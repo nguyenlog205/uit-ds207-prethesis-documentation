@@ -1,0 +1,107 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
+\newlabel{sec:introduction}{{1}{1}}
+\citation{hughes2015plant}
+\citation{mohanty2016using}
+\citation{barbedo2019plant}
+\citation{howard2017mobilenets}
+\citation{tan2019efficientnet}
+\citation{liu2022convnet}
+\citation{atila2021plant}
+\citation{snell2017prototypical}
+\citation{sung2018learning}
+\citation{finn2017model}
+\citation{arguelles2020few,wang2021few}
+\citation{guo2017calibration}
+\citation{gal2016dropout}
+\citation{wang2022uncertainty}
+\citation{gonzalez2020identifying}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Plant Disease Classification}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Lightweight Architectures for Edge Deployment}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Few‑shot Learning for Plant Disease Recognition}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Uncertainty Estimation in Deep Learning}{2}{}\protected@file@percent }
+\citation{selvaraju2017grad}
+\citation{sharma2020explainable}
+\citation{he2016deep}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Explainable AI for Plant Diagnosis}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Dataset Construction Process}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Dataset Construction Collection}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Dataset Annotation}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Quality Control}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Analysis}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset Statistics}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary statistics of the AvocadoLeaf dataset.\relax }}{3}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:dataset_stats}{{1}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Class distribution: (left) overall bar chart, (right) grouped bar chart showing train/validation/test splits.\relax }}{3}{}\protected@file@percent }
+\newlabel{fig:class_dist}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Photometric Analysis}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Brightness (left) and contrast (right) distributions per class.\relax }}{3}{}\protected@file@percent }
+\newlabel{fig:brightness_contrast}{{2}{3}}
+\citation{maaten2008visualizing}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces RGB histograms of one sample image per class. Colors: red, green, blue.\relax }}{4}{}\protected@file@percent }
+\newlabel{fig:rgb_histograms}{{3}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Intrinsic Difficulty Analysis}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Quantitative Clustering Metrics}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies–Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.\relax }}{4}{}\protected@file@percent }
+\newlabel{tab:difficulty_metrics}{{2}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Visualisation with t-SNE}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces t-SNE projection of ResNet-18 features on the validation set. Overlapping clusters confirm that disease categories are not well separated in the deep feature space.\relax }}{4}{}\protected@file@percent }
+\newlabel{fig:tsne}{{4}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Linear Separability Test}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Proposed Lightweight Model}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experiments and Results}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Experimental Setup}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Main Classification Results}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Explainable AI: Visualizing Model Decisions}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Few-shot Learning}{5}{}\protected@file@percent }
+\newlabel{subsec:fewshot}{{6.4}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Uncertainty Estimation}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.1}Calibration}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.2}Far out of distribution detection}{5}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Few-shot classification accuracy (\%) on the test set. Fine‑tune results are from a single training run; ProtoNet and RelationNet results are averaged over 600 random episodes (mean \(\pm \) std).\relax }}{6}{}\protected@file@percent }
+\newlabel{tab:fewshot_results}{{3}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Few-shot test accuracy comparison. Error bars represent standard deviation (ProtoNet, RelationNet). Fine‑tune results are single runs.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:fewshot_acc}{{5}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Entropy distribution on far OOD (random internet images). ID samples concentrate at very low entropy, OOD samples at high entropy, with almost no overlap.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:far_entropy}{{6}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.3}Near out of distribution detection}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to moderately higher entropy, with a small overlap consistent with the AUC of 0.895.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:near_entropy}{{7}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces OOD detection AUC using MC Dropout entropy.\relax }}{7}{}\protected@file@percent }
+\newlabel{tab:ood_auc}{{4}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{7}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion and Future Work}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Extended Difficulty Analysis}{8}{}\protected@file@percent }
+\newlabel{app:difficulty}{{A}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Software and Implementation Details}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Mathematical Definition of Metrics}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Silhouette Score}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Davies–Bouldin Index (DBI)}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Intra/Inter-class Distance Ratio}{8}{}\protected@file@percent }
+\bibcite{he2016deep}{1}
+\bibcite{maaten2008visualizing}{2}
+\bibcite{rousseeuw1987silhouettes}{3}
+\bibcite{davies1979cluster}{4}
+\bibcite{calinski1974dendrite}{5}
+\bibcite{hughes2015}{6}
+\bibcite{mohanty2016}{7}
+\bibcite{barbedo2019}{8}
+\bibcite{howard2017}{9}
+\bibcite{tan2019}{10}
+\bibcite{liu2022}{11}
+\bibcite{atila2021}{12}
+\bibcite{snell2017}{13}
+\bibcite{sung2018}{14}
+\bibcite{finn2017}{15}
+\bibcite{arguelles2020}{16}
+\bibcite{wang2021}{17}
+\bibcite{guo2017}{18}
+\bibcite{gal2016}{19}
+\bibcite{wang2022}{20}
+\bibcite{gonzalez2020}{21}
+\bibcite{selvaraju2017}{22}
+\bibcite{sharma2020}{23}
+\gdef \@abspage@last{10}

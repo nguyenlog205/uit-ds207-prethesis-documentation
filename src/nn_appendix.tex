@@ -1,0 +1,48 @@
+\section{Extended Difficulty Analysis}
+\label{app:difficulty}
+
+This appendix provides supplementary details for the difficulty analysis presented in Section 4.3.
+
+\subsection{Software and Implementation Details}
+
+All experiments were implemented in Python 3.10 using PyTorch 2.0.0 for feature extraction. The t-SNE projection was performed using the scikit-learn implementation with perplexity 30, 1000 iterations, and a random state of 42. Logistic regression was implemented via scikit-learn's \texttt{LogisticRegression} with the LBFGS solver and a maximum of 1000 iterations to ensure convergence.
+
+\subsection{Mathematical Definition of Metrics}
+
+For completeness, we restate the three clustering evaluation metrics used in the main paper.
+
+\paragraph{Silhouette Score}
+For a sample \(i\) assigned to cluster \(C_I\), let \(a(i)\) be the mean distance between \(i\) and all other points in the same cluster, and \(b(i)\) the mean distance between \(i\) and all points in the nearest neighbouring cluster. The Silhouette score of \(i\) is:
+\[
+s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}.
+\]
+The overall Silhouette score is the average of \(s(i)\) over all samples. The score ranges from \(-1\) (poor clustering) to \(+1\) (excellent clustering). A value near zero indicates substantial overlap between clusters.
+
+\paragraph{Davies–Bouldin Index (DBI)}
+For each cluster \(C_i\), define its scatter \(S_i\) as the average distance of points in \(C_i\) to its centroid. For two clusters \(C_i\) and \(C_j\), let \(d_{ij}\) be the distance between their centroids. The DBI is:
+\[
+DB = \frac{1}{k} \sum_{i=1}^{k} \max_{j \neq i} \left( \frac{S_i + S_j}{d_{ij}} \right),
+\]
+where \(k\) is the number of clusters. Lower DBI values imply better separation; values above 1 often indicate overlapping clusters.
+
+\paragraph{Intra/Inter-class Distance Ratio}
+Let \(\mathbf{c}_g\) denote the centroid of class \(g\). The average intra-class distance is:
+\[
+D_{\text{intra}} = \frac{1}{k} \sum_{g=1}^{k} \frac{1}{|C_g|} \sum_{\mathbf{x} \in C_g} \|\mathbf{x} - \mathbf{c}_g\|_2.
+\]
+The average inter-class distance is defined as the mean pairwise distance between centroids:
+\[
+D_{\text{inter}} = \frac{2}{k(k-1)} \sum_{1 \le i < j \le k} \|\mathbf{c}_i - \mathbf{c}_j\|_2.
+\]
+The ratio \(R = D_{\text{intra}} / D_{\text{inter}}\) quantifies the trade-off between within-class compactness and between-class separation. A ratio \(R \ge 1\) suggests that classes are not well separated.
+
+% \subsection{Additional Visualisation}
+
+% Figure~\ref{fig:tsne_full} presents the same t-SNE projection as in the main paper, but with each class explicitly labelled for easier interpretation.
+
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.85\textwidth]{img/dataset/analysis/tsne_avocado_leaf_labelled.png}
+% \caption{t-SNE projection with explicit class labels. Overlapping clusters are evident, especially between \textit{leaf burn} and \textit{mealybug infestation}.}
+% \label{fig:tsne_full}
+% \end{figure}

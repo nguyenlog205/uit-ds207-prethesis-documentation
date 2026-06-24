@@ -1,0 +1,57 @@
+\documentclass[twocolumn,a4paper,10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\usepackage{cuted}
+\usepackage{caption} % <--- Adds support for \captionof
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+
+\usepackage[htt]{hyphenat}
+\lstdefinelanguage{YAML}{
+  keywords={true,false,null,y,n},
+  keywordstyle=\color{blue},
+  sensitive=false,
+  comment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{gray}\ttfamily,
+  stringstyle=\color{purple}\ttfamily,
+  moredelim=[l][\color{darkgray}]{\ },
+  morestring=[b]',
+  morestring=[b]"
+}
+
+
+% Add these to your PREAMBLE (before \begin{document}) to fix the top-float placement
+\renewcommand{\topfraction}{0.95}      % Max fraction of page columns occupied by top floats
+\renewcommand{\dbltopfraction}{0.95}   % Max fraction of two-column page occupied by top floats
+\renewcommand{\textfraction}{0.05}     % Min fraction of page remaining for body text
+\renewcommand{\floatpagefraction}{0.9} % Min fraction of a float-only page
+
+
+
+\begin{document}
+\input{src/00_information_and_abstract}
+\input{src/01_introduction.tex}
+\input{src/02_related_work.tex}
+\input{src/03a_dataset_construction.tex}
+\input{src/03b_dataset_analysis.tex}
+\input{src/04_proposed_model.tex}
+\input{src/05_experiments.tex}
+\input{src/06_discussion.tex}
+\input{src/07_conclusion.tex}
+
+\appendix
+\clearpage
+\onecolumn 
+\input{src/nn_appendix.tex}
+\newpage
+\input{src/nn_reference.tex}
+\end{document}

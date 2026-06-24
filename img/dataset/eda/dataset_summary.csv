@@ -1,0 +1,9 @@
+Metric,Value
+Total images,1861
+Train images,1302
+Validation images,279
+Test images,280
+Number of classes,6
+Min images per class,165
+Max images per class,654
+Imbalance ratio (max/min),3.96

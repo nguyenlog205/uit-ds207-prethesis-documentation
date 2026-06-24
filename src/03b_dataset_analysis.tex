@@ -1,0 +1,120 @@
+\section{Dataset Analysis}
+
+
+
+% =============================================
+% Dataset Statistics
+% =============================================
+\subsection{Dataset Statistics}
+
+The dataset consists of 1,861 images distributed across file disease categories and healthy leaves. It then was randomly split into training (70\%), validation (15\%), and test (15\%) sets while preserving class proportions via stratified sampling. Table~\ref{tab:dataset_stats} summarizes the overall statistics.
+
+\begin{table}[htbp]
+\centering
+\caption{Summary statistics of the AvocadoLeaf dataset.}
+\label{tab:dataset_stats}
+\begin{tabular}{l c}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Total images & 1,861 \\
+Train images & 1,302 \\
+Validation images & 279 \\
+Test images & 280 \\
+Number of classes & 6 \\
+Min images per class & 165 \\
+Max images per class & 654 \\
+Imbalance ratio (max/min) & 3.96 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The class distribution is shown in Figure~\ref{fig:class_dist}. The most frequent class is \textit{domla} (654 images), while the least frequent is \textit{repsap} (165 images). The imbalance ratio of 3.96 indicates moderate class imbalance, which is typical for field-collected datasets. Given the use of transfer learning and data augmentation, this sample size is expected to be adequate for initial model development. The per-split distribution is also displayed, confirming that the stratification was effective.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{img/dataset/eda/class_distribution.png}
+\caption{Class distribution: (left) overall bar chart, (right) grouped bar chart showing train/validation/test splits.}
+\label{fig:class_dist}
+\end{figure}
+
+
+% =============================================
+% Photometric Analysis
+% =============================================
+\subsection{Photometric Analysis}
+
+To demonstrate the diversity of imaging conditions, Figure~\ref{fig:brightness_contrast} presents the mean brightness and contrast per class. Brightness values range from 22.7 (darkest, in \textit{repsap}) to 153.9 (brightest, in \textit{domla}), covering a wide spectrum of illumination levels. Contrast also varies substantially across classes, reflecting differences in texture and disease symptoms. This variation confirms that the dataset captures real‑world conditions with diverse lighting and shadow effects.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{img/dataset/eda/brightness_contrast.png}
+\caption{Brightness (left) and contrast (right) distributions per class.}
+\label{fig:brightness_contrast}
+\end{figure}
+
+Figure~\ref{fig:rgb_histograms} shows RGB histograms of representative samples from each class. The histograms exhibit distinct color profiles: for instance, \textit{chaymepla} (leaf burn) has a relatively higher red channel, while \textit{repsap} (mealybug) shows suppressed green and blue intensities. These differences indicate that color information can help distinguish diseases, and the observed variation demonstrates the dataset’s richness in chromatic content.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{img/dataset/eda/rgb_histograms.png}
+\caption{RGB histograms of one sample image per class. Colors: red, green, blue.}
+\label{fig:rgb_histograms}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+% ===============================================
+% Difficulty Analysis
+% ===============================================
+\subsection{Intrinsic Difficulty Analysis}
+
+To assess how challenging the dataset is for automatic classification, we performed three complementary analyses on the validation set using features extracted from a frozen ImageNet-pretrained ResNet-18 \cite{he2016deep}. The feature dimension was reduced to 512 via global average pooling.
+
+\subsubsection{Quantitative Clustering Metrics}
+
+We computed three standard metrics that evaluate class separability in the feature space. Table~\ref{tab:difficulty_metrics} summarises the results.
+
+\begin{table}[htbp]
+\centering
+\caption{Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies–Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.}
+\label{tab:difficulty_metrics}
+\begin{tabular}{l c}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Silhouette Score & 0.0067 \\
+Davies–Bouldin Index & 4.17 \\
+Calinski–Harabasz Index & 8.23 \\
+Average intra-class distance & 12.82 \\
+Average inter-class distance & 8.04 \\
+Intra/Inter distance ratio & 1.59 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Silhouette score near zero indicates that samples are not closer to their own class than to neighbouring classes, implying heavy inter-class overlap. The Davies–Bouldin index (4.17) far exceeds the typical threshold of 1.0 for well-separated datasets, confirming high similarity between disease categories. Notably, the intra/inter distance ratio exceeds 1 (1.59), meaning that within-class variation is larger than the separation between class centroids – a hallmark of fine-grained recognition problems.
+
+\subsubsection{Visualisation with t-SNE}
+
+We projected the 512‑dimensional features into two dimensions using t-SNE \cite{maaten2008visualizing} with perplexity 30. Figure~\ref{fig:tsne} shows the resulting scatter plot, where each point represents a validation image and colours encode disease classes. All six classes exhibit substantial overlap without clear cluster boundaries. Classes with visually similar symptoms, such as \textit{leaf burn} and \textit{mealybug infestation}, are heavily interleaved. This visual entanglement further confirms that the disease categories are not well separated in the deep feature space.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{img/dataset/analysis/tsne_avocado_leaf.png}
+\caption{t-SNE projection of ResNet-18 features on the validation set. Overlapping clusters confirm that disease categories are not well separated in the deep feature space.}
+\label{fig:tsne}
+\end{figure}
+
+\subsubsection{Linear Separability Test}
+
+To determine whether the frozen deep features are linearly separable by disease class, we trained a logistic regression classifier on the extracted features. Using 5‑fold cross‑validation, the model achieved a mean accuracy of \(75.25\% \pm 3.76\%\). When evaluated on a held‑out test split (30\% of the validation data), the accuracy dropped to \(65.48\%\). While these results are significantly better than random guessing (\(16.7\%\) for six classes), they remain far below the performance typically observed on non‑fine‑grained benchmarks (e.g., \(>90\%\) on PlantVillage subsets). Hence, the disease classes are \textbf{not linearly separable} in the feature space, requiring non‑linear models or fine‑tuning to achieve satisfactory accuracy.
