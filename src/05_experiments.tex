@@ -98,14 +98,14 @@ For each setting, we randomly sampled \(K\) images per class (\(K \in \{1,5,10,2
 The quantitative results are summarised in Table~\ref{tab:fewshot_results}, and a visual comparison is provided in Figure~\ref{fig:fewshot_acc}. Several observations can be made:
 
 \begin{itemize}
-    \item \textbf{Fine‑tune suffers from severe overfitting} when only a few samples per class are available. With only 5 shots, it achieves only 28.9\% accuracy, and even with 20 shots it reaches only 50.0\%, indicating that conventional fine‑tuning is not suitable for extreme low‑data regimes.
+    \item \textbf{Fine‑tune suffers from severe overfitting} when only a few samples per class are available. With only 5 shots, it achieves only 16.4\% accuracy, and even with 20 shots it reaches only 28.6\%, indicating that conventional fine‑tuning is not suitable for extreme low‑data regimes.
     
-    \item \textbf{Prototypical Networks substantially outperforms fine‑tuning at all shot levels.} Already with 1 shot per class, ProtoNet attains 36.3\% accuracy, which is higher than fine‑tuning with 5 shots (28.9\%). The gap becomes larger as the number of shots increases: at 5 shots ProtoNet achieves 59.9\% (+31.0 p.p.), at 10 shots 67.7\% (+30.2 p.p.), and at 20 shots 71.7\% (+21.7 p.p.). These results demonstrate that metric‑based few‑shot learning is highly effective for fine‑grained plant disease classification.
+    \item \textbf{Prototypical Networks substantially outperforms fine‑tuning at all shot levels.} Already with 1 shot per class, ProtoNet attains 28.9\% accuracy, which is higher than fine‑tuning with 5 shots (16.4\%). The gap remains large as the number of shots increases: at 5 shots ProtoNet achieves 45.7\% (+29.2 p.p.), at 10 shots 52.3\% (+31.3 p.p.), and at 20 shots 57.4\% (+28.9 p.p.). These results demonstrate that metric‑based few‑shot learning is substantially more effective than fine‑tuning for fine‑grained plant disease classification, even though absolute accuracy remains moderate.
     
-    \item \textbf{Relation Networks perform poorly} on this dataset, with accuracy remaining near random (10–17\%) across all shot levels (see Figure~\ref{fig:fewshot_acc}). This suggests that the learnable distance metric of RelationNet may overfit to the specific episode composition or that the relation module requires more training data to generalise.
+    \item \textbf{Relation Networks perform poorly} on this dataset, with accuracy remaining close to the 16.7\% random-chance baseline (16–19\%) across all shot levels and showing no consistent improvement as the number of shots increases (see Figure~\ref{fig:fewshot_acc}). This suggests that the learnable distance metric of RelationNet may overfit to the specific episode composition or that the relation module requires more training data to generalise.
 \end{itemize}
 
-Overall, the ProtoNet framework combined with a frozen ConvNeXt‑V2 backbone provides a strong baseline for few‑shot avocado leaf disease recognition, achieving more than 70\% accuracy with only 20 labeled images per class. This opens the door to practical deployment in scenarios where data collection is expensive.
+Overall, the ProtoNet framework combined with a frozen ConvNeXt‑V2 backbone provides the strongest few‑shot baseline among the three methods evaluated, more than doubling fine‑tuning's accuracy at every shot level tested and reaching 57.4\% accuracy with only 20 labeled images per class. While this is well below the $>$90\% accuracy achieved with the full training set (Table~\ref{tab:arch_compare}), it demonstrates that metric-based few-shot learning is a substantially more data-efficient starting point than fine-tuning for scenarios where data collection is expensive.
 
 \begin{table*}[htbp]
 \centering
@@ -115,9 +115,9 @@ Overall, the ProtoNet framework combined with a frozen ConvNeXt‑V2 backbone pr
 \toprule
 \textbf{Method} & \textbf{1-shot} & \textbf{5-shot} & \textbf{10-shot} & \textbf{20-shot} \\
 \midrule
-Fine‑tune       & --              & 28.93           & 37.50           & 50.00           \\
-ProtoNet        & {\textbf{36.3 ± 9.6}}  & {\textbf{59.9 ± 9.1}}  & {\textbf{67.7 ± 8.5}}  & {\textbf{71.7 ± 8.0}}  \\
-RelationNet     & 17.0 ± 6.3      & 15.0 ± 5.5      & 10.2 ± 5.5      & 17.6 ± 5.4      \\
+Fine‑tune       & --              & 16.43           & 21.07           & 28.57           \\
+ProtoNet        & {\textbf{28.9 ± 8.3}}  & {\textbf{45.7 ± 9.1}}  & {\textbf{52.3 ± 8.8}}  & {\textbf{57.4 ± 9.0}}  \\
+RelationNet     & 16.2 ± 5.9      & 18.5 ± 6.3      & 17.5 ± 6.2      & 19.4 ± 6.9      \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -138,11 +138,11 @@ A high accuracy alone does not guarantee that a model knows when it is unsure. W
 
 \subsubsection{Calibration}
 
-We compute the Expected Calibration Error (ECE) on the validation set. Our baseline softmax model achieves an ECE of 0.0382. This value is below the common threshold of 0.05 that indicates good calibration. Consequently the model’s confidence scores reflect the true likelihood of being correct, making it trustworthy for practical use.
+We compute the Expected Calibration Error (ECE) on the validation set. Our baseline softmax model achieves an ECE of 0.0625. This is somewhat above the common threshold of 0.05 used to indicate good calibration, suggesting the model's raw softmax confidence is only moderately well calibrated and would benefit from post-hoc calibration (e.g. temperature scaling) before its confidence scores are used directly in high-stakes decisions.
 
 \subsubsection{Far out of distribution detection}
 
-We collect 100 random images from the internet, including animals, landscapes and objects. These images are completely unrelated to leaves. Using Monte Carlo Dropout with 50 forward passes, we compute the predictive entropy. The area under the ROC curve reaches 0.9983, meaning the model almost perfectly separates avocado leaf images from far domain images. The mean entropy for in distribution validation samples is 0.37, while for far OOD samples it is 1.64. This large gap confirms that the model becomes highly uncertain when confronted with entirely irrelevant inputs.
+We collect 100 random images from the internet, including animals, landscapes and objects. These images are completely unrelated to leaves. Using Monte Carlo Dropout with 50 forward passes, we compute the predictive entropy. The area under the ROC curve reaches 0.994, meaning the model almost perfectly separates avocado leaf images from far domain images. The mean entropy for in distribution validation samples is 0.21, while for far OOD samples it is 1.46. This large gap confirms that the model becomes highly uncertain when confronted with entirely irrelevant inputs.
 
 Figure~\ref{fig:far_entropy} shows the entropy histogram for this experiment.
 
@@ -155,14 +155,14 @@ Figure~\ref{fig:far_entropy} shows the entropy histogram for this experiment.
 
 \subsubsection{Near out of distribution detection}
 
-A more realistic challenge comes from leaf images of other crop species. We take 200 images from the PlantVillage dataset, containing leaves of tomato, corn and potato. These images still depict leaves but belong to plants that are never seen during training. The model achieves an AUC of 0.8954 on this near OOD set, which is substantially higher than random guessing. The mean entropy for near OOD samples is 1.18, noticeably higher than the 0.37 of the in distribution validation set. Although the separation is not as extreme as in the far OOD case, the model still demonstrates a strong ability to recognise that these images are not diseased avocado leaves.
+A more realistic challenge comes from leaf images of other crop species. We take 200 images from the PlantVillage dataset, containing leaves of tomato, corn and potato. These images still depict leaves but belong to plants that are never seen during training. The model achieves an AUC of 0.985 on this near OOD set, nearly as strong as the far OOD result. The mean entropy for near OOD samples is 1.35, noticeably higher than the 0.21 of the in distribution validation set. This shows that the model's uncertainty is not merely picking up on trivial domain shift (as in the far OOD case) but also distinguishes avocado leaves from visually similar leaves of other crop species.
 
 Figure~\ref{fig:near_entropy} presents the corresponding entropy histogram.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.49\textwidth]{img/experiments/uncertainty/near_entropy_histogram.png}
-\caption{Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to moderately higher entropy, with a small overlap consistent with the AUC of 0.895.}
+\caption{Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to high entropy, with only a small overlap, consistent with the AUC of 0.985.}
 \label{fig:near_entropy}
 \end{figure}
 
@@ -176,8 +176,8 @@ Table~\ref{tab:ood_auc} summarises the OOD detection results.
 \toprule
 \textbf{OOD set} & \textbf{Type} & \textbf{AUC} \\
 \midrule
-Random internet images & Far OOD & 0.9983 \\
-PlantVillage leaves & Near OOD & 0.8954 \\
+Random internet images & Far OOD & 0.994 \\
+PlantVillage leaves & Near OOD & 0.985 \\
 \bottomrule
 \end{tabular}
 \end{table}

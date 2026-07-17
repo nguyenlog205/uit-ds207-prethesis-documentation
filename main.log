@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2026.4.10)  17 JUL 2026 14:32
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2026.4.10)  17 JUL 2026 14:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -532,7 +532,12 @@ Underfull \hbox (badness 1014) in paragraph at lines 17--18
 
 
 Underfull \hbox (badness 1184) in paragraph at lines 19--20
-\TU/lmr/m/n/10 pected Calibration Error (ECE = 0.0382)
+\TU/lmr/m/n/10 pected Calibration Error (ECE = 0.0625)
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 19--20
+\TU/lmr/m/n/10 near‑perfect separation on far OOD (ran-
  []
 
 ) (./src/02_related_work.tex
@@ -594,8 +599,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--104
  []
 
 
-Underfull \hbox (badness 4403) in paragraph at lines 103--104
-\TU/lmr/bx/n/10 outperforms fine‑tuning at all shot
+Underfull \hbox (badness 5403) in paragraph at lines 103--104
+\TU/lmr/m/n/10 fine‑tuning for fine‑grained plant disease
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 108--109
+\TU/lmr/m/n/10 a frozen ConvNeXt‑V2 backbone provides the
  []
 
 File: img/experiments/fewshot/acc_comparison.jpg Graphic file (type bmp)
@@ -611,11 +621,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\TU/lmr/bx/n/14.4 Conclusion and Future
  []
 
-) [8] [9] (./src/nn_appendix.tex [10
+) [8] [9] [10
+
+] (./src/nn_appendix.tex [11
 
 
-]) [11] (./src/nn_reference.tex [12])
-[13] (./main.aux)
+]) [12] (./src/nn_reference.tex
+[13]) [14] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -627,6 +639,6 @@ Here is how much of TeX's memory you used:
  26913 multiletter control sequences out of 15000+600000
  521295 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,15n,63p,1329b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,15n,63p,1330b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (13 pages).
+Output written on main.pdf (14 pages).
