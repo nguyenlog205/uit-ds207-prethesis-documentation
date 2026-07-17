@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2026.4.10)  17 JUL 2026 14:51
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2026.4.10)  17 JUL 2026 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,18 +616,40 @@ bmp)
 File: img/experiments/uncertainty/near_entropy_histogram.png Graphic file (type
  bmp)
 <img/experiments/uncertainty/near_entropy_histogram.png>
-) (./src/06_discussion.tex) (./src/07_conclusion.tex
+) (./src/06_discussion.tex
+Underfull \hbox (badness 7238) in paragraph at lines 4--5
+\TU/lmr/bx/n/10 Why ConvNeXt‑V2 works well on a
+ []
+
+[8] [9]
+Underfull \hbox (badness 1484) in paragraph at lines 6--7
+\TU/lmr/bx/n/10 close the data-efficiency gap. \TU/lmr/m/n/10 The same
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 10--11
+\TU/lmr/m/n/10 vNeXt‑V2 has learned disease-relevant features
+ []
+
+
+Underfull \vbox (badness 1019) has occurred while \output is active []
+
+ [10])
+(./src/07_conclusion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\TU/lmr/bx/n/14.4 Conclusion and Future
  []
 
-) [8] [9] [10
 
-] (./src/nn_appendix.tex [11
+Underfull \hbox (badness 1303) in paragraph at lines 4--5
+\TU/lmr/m/n/10 trade-off, reaching 92.14% accuracy and 0.900
+ []
+
+) [11] (./src/nn_appendix.tex [12
 
 
-]) [12] (./src/nn_reference.tex
-[13]) [14] (./main.aux)
+]) [13] (./src/nn_reference.tex [14]) [15]
+(./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -635,10 +657,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  6821 strings out of 476696
  111322 string characters out of 5806955
- 1870018 words of memory out of 6000000
+ 1871018 words of memory out of 6000000
  26913 multiletter control sequences out of 15000+600000
  521295 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,15n,63p,1330b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,15n,63p,1352b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (14 pages).
+Output written on main.pdf (15 pages).
