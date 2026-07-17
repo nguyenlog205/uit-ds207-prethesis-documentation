@@ -2,38 +2,8 @@
 \label{sec:experiments}
 
 \subsection{Comparison of Architectures}
-\subsubsection{Comparison of Architectures}
 
-We benchmark a wide range of lightweight and efficient architectures on the AvocadoLeaf test set. Table~\ref{tab:arch_compare} reports top-1 accuracy, macro F1 score, number of parameters, and per-image inference time on a single NVIDIA GTX 3050-6GB GPU for all 15 evaluated models. All models are trained with the same data augmentation and optimisation schedule.
-
-% \begin{table}[htbp]
-% \centering
-% \caption{Performance comparison of all evaluated architectures. The highest values in each column are highlighted in bold and underlined.}
-% \label{tab:arch_compare}
-% \small
-% \setlength{\tabcolsep}{2.5pt}
-% \begin{tabularx}{\columnwidth}{X c c c c}
-% \toprule
-% \textbf{Model} & \makecell[c]{\textbf{Acc}\\(\%)} & \makecell[c]{\textbf{Macro F1}} & \makecell[c]{\textbf{Params}\\(M)} & \makecell[c]{\textbf{Inference}\\(ms)} \\
-% \midrule
-% ConvNeXt-V2            & \textbf{\underline{92.14}} & 0.900 &  3.4 & 2.30 \\
-% SwinTransformer        & 91.43 & 0.899 & 27.5 & 6.69 \\
-% MobileOne              & 91.43 & 0.893 &  4.3 & 8.35 \\
-% ConvNeXt-V1            & 91.07 & 0.895 & 27.8 & 5.24 \\
-% ViT                    & 91.07 & \textbf{\underline{0.904}} & 85.8 & 14.25 \\
-% EdgeNeXt               & 91.07 & 0.877 &  5.3 & 3.75 \\
-% ResNet-18              & 88.93 & 0.863 & 11.2 & 1.98 \\
-% TinyNet                & 88.21 & 0.863 &  4.9 & 3.66 \\
-% FastViT                & 87.50 & 0.853 &  3.3 & 3.63 \\
-% MobileNet-V2           & 87.14 & 0.847 &  2.2 & 1.80 \\
-% EfficientNet-B0        & 86.43 & 0.838 &  4.0 & 2.85 \\
-% MobileNet-V4           & 76.07 & 0.724 &  2.5 & 1.89 \\
-% EfficientViT           & 69.29 & 0.650 &  3.2 & 7.00 \\
-% GhostNet-V2            & 69.29 & 0.571 &  4.9 & 5.43 \\
-% VanillaCNN             & 63.57 & 0.623 & 25.8 & 1.33 \\
-% \bottomrule
-% \end{tabularx}
-% \end{table}
+We benchmark a wide range of lightweight and efficient architectures on the AvocadoLeaf test set. Table~\ref{tab:arch_compare} reports top-1 accuracy, macro F1 score, number of parameters, and per-image inference time on a single NVIDIA RTX 3050-6GB GPU for all 15 evaluated models. All models are trained with the same data augmentation and optimisation schedule.
 
 \begin{table*}[t]
 \centering
@@ -72,7 +42,7 @@ ConvNeXt-V2 stands out as the only light model attaining F1 (0.900) comparable t
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\columnwidth]{img/models/f1_comparision.jpg}
-\caption{Macro F1 scores of all evaluated models. Lightweight models (<5M parameters) are shown in blue, heavy models (≥5M) in orange.}
+\caption{Macro F1 scores of all evaluated models. Lightweight models (<5M parameters) are shown in blue, heavy models ($\geq$5M) in orange.}
 \label{fig:f1_comparision}
 \end{figure}
 
@@ -96,50 +66,32 @@ This metric quantifies the predictive performance achieved per unit of resource 
 
 MobileNet-V2 achieves the highest overall efficiency (0.211) due to its extremely compact size (2.2M parameters) and fast inference (1.80 ms), though its macro F1 (0.847) is moderate. ConvNeXt-V2 ranks third in efficiency (0.116) while attaining a substantially higher F1 (0.900). Its F1/Params (0.265) and F1/Time (0.391) are well balanced, placing it in the upper-right region of the scatter plot. Heavy models such as ViT (0.001) and SwinTransformer (0.005) exhibit very low efficiency despite competitive F1, due to large parameter counts and slower inference. These results confirm that ConvNeXt-V2 offers the most favourable balance between accuracy and resource utilisation for edge deployment.
 
-% Pruning reduces the model size significantly (≈30\%) while the accuracy drop remains below 1\% for both models. This demonstrates that our architecture can be further compressed for resource‑constrained edge devices without major performance loss.
-
-% \subsubsection{Error Analysis}
-% We examine the confusion matrix on the test set (Figure~\ref{fig:confusion}) to understand the failure modes of ConvNeXt‑V1.
-% % (Insert confusion matrix plot here, reference as \ref{fig:confusion})
-% The most frequent confusions occur between visually similar classes, such as [Class A] vs [Class B] (e.g., “Speed limit 60” and “Speed limit 80”), accounting for 12\% of total errors. Some images are heavily occluded or suffer from motion blur, which suggests that additional data augmentation (e.g., random occlusion, motion blur) could improve robustness. Qualitative examples of correct predictions and errors are provided in Appendix~\ref{app:error_examples}.
-
-
-% \subsubsection{Model Pruning \& Distillation}
-% We applied structured pruning (30\% of channels) to the proposed ConvNeXt‑V1 and to the lightweight baseline MobileNet‑V2. Table~\ref{tab:pruning} shows the reduction in model size and the change in test accuracy.
-
-% \begin{table}[htbp]
-% \centering
-% \caption{Impact of 30\% structured pruning.}
-% \label{tab:pruning}
-% \begin{tabular}{l c c c}
-% \toprule
-% \textbf{Model} & \textbf{Original Size (MB)} & \textbf{Pruned Size (MB)} & \textbf{Acc drop (\%)} \\
-% \midrule
-% ConvNeXt‑V1 (Ours) & 5.2 & 3.6 & 0.82 \\
-% MobileNet‑V2       & 4.3 & 3.0 & 0.55 \\
-% \bottomrule
-% \end{tabular}
-% \end{table}
-
-
-
-
-
-
-
-
-
+% TODO (future work): Error Analysis — confusion matrix on the test set to
+% understand ConvNeXt-V2's failure modes. Not yet produced.
+% TODO (future work): Model Pruning & Distillation — structured pruning of
+% ConvNeXt-V2. No pruning run has been completed yet (see
+% source/src/experiments/pruning/distill_prune.py); do not report numbers
+% here until that experiment actually produces deliverables.
 
 \subsection{Model Interpretability}
 
+To assess whether ConvNeXt‑V2 relies on disease‑relevant visual evidence rather than spurious correlations, we apply LIME \cite{ribeiro2016why} to one held‑out test image per class. Each image is segmented into superpixels with the Quickshift algorithm, and 500 perturbed samples are used to fit a local surrogate model that identifies the superpixels most responsible for the predicted class. All six sampled images are classified correctly, with confidence ranging from 0.844 (\textit{binhthuong}, healthy) to 0.994 (\textit{chaymepla}, leaf scorch).
 
+Figure~\ref{fig:lime_examples} shows two representative examples. For \textit{chaymepla}, the highlighted superpixels tightly enclose the brown, scorched lesion at the centre of the leaf, closely matching the visible symptom boundary. For \textit{moctrang} (powdery mildew), the highlighted regions concentrate on the white powdery patches on the leaf surface rather than on the unaffected tissue or background. Across the remaining four classes (not shown), the explanations similarly localise to symptomatic regions — spotted or discoloured areas for \textit{domla} and \textit{gisat}, and diffuse but leaf-confined regions for \textit{repsap}, consistent with the stippled, non-localised nature of mealybug damage. These qualitative results suggest that ConvNeXt‑V2's predictions are driven by the same visual cues a human expert would use, rather than by background or imaging artefacts, though we note this evidence is qualitative and based on a single image per class.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.49\linewidth]{img/experiments/xai/chaymepla_lime.png}
+\includegraphics[width=0.49\linewidth]{img/experiments/xai/moctrang_lime.png}
+\caption{LIME explanations for ConvNeXt‑V2 on two disease classes. Left: \textit{chaymepla} (leaf scorch), where the highlighted region matches the scorched lesion. Right: \textit{moctrang} (powdery mildew), where the highlighted region matches the white powdery patches. Yellow outlines mark superpixels positively attributed to the predicted class.}
+\label{fig:lime_examples}
+\end{figure}
 
 
 \subsection{Few-shot Learning}
 \label{subsec:fewshot}
 
-To evaluate the ability of our model to generalise from very few labelled examples – a realistic scenario in agricultural applications where data collection is expensive – we conducted few-shot experiments on the AvocadoLeaf dataset. We compared three approaches: (i) standard fine-tuning of the entire classifier on the limited support set (denoted as \texttt{Fine‑tune}), (ii) Prototypical Networks (ProtoNet) using a frozen ConvNeXt‑V1 backbone, and (iii) Relation Networks (RelationNet) with the same frozen backbone.
+To evaluate the ability of our model to generalise from very few labelled examples – a realistic scenario in agricultural applications where data collection is expensive – we conducted few-shot experiments on the AvocadoLeaf dataset. We compared three approaches: (i) standard fine-tuning of the entire classifier on the limited support set (denoted as \texttt{Fine‑tune}), (ii) Prototypical Networks (ProtoNet) using a frozen ConvNeXt‑V2 backbone, and (iii) Relation Networks (RelationNet) with the same frozen backbone.
 
 For each setting, we randomly sampled \(K\) images per class (\(K \in \{1,5,10,20\}\)) from the training set to form the support set, and evaluated on the full test set. Fine‑tune was trained for 50 epochs with early stopping; for ProtoNet and RelationNet we report the mean accuracy and standard deviation over 600 randomly generated episodes (6‑way, \(K\)-shot, 15 query images per class).
 
@@ -153,7 +105,7 @@ The quantitative results are summarised in Table~\ref{tab:fewshot_results}, and 
     \item \textbf{Relation Networks perform poorly} on this dataset, with accuracy remaining near random (10–17\%) across all shot levels (see Figure~\ref{fig:fewshot_acc}). This suggests that the learnable distance metric of RelationNet may overfit to the specific episode composition or that the relation module requires more training data to generalise.
 \end{itemize}
 
-Overall, the ProtoNet framework combined with a frozen ConvNeXt‑V1 backbone provides a strong baseline for few‑shot avocado leaf disease recognition, achieving more than 70\% accuracy with only 20 labeled images per class. This opens the door to practical deployment in scenarios where data collection is expensive.
+Overall, the ProtoNet framework combined with a frozen ConvNeXt‑V2 backbone provides a strong baseline for few‑shot avocado leaf disease recognition, achieving more than 70\% accuracy with only 20 labeled images per class. This opens the door to practical deployment in scenarios where data collection is expensive.
 
 \begin{table*}[htbp]
 \centering

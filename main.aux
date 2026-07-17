@@ -18,6 +18,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Few-shot Learning for Plant Disease Recognition}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Uncertainty Estimation in Deep Learning}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Dataset Construction}{2}{}\protected@file@percent }
+\newlabel{sec:dataset_construction}{{3}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Data Collection and Filtering}{2}{}\protected@file@percent }
 \newlabel{subsec:data_collection}{{3.1}{2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the data annotation pipeline with an iterative quality-control loop based on inter-annotator agreement (Cohen's Kappa).\relax }}{3}{}\protected@file@percent }
@@ -36,6 +37,7 @@
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Expert quality control results on the $279$‑image sample.\relax }}{4}{}\protected@file@percent }
 \newlabel{tab:quality_control}{{1}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Analysis}{4}{}\protected@file@percent }
+\newlabel{sec:dataset_analysis}{{4}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset Statistics}{4}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Summary statistics of the AvocadoLeaf dataset.\relax }}{4}{}\protected@file@percent }
 \newlabel{tab:dataset_stats}{{2}{4}}
@@ -44,10 +46,13 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Photometric Analysis}{4}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Brightness (left) and contrast (right) distributions per class.\relax }}{4}{}\protected@file@percent }
 \newlabel{fig:brightness_contrast}{{3}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Intrinsic Difficulty Analysis}{4}{}\protected@file@percent }
+\citation{rousseeuw1987silhouettes}
+\citation{davies1979cluster}
+\citation{calinski1974dendrite}
 \citation{maaten2008visualizing}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces RGB histograms of one sample image per class. Colors: red, green, blue.\relax }}{5}{}\protected@file@percent }
 \newlabel{fig:rgb_histograms}{{4}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Intrinsic Difficulty Analysis}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Quantitative Clustering Metrics}{5}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies–Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.\relax }}{5}{}\protected@file@percent }
 \newlabel{tab:difficulty_metrics}{{3}{5}}
@@ -55,37 +60,40 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces t-SNE projection of ResNet-18 features on the validation set. Overlapping clusters confirm that disease categories are not well separated in the deep feature space.\relax }}{5}{}\protected@file@percent }
 \newlabel{fig:tsne}{{5}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Linear Separability Test}{5}{}\protected@file@percent }
+\citation{ribeiro2016why}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Experiments and Results}{6}{}\protected@file@percent }
 \newlabel{sec:experiments}{{5}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Comparison of Architectures}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Comparison of Architectures}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Macro F1 scores of all evaluated models. Lightweight models (<5M parameters) are shown in blue, heavy models (≥5M) in orange.\relax }}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Macro F1 scores of all evaluated models. Lightweight models (<5M parameters) are shown in blue, heavy models ($\geq $5M) in orange.\relax }}{6}{}\protected@file@percent }
 \newlabel{fig:f1_comparision}{{6}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Efficiency Analysis}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Scatter plot of F1 per parameter versus F1 per inference time. Colour indicates macro F1.\relax }}{6}{}\protected@file@percent }
-\newlabel{fig:efficiency}{{7}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Efficiency Analysis}{6}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Performance comparison of all evaluated architectures. The highest values in each column are highlighted in bold and underlined.\relax }}{7}{}\protected@file@percent }
 \newlabel{tab:arch_compare}{{4}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Scatter plot of F1 per parameter versus F1 per inference time. Colour indicates macro F1.\relax }}{7}{}\protected@file@percent }
+\newlabel{fig:efficiency}{{7}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Model Interpretability}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces LIME explanations for ConvNeXt‑V2 on two disease classes. Left: \textit  {chaymepla} (leaf scorch), where the highlighted region matches the scorched lesion. Right: \textit  {moctrang} (powdery mildew), where the highlighted region matches the white powdery patches. Yellow outlines mark superpixels positively attributed to the predicted class.\relax }}{7}{}\protected@file@percent }
+\newlabel{fig:lime_examples}{{8}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Few-shot Learning}{7}{}\protected@file@percent }
 \newlabel{subsec:fewshot}{{5.3}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Few-shot classification accuracy (\%) on the test set. Fine‑tune results are from a single training run; ProtoNet and RelationNet results are averaged over 600 random episodes (mean \(\pm \) std).\relax }}{8}{}\protected@file@percent }
-\newlabel{tab:fewshot_results}{{5}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Few-shot test accuracy comparison. Error bars represent standard deviation (ProtoNet, RelationNet). Fine‑tune results are single runs.\relax }}{8}{}\protected@file@percent }
-\newlabel{fig:fewshot_acc}{{8}{8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Uncertainty Estimation}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1}Calibration}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2}Far out of distribution detection}{8}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Entropy distribution on far OOD (random internet images). ID samples concentrate at very low entropy, OOD samples at high entropy, with almost no overlap.\relax }}{8}{}\protected@file@percent }
-\newlabel{fig:far_entropy}{{9}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.3}Near out of distribution detection}{8}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to moderately higher entropy, with a small overlap consistent with the AUC of 0.895.\relax }}{9}{}\protected@file@percent }
-\newlabel{fig:near_entropy}{{10}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{8}{}\protected@file@percent }
+\newlabel{sec:discussion}{{6}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion and Future Work}{8}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Few-shot classification accuracy (\%) on the test set. Fine‑tune results are from a single training run; ProtoNet and RelationNet results are averaged over 600 random episodes (mean \(\pm \) std).\relax }}{9}{}\protected@file@percent }
+\newlabel{tab:fewshot_results}{{5}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Few-shot test accuracy comparison. Error bars represent standard deviation (ProtoNet, RelationNet). Fine‑tune results are single runs.\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:fewshot_acc}{{9}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Entropy distribution on far OOD (random internet images). ID samples concentrate at very low entropy, OOD samples at high entropy, with almost no overlap.\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:far_entropy}{{10}{9}}
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces OOD detection AUC using MC Dropout entropy.\relax }}{9}{}\protected@file@percent }
 \newlabel{tab:ood_auc}{{6}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{9}{}\protected@file@percent }
-\newlabel{sec:conclusion}{{6}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion and Future Work}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to moderately higher entropy, with a small overlap consistent with the AUC of 0.895.\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:near_entropy}{{11}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Quality Control – Raw Data and Agreement Calculation}{10}{}\protected@file@percent }
 \newlabel{app:quality_control_raw}{{A}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Per‑Annotator Performance vs.\ Expert}{10}{}\protected@file@percent }
@@ -108,22 +116,23 @@
 \bibcite{davies1979cluster}{4}
 \bibcite{calinski1974dendrite}{5}
 \bibcite{landis1977measurement}{6}
-\bibcite{hughes2015}{7}
-\bibcite{mohanty2016}{8}
-\bibcite{barbedo2019}{9}
-\bibcite{howard2017}{10}
-\bibcite{tan2019}{11}
-\bibcite{liu2022}{12}
-\bibcite{atila2021}{13}
-\bibcite{snell2017}{14}
-\bibcite{sung2018}{15}
-\bibcite{finn2017}{16}
-\bibcite{arguelles2020}{17}
-\bibcite{wang2021}{18}
-\bibcite{guo2017}{19}
-\bibcite{gal2016}{20}
-\bibcite{wang2022}{21}
-\bibcite{gonzalez2020}{22}
-\bibcite{selvaraju2017}{23}
-\bibcite{sharma2020}{24}
+\bibcite{hughes2015plant}{7}
+\bibcite{mohanty2016using}{8}
+\bibcite{barbedo2019plant}{9}
+\bibcite{howard2017mobilenets}{10}
+\bibcite{tan2019efficientnet}{11}
+\bibcite{liu2022convnet}{12}
+\bibcite{atila2021plant}{13}
+\bibcite{snell2017prototypical}{14}
+\bibcite{sung2018learning}{15}
+\bibcite{finn2017model}{16}
+\bibcite{arguelles2020few}{17}
+\bibcite{wang2021few}{18}
+\bibcite{guo2017calibration}{19}
+\bibcite{gal2016dropout}{20}
+\bibcite{wang2022uncertainty}{21}
+\bibcite{gonzalez2020identifying}{22}
+\bibcite{selvaraju2017grad}{23}
+\bibcite{sharma2020explainable}{24}
+\bibcite{ribeiro2016why}{25}
 \gdef \@abspage@last{13}
