@@ -1,3 +1,83 @@
+\section{Quality Control – Raw Data and Agreement Calculation}
+\label{app:quality_control_raw}
+
+\subsection{Per‑Annotator Performance vs.\ Expert}
+
+Table~\ref{tab:raw_annotator} reports the number of images on which each annotator agreed with the independent expert.
+
+\begin{table}[htbp]
+\centering
+\caption{Individual annotator agreement with the expert on the 279‑image review set.}
+\label{tab:raw_annotator}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Annotator} & \textbf{Correct} & \textbf{Incorrect} & \textbf{Accuracy} \\
+\midrule
+Annotator 1 & 236 & 43 & 0.846 \\
+Annotator 2 & 235 & 44 & 0.842 \\
+Annotator 3 & 236 & 43 & 0.846 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On average, an individual annotator agreed with the expert on roughly 84.5\% of the images.
+
+\subsection{Consensus (Majority Vote) vs.\ Expert}
+
+The final label for each image was obtained by majority voting among the three annotators. Table~\ref{tab:conf_matrix} shows the confusion matrix between this consensus label and the expert label.
+
+\begin{table}[htbp]
+\centering
+\caption{Confusion matrix: consensus (majority vote) vs.\ expert on the 279‑image review set.}
+\label{tab:conf_matrix}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{l c c c c c c | c}
+\toprule
+ & \texttt{binhthuong} & \texttt{chaymepla} & \texttt{domla} & \texttt{gisat} & \texttt{moctrang} & \texttt{repsap} & \textbf{Total} \\
+\midrule
+\texttt{binhthuong} & 43 & 1 & 1 & 1 & 0 & 0 & 46 \\
+\texttt{chaymepla}  &  1 & 43 & 1 & 0 & 1 & 0 & 46 \\
+\texttt{domla}      &  1 & 1 & 43 & 0 & 0 & 1 & 46 \\
+\texttt{gisat}      &  1 & 0 & 0 & 44 & 1 & 1 & 47 \\
+\texttt{moctrang}   &  0 & 1 & 0 & 1 & 44 & 1 & 47 \\
+\texttt{repsap}     &  0 & 0 & 1 & 1 & 1 & 44 & 47 \\
+\midrule
+\textbf{Total}      & 46 & 46 & 46 & 47 & 47 & 47 & 279 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Calculation of Agreement Metrics}
+
+From the confusion matrix:
+
+\begin{itemize}
+    \item[a.] \textbf{Observed agreement} ($p_o$) = sum of diagonal elements / total images = $(43+43+43+44+44+44) / 279 = 261 / 279 \approx 0.9355$, reported as $0.94$.
+    \item[b.] \textbf{Expected agreement by chance} ($p_e$) is computed from the marginal distributions. Row totals $R$ and column totals $C$ are identical: $(46,46,46,47,47,47)$. Hence
+    \begin{equation}
+        p_e = \frac{\sum_{i=1}^{6} R_i \, C_i}{N^2} = \frac{3 \times 46^2 + 3 \times 47^2}{279^2} = \frac{3 \times 2116 + 3 \times 2209}{77841} = \frac{12975}{77841} \approx 0.1667.
+    \end{equation}
+    \item[c.] \textbf{Cohen's Kappa} is then
+    \begin{equation}
+        \kappa = \frac{p_o - p_e}{1 - p_e} = \frac{0.9355 - 0.1667}{1 - 0.1667} = \frac{0.7688}{0.8333} \approx 0.9226,
+    \end{equation}
+    which is rounded to $0.92$ in the main text.
+\end{itemize}
+
+These results confirm that the three‑annotator consensus achieves very high agreement with the expert ($93.5\%$ observed agreement, $\kappa = 0.92$), validating the annotation protocol.
+
+
+
+
+
+
+
+
+
+
 \section{Extended Difficulty Analysis}
 \label{app:difficulty}
 

@@ -1,35 +1,84 @@
-\section{Dataset Construction Process}
-\subsection{Dataset Construction Collection}
+\section{Dataset Construction}
+\subsection{Data Collection and Filtering}
+\label{subsec:data_collection}
 
-% The dataset was collected directly in commercial avocado orchards located in Dak Lak, Lam Dong, and Gia Lai provinces in Vietnam from Jannuary to April 2026. To isolate the leaf region from complex natural backgrounds (soil, grass, sky, other leaves), a portable black fabric backdrop was placed behind each leaf during image capture. This approach preserves real-world lighting conditions (sunlight, cloud cover, shadows) while minimizing background clutter, a common practice in field-based plant phenotyping [citation].
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{img/dataset/dataset_diagram.png}
+\caption{Overview of the data annotation pipeline with an iterative quality-control loop based on inter-annotator agreement (Cohen's Kappa).}
+\label{fig:annotation_pipeline}
+\end{figure*}
 
-% All images were captured using [thiết bị, e.g., a smartphone camera (iPhone 13) held at approximately 25–35 cm from the leaf surface] with autofocus enabled. No artificial lighting was used; illumination varied naturally across sunny, overcast, and shaded conditions to ensure diversity. The black background also provided high contrast for subsequent leaf segmentation and reduced the need for complex pre‑processing.
+All images were collected by our team in avocado orchards across three provinces of the Central Highlands: Gia Lai, Đắk Lắk, and Đắk Nông. We visited multiple gardens to capture the natural diversity of leaf appearance across (1) light (full sun, cloudy, backlight), (2) weather (dry, cloudy, sunny, after rain), (3) time of day (morning, noon, afternoon), and (4) angle and distance (top-down, oblique, close-up).
 
-% A total of 1836 raw images were acquired from avocado leaves exhibiting six distinct health statuses: healthy, leaf burn, mealybug infestation, leaf curl, [and two more classes, e.g., scab and anthracnose]. Each leaf sample was first inspected by an agricultural expert to confirm disease type before photography.
+To ensure quality, we applied the following filtering steps:
+\begin{enumerate}
+    \item[(1)] Removal of duplicate images;
+    \item[(2)] Exclusion of images with motion blur so severe that the leaf becomes impossible to distinguish;
+    \item[(3)] Manual screening to discard frames where the avocado leaf is occluded more than $50\%$ or is otherwise impossible to identify reliably.
+\end{enumerate}
+After filtering, $1,861$ images remained and were passed to the annotation phase.
 
-\subsection{Dataset Annotation}
+
+\subsection{Annotation Guideline and Metadata Definition}
+\label{subsec:annotation_guideline}
+
+We defined a simple annotation protocol for the six avocado leaf conditions observed in our dataset. The six class labels and their meanings are:
+\begin{itemize}
+    \item \texttt{binhthuong} – healthy leaf, no visible damage or disease.
+    \item \texttt{chaymepla} – Leaf scorch (no causal pathogen; abiotic physiological disorder): tip or margin burn typically caused by salt stress or sunburn.
+    \item \texttt{domla} – Cercospora leaf spot (\textit{Pseudocercospora purpurea}): small brown to purplish-black lesions caused by fungal infection.
+    \item \texttt{gisat} – Algal leaf spot, locally known as ``red rust'' (\textit{Cephaleuros virescens}): orange, velvety pustule-like spots caused by a parasitic alga.
+    \item \texttt{moctrang} – Powdery mildew (\textit{Oidium} sp., family Erysiphaceae): white powdery coating on the leaf surface.
+    \item \texttt{repsap} – Long-tailed mealybug damage (\textit{Pseudococcus longispinus}): sap-feeding insect leaving silver or stippled marks.
+\end{itemize}
+
+The annotators followed a consistent guideline:
+\begin{itemize}
+    \item Each image must contain at least one clearly visible avocado leaf as the main subject.
+    \item The label is assigned based on the dominant visible symptom on that leaf. If multiple symptoms are present, the annotator selects the most severe condition.
+    \item Images where the leaf cannot be reliably identified (e.g., extreme blur, heavy occlusion) are discarded during manual screening.
+\end{itemize}
+
+All annotations were recorded in a simple CSV file with \texttt{filename} and \texttt{label} columns. No bounding boxes or additional metadata were required, as the task is image-level classification.
+
 
 \subsection{Quality Control}
+\label{subsec:quality_control}
 
-% ===============================================
-% Data Preprocessing
-% ===============================================
-% \subsection{Data Preprocessing}
+To ensure the reliability of the annotated dataset, we conducted a quality control step using an independent expert review.
 
-% To ensure consistent input dimensions and reduce background variability, all raw images underwent a standard preprocessing pipeline before being used for model training and evaluation. The preprocessing steps are summarised as follows:
+\paragraph{Annotation aggregation.}
+After three annotators independently labelled the entire dataset, the final label for each image was determined by majority voting. In the rare case of a three‑way tie (all three annotators disagree), the image was flagged for a short discussion to reach a unanimous decision; no such case occurred in practice.
 
-% \begin{enumerate}
-%     \item \textbf{Center cropping:} Each image was cropped to a square by taking the largest possible square from the centre (i.e., using the shorter side as the crop size). This step removes peripheral background areas while preserving the central leaf region.
-%     \item \textbf{Resizing:} The cropped square was resized to a fixed resolution of \(224 \times 224\) pixels using Lanczos interpolation (high-quality downsampling).
-%     \item \textbf{Format conversion:} All processed images were saved in PNG format to avoid generation loss and stored in a flat directory structure (\texttt{processed/}) with sequential filenames (\texttt{00001.png}, \texttt{00002.png}, \dots).
-% \end{enumerate}
+\paragraph{Expert review procedure.}
+From the $1,861$ images with their consensus labels, we randomly sampled $15\%$ ($279$ images), independent of the train/validation/test split used for model development. These images were presented to an avocado leaf disease expert who had not participated in the original annotation. The expert, blind to the annotators' decision, assigned one of the six predefined classes to each image following the same annotation guideline. As only one expert was involved, the resulting agreement reflects consistency with a single reviewer's judgment rather than inter-expert reliability.
 
-% For model training, we applied two sets of transformations:
+\paragraph{Agreement metric.}
+We measured the agreement between the annotator consensus labels and the expert labels using Cohen's Kappa coefficient ($\kappa$), which accounts for chance agreement. It is defined as:
+\begin{equation}
+\kappa = \frac{p_o - p_e}{1 - p_e}
+\end{equation}
+where $p_o$ is the observed proportion of agreement and $p_e$ the expected proportion under random assignment. Values of $\kappa > 0.80$ indicate strong agreement \cite{landis1977measurement}.
 
-% \begin{itemize}
-%     \item \textbf{Base transforms (used for validation and test):} Images were normalised using ImageNet channel statistics (mean = [0.485, 0.456, 0.406], standard deviation = [0.229, 0.224, 0.225]) to facilitate transfer learning from pretrained models.
-%     \item \textbf{Augmented transforms (used for training, when enabled):} In addition to the base normalisation, we applied random horizontal flipping (probability 0.5), random rotation within \(\pm 15^\circ\), and random brightness/contrast adjustments (\(\pm 20\%\) each) to increase data diversity and improve model generalisation. No geometric distortion (e.g., shear, zoom) was employed to preserve the shape of disease lesions.
-% \end{itemize}
+\paragraph{Results.}
+Table~\ref{tab:quality_control} reports the outcome of this review.
 
-% \sloppy
-% The preprocessing and augmentation choices were kept intentionally simple to focus on the intrinsic difficulty of the dataset and to provide a reproducible baseline for future comparisons. All transformations were implemented in PyTorch using standard \texttt{torchvision} modules.
+\begin{table}[htbp]
+\centering
+\caption{Expert quality control results on the $279$‑image sample.}
+\label{tab:quality_control}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{l c}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Images reviewed            & 279 \\
+Observed agreement ($p_o$) & 0.94 \\
+Cohen's $\kappa$           & 0.92 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Kappa score of $0.92$ indicates strong agreement between the three-annotator consensus and the independent expert, supporting the reliability of the labelled dataset for downstream classification tasks.

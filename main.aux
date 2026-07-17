@@ -4,10 +4,6 @@
 \citation{hughes2015plant}
 \citation{mohanty2016using}
 \citation{barbedo2019plant}
-\citation{howard2017mobilenets}
-\citation{tan2019efficientnet}
-\citation{liu2022convnet}
-\citation{atila2021plant}
 \citation{snell2017prototypical}
 \citation{sung2018learning}
 \citation{finn2017model}
@@ -17,91 +13,117 @@
 \citation{wang2022uncertainty}
 \citation{gonzalez2020identifying}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{}\protected@file@percent }
+\newlabel{sec:related_work}{{2}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Plant Disease Classification}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Lightweight Architectures for Edge Deployment}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Few‑shot Learning for Plant Disease Recognition}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Uncertainty Estimation in Deep Learning}{2}{}\protected@file@percent }
-\citation{selvaraju2017grad}
-\citation{sharma2020explainable}
-\citation{he2016deep}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Explainable AI for Plant Diagnosis}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Dataset Construction Process}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Dataset Construction Collection}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Dataset Annotation}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Quality Control}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Analysis}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset Statistics}{3}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary statistics of the AvocadoLeaf dataset.\relax }}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Few-shot Learning for Plant Disease Recognition}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Uncertainty Estimation in Deep Learning}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Dataset Construction}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Data Collection and Filtering}{2}{}\protected@file@percent }
+\newlabel{subsec:data_collection}{{3.1}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the data annotation pipeline with an iterative quality-control loop based on inter-annotator agreement (Cohen's Kappa).\relax }}{3}{}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{tab:dataset_stats}{{1}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Class distribution: (left) overall bar chart, (right) grouped bar chart showing train/validation/test splits.\relax }}{3}{}\protected@file@percent }
-\newlabel{fig:class_dist}{{1}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Photometric Analysis}{3}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Brightness (left) and contrast (right) distributions per class.\relax }}{3}{}\protected@file@percent }
-\newlabel{fig:brightness_contrast}{{2}{3}}
-\citation{maaten2008visualizing}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces RGB histograms of one sample image per class. Colors: red, green, blue.\relax }}{4}{}\protected@file@percent }
-\newlabel{fig:rgb_histograms}{{3}{4}}
+\newlabel{fig:annotation_pipeline}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Annotation Guideline and Metadata Definition}{3}{}\protected@file@percent }
+\newlabel{subsec:annotation_guideline}{{3.2}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Quality Control}{3}{}\protected@file@percent }
+\newlabel{subsec:quality_control}{{3.3}{3}}
+\@writefile{toc}{\contentsline {paragraph}{Annotation aggregation.}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Expert review procedure.}{3}{}\protected@file@percent }
+\citation{landis1977measurement}
+\citation{he2016deep}
+\@writefile{toc}{\contentsline {paragraph}{Agreement metric.}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Results.}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Expert quality control results on the $279$‑image sample.\relax }}{4}{}\protected@file@percent }
+\newlabel{tab:quality_control}{{1}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Analysis}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset Statistics}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Summary statistics of the AvocadoLeaf dataset.\relax }}{4}{}\protected@file@percent }
+\newlabel{tab:dataset_stats}{{2}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Class distribution: (left) overall bar chart, (right) grouped bar chart showing train/validation/test splits.\relax }}{4}{}\protected@file@percent }
+\newlabel{fig:class_dist}{{2}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Photometric Analysis}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Brightness (left) and contrast (right) distributions per class.\relax }}{4}{}\protected@file@percent }
+\newlabel{fig:brightness_contrast}{{3}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Intrinsic Difficulty Analysis}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Quantitative Clustering Metrics}{4}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies–Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.\relax }}{4}{}\protected@file@percent }
-\newlabel{tab:difficulty_metrics}{{2}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Visualisation with t-SNE}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces t-SNE projection of ResNet-18 features on the validation set. Overlapping clusters confirm that disease categories are not well separated in the deep feature space.\relax }}{4}{}\protected@file@percent }
-\newlabel{fig:tsne}{{4}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Linear Separability Test}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Proposed Lightweight Model}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Experiments and Results}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Experimental Setup}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Main Classification Results}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Explainable AI: Visualizing Model Decisions}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Few-shot Learning}{5}{}\protected@file@percent }
-\newlabel{subsec:fewshot}{{6.4}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Uncertainty Estimation}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.1}Calibration}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.2}Far out of distribution detection}{5}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Few-shot classification accuracy (\%) on the test set. Fine‑tune results are from a single training run; ProtoNet and RelationNet results are averaged over 600 random episodes (mean \(\pm \) std).\relax }}{6}{}\protected@file@percent }
-\newlabel{tab:fewshot_results}{{3}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Few-shot test accuracy comparison. Error bars represent standard deviation (ProtoNet, RelationNet). Fine‑tune results are single runs.\relax }}{6}{}\protected@file@percent }
-\newlabel{fig:fewshot_acc}{{5}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Entropy distribution on far OOD (random internet images). ID samples concentrate at very low entropy, OOD samples at high entropy, with almost no overlap.\relax }}{6}{}\protected@file@percent }
-\newlabel{fig:far_entropy}{{6}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.3}Near out of distribution detection}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to moderately higher entropy, with a small overlap consistent with the AUC of 0.895.\relax }}{6}{}\protected@file@percent }
-\newlabel{fig:near_entropy}{{7}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces OOD detection AUC using MC Dropout entropy.\relax }}{7}{}\protected@file@percent }
-\newlabel{tab:ood_auc}{{4}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{7}{}\protected@file@percent }
-\newlabel{sec:conclusion}{{7}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion and Future Work}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Extended Difficulty Analysis}{8}{}\protected@file@percent }
-\newlabel{app:difficulty}{{A}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Software and Implementation Details}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Mathematical Definition of Metrics}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Silhouette Score}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Davies–Bouldin Index (DBI)}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Intra/Inter-class Distance Ratio}{8}{}\protected@file@percent }
+\citation{maaten2008visualizing}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces RGB histograms of one sample image per class. Colors: red, green, blue.\relax }}{5}{}\protected@file@percent }
+\newlabel{fig:rgb_histograms}{{4}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Quantitative Clustering Metrics}{5}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies–Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.\relax }}{5}{}\protected@file@percent }
+\newlabel{tab:difficulty_metrics}{{3}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Visualisation with t-SNE}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces t-SNE projection of ResNet-18 features on the validation set. Overlapping clusters confirm that disease categories are not well separated in the deep feature space.\relax }}{5}{}\protected@file@percent }
+\newlabel{fig:tsne}{{5}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Linear Separability Test}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experiments and Results}{6}{}\protected@file@percent }
+\newlabel{sec:experiments}{{5}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Comparison of Architectures}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Comparison of Architectures}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Macro F1 scores of all evaluated models. Lightweight models (<5M parameters) are shown in blue, heavy models (≥5M) in orange.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:f1_comparision}{{6}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Efficiency Analysis}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Scatter plot of F1 per parameter versus F1 per inference time. Colour indicates macro F1.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:efficiency}{{7}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Performance comparison of all evaluated architectures. The highest values in each column are highlighted in bold and underlined.\relax }}{7}{}\protected@file@percent }
+\newlabel{tab:arch_compare}{{4}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Model Interpretability}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Few-shot Learning}{7}{}\protected@file@percent }
+\newlabel{subsec:fewshot}{{5.3}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Few-shot classification accuracy (\%) on the test set. Fine‑tune results are from a single training run; ProtoNet and RelationNet results are averaged over 600 random episodes (mean \(\pm \) std).\relax }}{8}{}\protected@file@percent }
+\newlabel{tab:fewshot_results}{{5}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Few-shot test accuracy comparison. Error bars represent standard deviation (ProtoNet, RelationNet). Fine‑tune results are single runs.\relax }}{8}{}\protected@file@percent }
+\newlabel{fig:fewshot_acc}{{8}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Uncertainty Estimation}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1}Calibration}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2}Far out of distribution detection}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Entropy distribution on far OOD (random internet images). ID samples concentrate at very low entropy, OOD samples at high entropy, with almost no overlap.\relax }}{8}{}\protected@file@percent }
+\newlabel{fig:far_entropy}{{9}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.3}Near out of distribution detection}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to moderately higher entropy, with a small overlap consistent with the AUC of 0.895.\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:near_entropy}{{10}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces OOD detection AUC using MC Dropout entropy.\relax }}{9}{}\protected@file@percent }
+\newlabel{tab:ood_auc}{{6}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{9}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{6}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion and Future Work}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Quality Control – Raw Data and Agreement Calculation}{10}{}\protected@file@percent }
+\newlabel{app:quality_control_raw}{{A}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Per‑Annotator Performance vs.\ Expert}{10}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Individual annotator agreement with the expert on the 279‑image review set.\relax }}{10}{}\protected@file@percent }
+\newlabel{tab:raw_annotator}{{7}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Consensus (Majority Vote) vs.\ Expert}{10}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Confusion matrix: consensus (majority vote) vs.\ expert on the 279‑image review set.\relax }}{10}{}\protected@file@percent }
+\newlabel{tab:conf_matrix}{{8}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Calculation of Agreement Metrics}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Extended Difficulty Analysis}{10}{}\protected@file@percent }
+\newlabel{app:difficulty}{{B}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Software and Implementation Details}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Mathematical Definition of Metrics}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Silhouette Score}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Davies–Bouldin Index (DBI)}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Intra/Inter-class Distance Ratio}{11}{}\protected@file@percent }
 \bibcite{he2016deep}{1}
 \bibcite{maaten2008visualizing}{2}
 \bibcite{rousseeuw1987silhouettes}{3}
 \bibcite{davies1979cluster}{4}
 \bibcite{calinski1974dendrite}{5}
-\bibcite{hughes2015}{6}
-\bibcite{mohanty2016}{7}
-\bibcite{barbedo2019}{8}
-\bibcite{howard2017}{9}
-\bibcite{tan2019}{10}
-\bibcite{liu2022}{11}
-\bibcite{atila2021}{12}
-\bibcite{snell2017}{13}
-\bibcite{sung2018}{14}
-\bibcite{finn2017}{15}
-\bibcite{arguelles2020}{16}
-\bibcite{wang2021}{17}
-\bibcite{guo2017}{18}
-\bibcite{gal2016}{19}
-\bibcite{wang2022}{20}
-\bibcite{gonzalez2020}{21}
-\bibcite{selvaraju2017}{22}
-\bibcite{sharma2020}{23}
-\gdef \@abspage@last{10}
+\bibcite{landis1977measurement}{6}
+\bibcite{hughes2015}{7}
+\bibcite{mohanty2016}{8}
+\bibcite{barbedo2019}{9}
+\bibcite{howard2017}{10}
+\bibcite{tan2019}{11}
+\bibcite{liu2022}{12}
+\bibcite{atila2021}{13}
+\bibcite{snell2017}{14}
+\bibcite{sung2018}{15}
+\bibcite{finn2017}{16}
+\bibcite{arguelles2020}{17}
+\bibcite{wang2021}{18}
+\bibcite{guo2017}{19}
+\bibcite{gal2016}{20}
+\bibcite{wang2022}{21}
+\bibcite{gonzalez2020}{22}
+\bibcite{selvaraju2017}{23}
+\bibcite{sharma2020}{24}
+\gdef \@abspage@last{13}

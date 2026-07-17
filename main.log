@@ -1,40 +1,44 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2026.4.10)  30 MAY 2026 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.4.10)  5 JUL 2026 02:10
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/nguyenlog205/projects/university/semester6/project-ds207-prethesis/documentation/report/main
-(/home/nguyenlog205/projects/university/semester6/project-ds207-prethesis/documentation/report/main.tex
+**main.tex
+(./main.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-02-22> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2023-02-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count181
-\c@section=\count182
-\c@subsection=\count183
-\c@subsubsection=\count184
-\c@paragraph=\count185
-\c@subparagraph=\count186
-\c@figure=\count187
-\c@table=\count188
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count189
-\Gm@cntv=\count190
-\c@Gm@tempcnt=\count191
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
 \Gm@bindingoffset=\dimen141
 \Gm@wd@mp=\dimen142
 \Gm@odd@mp=\dimen143
@@ -44,35 +48,40 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layouthoffset=\dimen147
 \Gm@layoutvoffset=\dimen148
 \Gm@dimlist=\toks17
-) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
 \ex@=\dimen149
-)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen150
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count192
+\inf@bad=\count196
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count193
-\leftroot@=\count194
+\uproot@=\count197
+\leftroot@=\count198
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count195
-\DOTSCASE@=\count196
+\classnum@=\count199
+\DOTSCASE@=\count266
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -85,20 +94,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen151
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count197
+\macc@depth=\count267
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count198
+\c@MaxMatrixCols=\count268
 \dotsspace@=\muskip16
-\c@parentequation=\count199
-\dspbrk@lvl=\count266
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
 \tag@help=\toks19
-\row@=\count267
-\column@=\count268
-\maxfields@=\count269
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
 \andhelp@=\toks20
 \eqnshift@=\dimen152
 \alignsep@=\dimen153
@@ -112,38 +121,49 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: xetex.def on input line 107.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen158
 \Gin@req@width=\dimen159
-) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: xetex.def on input line 227.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
@@ -151,7 +171,8 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen160
 \lightrulewidth=\dimen161
@@ -163,16 +184,18 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen167
 \cmidrulekern=\dimen168
 \defaultaddspace=\dimen169
-\@cmidla=\count270
-\@cmidlb=\count271
+\@cmidla=\count274
+\@cmidlb=\count275
 \@aboverulesep=\dimen170
 \@belowrulesep=\dimen171
-\@thisruleclass=\count272
-\@lastruleclass=\count273
+\@thisruleclass=\count276
+\@lastruleclass=\count277
 \@thisrulewidth=\dimen172
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
- (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen173
 \ar@mcellbox=\box53
@@ -187,13 +210,20 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \TX@old@col=\dimen177
 \TX@target=\dimen178
 \TX@delta=\dimen179
-\TX@cols=\count274
+\TX@cols=\count278
 \TX@ftn=\toks24
-) (/usr/share/texlive/texmf-dist/tex/latex/sttools/cuted.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen180
+\c@nlinenum=\count279
+\TeXr@lab=\toks25
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/cuted.sty
 Package: cuted 2021/10/04 v2.0 Mixing onecolumn and twocolumn modes
-\At@ViperColsBreak=\toks25
-\preCutedStrip=\toks26
-\postCutedStrip=\toks27
+\At@ViperColsBreak=\toks26
+\preCutedStrip=\toks27
+\postCutedStrip=\toks28
 \cuted@@tempbox@a=\box55
 \cuted@@tempbox@c=\box56
 \cuted@@tempbox@var=\box57
@@ -201,60 +231,67 @@ Package: cuted 2021/10/04 v2.0 Mixing onecolumn and twocolumn modes
 \@viper=\box59
 \cuted@@varbox@a=\box60
 \cuted@@varbox@c=\box61
-\cuted@@tempdim@spread=\dimen180
-\cuted@@tempdim@a=\dimen181
-\cuted@@tempdim@b=\dimen182
-\ht@hold@viper=\dimen183
-\ht@viper=\dimen184
-\var@@pagediscards@ht=\dimen185
+\cuted@@tempdim@spread=\dimen181
+\cuted@@tempdim@a=\dimen182
+\cuted@@tempdim@b=\dimen183
+\ht@hold@viper=\dimen184
+\ht@viper=\dimen185
+\var@@pagediscards@ht=\dimen186
 \stripsep=\skip55
-\viper@penalty=\count275
-) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+\viper@penalty=\count280
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/03/12 v3.6j Customizing captions (AR)
- (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
-\caption@tempdima=\dimen186
-\captionmargin=\dimen187
-\caption@leftmargin=\dimen188
-\caption@rightmargin=\dimen189
-\caption@width=\dimen190
-\caption@indent=\dimen191
-\caption@parindent=\dimen192
-\caption@hangindent=\dimen193
+\caption@tempdima=\dimen187
+\captionmargin=\dimen188
+\caption@leftmargin=\dimen189
+\caption@rightmargin=\dimen190
+\caption@width=\dimen191
+\caption@indent=\dimen192
+\caption@parindent=\dimen193
+\caption@hangindent=\dimen194
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count276
-\c@continuedfloat=\count277
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count278
+\c@caption@flags=\count281
+\c@continuedfloat=\count282
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count283
 \lst@gtempboxa=\box62
-\lst@token=\toks28
-\lst@length=\count279
-\lst@currlwidth=\dimen194
-\lst@column=\count280
-\lst@pos=\count281
-\lst@lostspace=\dimen195
-\lst@width=\dimen196
-\lst@newlines=\count282
-\lst@lineno=\count283
-\lst@maxwidth=\dimen197
- (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+\lst@token=\toks29
+\lst@length=\count284
+\lst@currlwidth=\dimen195
+\lst@column=\count285
+\lst@pos=\count286
+\lst@lostspace=\dimen196
+\lst@width=\dimen197
+\lst@newlines=\count287
+\lst@lineno=\count288
+\lst@maxwidth=\dimen198
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count284
-\lst@skipnumbers=\count285
+\c@lstnumber=\count289
+\lst@skipnumbers=\count290
 \lst@framebox=\box63
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
 Package: listings 2023/02/27 1.9 (Carsten Heinz)
- (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count286
-\float@exts=\toks29
+\c@float@type=\count291
+\float@exts=\toks30
 \float@box=\box64
-\@float@everytoks=\toks30
+\@float@everytoks=\toks31
 \@floatcapt=\box65
-) (/usr/share/texlive/texmf-dist/tex/latex/hyphenat/hyphenat.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyphenat/hyphenat.sty
 Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
 
 
@@ -266,41 +303,33 @@ Package hyphenat Warning: *******************************
 
 \langwohyphens=\language85
 LaTeX Info: Redefining \_ on input line 43.
-) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
-\g__graphics_track_int=\count287
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count292
 \l__pdf_internal_box=\box66
-\g__pdf_backend_object_int=\count288
-\g__pdf_backend_annotation_int=\count289
-\g__pdf_backend_link_int=\count290
-) (./main.aux)
+)
+(./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 40.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: xetex
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: xetex
+* driver: pdftex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -331,328 +360,594 @@ LaTeX Font Info:    ... okay on input line 40.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count293
+\scratchdimen=\dimen199
+\scratchbox=\box67
+\nofMPsegments=\count294
+\nofMParguments=\count295
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count296
+\MPscratchDim=\dimen256
+\MPnumerator=\count297
+\makeMPintoPDFobject=\count298
+\everyMPtoPDFconversion=\toks33
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count291
-
-LaTeX Font Warning: Font shape `TU/lmtt/b/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 40.
+\c@lstlisting=\count299
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/b/scsl' undefined
-(Font)              using `TU/lmtt/b/sc' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/m/scsl' undefined
+(Font)              using `OT1/cmtt/m/sc' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/b/sc' undefined
-(Font)              using `TU/lmtt/b/n' instead on input line 40.
-
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 40.
-
-LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 40.
-
-LaTeX Font Info:    Font shape `TU/lmtt/bx/sl' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 40.
-
-LaTeX Font Warning: Font shape `TU/lmtt/bx/scsl' undefined
-(Font)              using `TU/lmtt/bx/sc' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/b/n' undefined
+(Font)              using `OT1/cmtt/m/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/bx/sc' undefined
-(Font)              using `TU/lmtt/bx/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/b/it' undefined
+(Font)              using `OT1/cmtt/b/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/sbx/sc' undefined
-(Font)              using `TU/lmtt/sb/sc' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/b/sl' undefined
+(Font)              using `OT1/cmtt/b/it' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/sb/n' undefined
-(Font)              using `TU/lmtt/m/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/b/scit' undefined
+(Font)              using `OT1/cmtt/b/sc' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/sb/it' undefined
-(Font)              using `TU/lmtt/sb/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/b/sc' undefined
+(Font)              using `OT1/cmtt/b/n' instead on input line 41.
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/sl' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 41.
+
+LaTeX Font Warning: Font shape `OT1/cmtt/bx/scsl' undefined
+(Font)              using `OT1/cmtt/bx/sc' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/sb/sl' undefined
-(Font)              using `TU/lmtt/sb/it' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/bx/sc' undefined
+(Font)              using `OT1/cmtt/bx/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/sb/scit' undefined
-(Font)              using `TU/lmtt/sb/sc' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/sbx/sc' undefined
+(Font)              using `OT1/cmtt/sb/sc' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/sb/sc' undefined
-(Font)              using `TU/lmtt/sb/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/sb/n' undefined
+(Font)              using `OT1/cmtt/m/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/sbc/sc' undefined
-(Font)              using `TU/lmtt/c/sc' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/sb/it' undefined
+(Font)              using `OT1/cmtt/sb/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/c/n' undefined
-(Font)              using `TU/lmtt/m/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/sb/sl' undefined
+(Font)              using `OT1/cmtt/sb/it' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/c/it' undefined
-(Font)              using `TU/lmtt/c/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/sb/scit' undefined
+(Font)              using `OT1/cmtt/sb/sc' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/c/sl' undefined
-(Font)              using `TU/lmtt/c/it' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/sb/sc' undefined
+(Font)              using `OT1/cmtt/sb/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/c/scit' undefined
-(Font)              using `TU/lmtt/c/sc' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/sbc/sc' undefined
+(Font)              using `OT1/cmtt/c/sc' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/c/sc' undefined
-(Font)              using `TU/lmtt/c/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/c/n' undefined
+(Font)              using `OT1/cmtt/m/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/lc/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/lc/sl' tried instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/c/it' undefined
+(Font)              using `OT1/cmtt/c/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/lc/scsl' undefined
-(Font)              using `TU/lmtt/lc/sc' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/c/sl' undefined
+(Font)              using `OT1/cmtt/c/it' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/lc/sc' undefined
-(Font)              using `TU/lmtt/lc/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/c/scit' undefined
+(Font)              using `OT1/cmtt/c/sc' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/m/ui' undefined
-(Font)              using `TU/lmtt/m/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/c/sc' undefined
+(Font)              using `OT1/cmtt/c/n' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/bx/ui' undefined
-(Font)              using `TU/lmtt/bx/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/lc/sc' undefined
+(Font)              using `OT1/cmtt/l/sc' instead on input line 41.
 
 
-LaTeX Font Warning: Font shape `TU/lmtt/m/In' undefined
-(Font)              using `TU/lmtt/m/n' instead on input line 40.
+LaTeX Font Warning: Font shape `OT1/cmtt/l/n' undefined
+(Font)              using `OT1/cmtt/m/n' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/l/it' undefined
+(Font)              using `OT1/cmtt/l/n' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/l/sl' undefined
+(Font)              using `OT1/cmtt/l/it' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/l/scit' undefined
+(Font)              using `OT1/cmtt/l/sc' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/l/sc' undefined
+(Font)              using `OT1/cmtt/l/n' instead on input line 41.
+
+LaTeX Font Info:    Font shape `OT1/cmtt/m/ui' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/ui' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 41.
+
+LaTeX Font Warning: Font shape `OT1/cmtt/m/In' undefined
+(Font)              using `OT1/cmtt/m/n' instead on input line 41.
 
 (./src/00_information_and_abstract.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: No \author given.
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 11.
 
-Missing character: There is no   (U+202F) in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no   (U+202F) in font [lmroman10-regular]:mapping=tex-text;!
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 11.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 11.
+
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
+11.
+(/usr/share/texlive/texmf-dist/tex/latex/R/omscmtt.fd
+File: omscmtt.fd 
+)
+LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10.5> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 11.
+
+
+! LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 ...cro F1 on the test set, and runs at 5.3 
+                                                  ms per image on a Raspberr...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 ...mation shows excellent calibration (ECE 
+                                                  = 0.038) and strong out�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 ...on shows excellent calibration (ECE = 
+                                                  0.038) and strong out‑of...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
 ) (./src/01_introduction.tex
-Underfull \hbox (badness 1436) in paragraph at lines 20--1
-\TU/lmr/m/n/10 learning, ConvNeXt, few-shot learning, Proto-
+Underfull \hbox (badness 1259) in paragraph at lines 20--1
+\OT1/cmr/bx/n/10 Keywords: \OT1/cmr/m/n/10 Av-o-cado leaf dis-ease, lightweight
+
  []
 
 
-Underfull \hbox (badness 5817) in paragraph at lines 6--7
-[]\TU/lmr/m/n/10 Traditional disease diagnosis relies on vi-
+Underfull \hbox (badness 5787) in paragraph at lines 6--7
+[]\OT1/cmr/m/n/10 Traditional dis-ease di-ag-no-sis re-lies on vi-
  []
 
 
-Underfull \hbox (badness 3229) in paragraph at lines 6--7
-\TU/lmr/m/n/10 sual inspection by human experts, which is
- []
-
-Missing character: There is no   (U+202F) in font [lmroman10-regular]:mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-\TU/lmr/m/n/10 efficient architecture derived from Con-
+Underfull \hbox (badness 3219) in paragraph at lines 6--7
+\OT1/cmr/m/n/10 sual in-spec-tion by hu-man ex-perts, which is
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 15--16
-\TU/lmr/m/n/10 macro F1, and runs at 5.3 ms per image
+Underfull \hbox (badness 1661) in paragraph at lines 17--18
+[]\OT1/cmr/bx/n/10 Few[]shot learn-ing eval-u-a-tion: \OT1/cmr/m/n/10 To as-
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 17--18
-[]\TU/lmr/bx/n/10 Few‑shot learning evaluation: \TU/lmr/m/n/10 To as-
- []
-
-
-Underfull \hbox (badness 1377) in paragraph at lines 17--18
-\TU/lmr/m/n/10 sess data efficiency, we compare standard
+Underfull \hbox (badness 1365) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 sess data ef-fi-ciency, we com-pare stan-dard
  []
 
 
 Underfull \hbox (badness 1014) in paragraph at lines 17--18
-\TU/lmr/m/n/10 toNet) and Relation Networks. ProtoNet
+\OT1/cmr/m/n/10 toNet) and Re-la-tion Net-works. Pro-toNet
  []
 
-[1
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 Underfull \hbox (badness 1184) in paragraph at lines 19--20
-\TU/lmr/m/n/10 pected Calibration Error (ECE = 0.0382)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-[]\TU/lmr/bx/n/10 Explainability: \TU/lmr/m/n/10 Grad‑CAM visualisa-
- []
-
-
-Underfull \hbox (badness 5970) in paragraph at lines 21--22
-\TU/lmr/m/n/10 tions show that the model focuses on
+\OT1/cmr/m/n/10 pected Cal-i-bra-tion Er-ror (ECE = 0.0382)
  []
 
 ) (./src/02_related_work.tex
-Underfull \hbox (badness 2680) in paragraph at lines 24--1
-\TU/lmr/m/n/10 follows. Section 2 reviews related work in
+Underfull \hbox (badness 2671) in paragraph at lines 22--1
+\OT1/cmr/m/n/10 fol-lows. Sec-tion 2 re-views re-lated work in
  []
 
 
-LaTeX Warning: Citation `hughes2015plant' on page 2 undefined on input line 4.
-
-
-LaTeX Warning: Citation `mohanty2016using' on page 2 undefined on input line 4.
-
-
-LaTeX Warning: Citation `barbedo2019plant' on page 2 undefined on input line 4.
-
-
-Underfull \hbox (badness 6348) in paragraph at lines 6--6
-[]\TU/lmr/bx/n/12 Lightweight Architectures for
+Underfull \hbox (badness 1521) in paragraph at lines 22--1
+\OT1/cmr/m/n/10 con-struc-tion pro-cess. Sec-tion 4 anal-y-ses the
  []
 
 
-LaTeX Warning: Citation `howard2017mobilenets' on page 2 undefined on input line 7.
+LaTeX Warning: Citation `hughes2015plant' on page 2 undefined on input line 5.
 
 
-LaTeX Warning: Citation `tan2019efficientnet' on page 2 undefined on input line 7.
+LaTeX Warning: Citation `mohanty2016using' on page 2 undefined on input line 5.
 
 
-LaTeX Warning: Citation `liu2022convnet' on page 2 undefined on input line 7.
+
+LaTeX Warning: Citation `barbedo2019plant' on page 2 undefined on input line 5.
 
 
-LaTeX Warning: Citation `atila2021plant' on page 2 undefined on input line 7.
+
+LaTeX Warning: Citation `snell2017prototypical' on page 2 undefined on input li
+ne 11.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-\TU/lmr/m/n/10 Deploying deep learning models on re-
- []
+LaTeX Warning: Citation `sung2018learning' on page 2 undefined on input line 11
+.
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 7--8
-\TU/lmr/m/n/10 source‑constrained edge devices (e.g., smart-
- []
+LaTeX Warning: Citation `finn2017model' on page 2 undefined on input line 11.
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 7--8
-\TU/lmr/m/n/10 separable convolutions and neural architecture
- []
+LaTeX Warning: Citation `arguelles2020few' on page 2 undefined on input line 11
+.
 
 
-LaTeX Warning: Citation `snell2017prototypical' on page 2 undefined on input line 10.
+LaTeX Warning: Citation `wang2021few' on page 2 undefined on input line 11.
 
 
-LaTeX Warning: Citation `sung2018learning' on page 2 undefined on input line 10.
+Underfull \vbox (badness 1852) has occurred while \output is active []
 
 
-LaTeX Warning: Citation `finn2017model' on page 2 undefined on input line 10.
+
+LaTeX Warning: Citation `guo2017calibration' on page 2 undefined on input line 
+14.
 
 
-LaTeX Warning: Citation `arguelles2020few' on page 2 undefined on input line 10.
+LaTeX Warning: Citation `gal2016dropout' on page 2 undefined on input line 14.
 
 
-LaTeX Warning: Citation `wang2021few' on page 2 undefined on input line 10.
+LaTeX Warning: Citation `wang2022uncertainty' on page 2 undefined on input line
+ 14.
 
 
-LaTeX Warning: Citation `guo2017calibration' on page 2 undefined on input line 13.
-
-
-LaTeX Warning: Citation `gal2016dropout' on page 2 undefined on input line 13.
-
-
-LaTeX Warning: Citation `wang2022uncertainty' on page 2 undefined on input line 13.
-
-
-LaTeX Warning: Citation `gonzalez2020identifying' on page 2 undefined on input line 13.
-
-[2]
-
-LaTeX Warning: Citation `selvaraju2017grad' on page 3 undefined on input line 16.
-
-
-LaTeX Warning: Citation `sharma2020explainable' on page 3 undefined on input line 16.
+LaTeX Warning: Citation `gonzalez2020identifying' on page 2 undefined on input 
+line 14.
 
 ) (./src/03a_dataset_construction.tex
-Underfull \hbox (badness 1048) in paragraph at lines 16--1
-\TU/lmr/m/n/10 Understanding why a model makes a particu-
+<img/dataset/dataset_diagram.png, id=13, 1034.86626pt x 350.30875pt>
+File: img/dataset/dataset_diagram.png Graphic file (type png)
+<use img/dataset/dataset_diagram.png>
+Package pdftex.def Info: img/dataset/dataset_diagram.png  used on input line 7.
+
+(pdftex.def)             Requested size: 430.31812pt x 145.66406pt.
+
+
+! LaTeX Error: Command \DJ unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...nces of the Central Highlands: Gia Lai, Đ
+                                                  ắk Lắk, and Đắk Nô...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Unicode character ắ (U+1EAF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...s of the Central Highlands: Gia Lai, Đắ
+                                                  k Lắk, and Đắk Nông....
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ắ (U+1EAF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...he Central Highlands: Gia Lai, Đắk Lắ
+                                                  k, and Đắk Nông. We vi...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Command \DJ unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...l Highlands: Gia Lai, Đắk Lắk, and Đ
+                                                  ắk Nông. We visited mul...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Unicode character ắ (U+1EAF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...ighlands: Gia Lai, Đắk Lắk, and Đắ
+                                                  k Nông. We visited multip...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[2]
+Underfull \hbox (badness 1377) in paragraph at lines 30--31
+[]\OT1/cmtt/l/it/10 domla \OT1/cmr/m/n/10 { Cer-cospora leaf spot (\OT1/cmr/m/i
+t/10 Pseu-do-cer-
  []
 
-) (./src/03b_dataset_analysis.tex
-File: img/dataset/eda/class_distribution.png Graphic file (type bmp)
-<img/dataset/eda/class_distribution.png>
-File: img/dataset/eda/brightness_contrast.png Graphic file (type bmp)
-<img/dataset/eda/brightness_contrast.png>
-File: img/dataset/eda/rgb_histograms.png Graphic file (type bmp)
-<img/dataset/eda/rgb_histograms.png>
- [3]
-Underfull \vbox (badness 1132) has occurred while \output is active []
+[3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./
+img/dataset/dataset_diagram.png>]) (./src/03b_dataset_analysis.tex
+<img/dataset/eda/class_distribution.png, id=24, 1072.7277pt x 419.8887pt>
+File: img/dataset/eda/class_distribution.png Graphic file (type png)
+<use img/dataset/eda/class_distribution.png>
+Package pdftex.def Info: img/dataset/eda/class_distribution.png  used on input 
+line 34.
+(pdftex.def)             Requested size: 221.48395pt x 86.69281pt.
+<img/dataset/eda/brightness_contrast.png, id=25, 998.7714pt x 419.8887pt>
+File: img/dataset/eda/brightness_contrast.png Graphic file (type png)
+<use img/dataset/eda/brightness_contrast.png>
+Package pdftex.def Info: img/dataset/eda/brightness_contrast.png  used on input
+ line 49.
+(pdftex.def)             Requested size: 221.48395pt x 93.1126pt.
+<img/dataset/eda/rgb_histograms.png, id=26, 1070.0778pt x 708.4869pt>
+File: img/dataset/eda/rgb_histograms.png Graphic file (type png)
+<use img/dataset/eda/rgb_histograms.png>
+Package pdftex.def Info: img/dataset/eda/rgb_histograms.png  used on input line
+ 56.
+(pdftex.def)             Requested size: 221.48395pt x 146.63531pt.
+ [4 <./img/dataset/eda/class_distribution.png> <./img/dataset/eda/brightness_co
+ntrast.png>]
+Underfull \hbox (badness 4595) in paragraph at lines 76--76
+[]\OT1/cmr/m/n/10 Table 3: |Quan-ti-ta-tive dif-fi-culty met-rics on
+ []
 
-File: img/dataset/analysis/tsne_avocado_leaf.png Graphic file (type bmp)
-<img/dataset/analysis/tsne_avocado_leaf.png>
-) (./src/04_proposed_model.tex
+
+Underfull \hbox (badness 1769) in paragraph at lines 76--76
+\OT1/cmr/m/n/10 the val-i-da-tion set. Lower Sil-hou-ette, higher
+ []
+
+<img/dataset/analysis/tsne_avocado_leaf.png, id=37, 701.019pt x 569.7285pt>
+File: img/dataset/analysis/tsne_avocado_leaf.png Graphic file (type png)
+<use img/dataset/analysis/tsne_avocado_leaf.png>
+Package pdftex.def Info: img/dataset/analysis/tsne_avocado_leaf.png  used on in
+put line 100.
+(pdftex.def)             Requested size: 221.48395pt x 179.99571pt.
+) (./src/05_experiments.tex [5 <./img/dataset/eda/rgb_histograms.png> <./img/da
+taset/analysis/tsne_avocado_leaf.png>]
+Underfull \hbox (badness 6792) in paragraph at lines 68--69
+[]\OT1/cmr/m/n/10 Among the eval-u-ated mod-els, ConvNeXt-
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 68--69
+\OT1/cmr/m/n/10 V2 achieves the high-est clas-si-fi-ca-tion ac-cu-racy
+ []
+
+<img/models/f1_comparision.jpg, id=43, 992.70876pt x 491.8375pt>
+File: img/models/f1_comparision.jpg Graphic file (type jpg)
+<use img/models/f1_comparision.jpg>
+Package pdftex.def Info: img/models/f1_comparision.jpg  used on input line 74.
+(pdftex.def)             Requested size: 221.48395pt x 109.72806pt.
+
+! LaTeX Error: Unicode character ≥ (U+2265)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.75 ... in blue, heavy models (≥5M) in orange.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ≥ (U+2265)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.75 ... in blue, heavy models (≥5M) in orange.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+<img/models/efficiency.jpg, id=44, 770.88pt x 592.2125pt>
+File: img/models/efficiency.jpg Graphic file (type jpg)
+<use img/models/efficiency.jpg>
+Package pdftex.def Info: img/models/efficiency.jpg  used on input line 92.
+(pdftex.def)             Requested size: 221.48395pt x 170.1468pt.
+
+Underfull \hbox (badness 1360) in paragraph at lines 97--98
+\OT1/cmr/m/n/10 fi-ciency (0.211) due to its ex-tremely com-pact
+ []
+
+
+Underfull \hbox (badness 1158) in paragraph at lines 97--98
+\OT1/cmr/m/n/10 ConvNeXt-V2 ranks third in ef-fi-ciency (0.116)
+ []
+
+[6 <./img/models/f1_comparision.jpg> <./img/models/efficiency.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+[]\OT1/cmr/bx/n/10 Prototypical Net-works sub-stan-tially
+ []
+
+
+Underfull \hbox (badness 4378) in paragraph at lines 151--152
+\OT1/cmr/bx/n/10 out-per-forms fine[]tuning at all shot
+ []
+
+<img/experiments/fewshot/acc_comparison.jpg, id=48, 1594.95876pt x 496.85625pt>
+
+File: img/experiments/fewshot/acc_comparison.jpg Graphic file (type jpg)
+<use img/experiments/fewshot/acc_comparison.jpg>
+Package pdftex.def Info: img/experiments/fewshot/acc_comparison.jpg  used on in
+put line 175.
+(pdftex.def)             Requested size: 430.31812pt x 134.04683pt.
+
+Underfull \vbox (badness 1320) has occurred while \output is active []
+
+ [7]
+<img/experiments/uncertainty/far_entropy_histogram.png, id=53, 578.16pt x 361.3
+5pt>
+File: img/experiments/uncertainty/far_entropy_histogram.png Graphic file (type 
+png)
+<use img/experiments/uncertainty/far_entropy_histogram.png>
+Package pdftex.def Info: img/experiments/uncertainty/far_entropy_histogram.png 
+ used on input line 199.
+(pdftex.def)             Requested size: 221.95676pt x 138.72043pt.
+
+[8 <./img/experiments/fewshot/acc_comparison.jpg> <./img/experiments/uncertaint
+y/far_entropy_histogram.png>]
+<img/experiments/uncertainty/near_entropy_histogram.png, id=59, 578.16pt x 361.
+35pt>
+File: img/experiments/uncertainty/near_entropy_histogram.png Graphic file (type
+ png)
+<use img/experiments/uncertainty/near_entropy_histogram.png>
+Package pdftex.def Info: img/experiments/uncertainty/near_entropy_histogram.png
+  used on input line 212.
+(pdftex.def)             Requested size: 221.95676pt x 138.72043pt.
+) (./src/06_discussion.tex)
+(./src/07_conclusion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
-[]\TU/lmr/bx/n/14.4 Proposed Lightweight
+[]\OT1/cmr/bx/n/14.4 Conclusion and Fu-ture
  []
 
-) (./src/05_experiments.tex
-Underfull \hbox (badness 3158) in paragraph at lines 4--5
-\TU/lmr/m/n/10 All experiments were conducted on a single
- []
+) [9
+
+ <./img/experiments/uncertainty/near_entropy_histogram.png>]
+(./src/nn_appendix.tex [10
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+]) [11] (./src/nn_reference.tex [12]) [13]
+(./main.aux)
 
- [4]
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-[]\TU/lmr/bx/n/12 Explainable AI: Visualizing
- []
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.45pt have occurred.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-[]\TU/lmr/bx/n/10 Prototypical Networks substantially
- []
-
-
-Underfull \hbox (badness 4403) in paragraph at lines 49--50
-\TU/lmr/bx/n/10 outperforms fine‑tuning at all shot
- []
-
-File: img/experiments/fewshot/acc_comparison.jpg Graphic file (type bmp)
-<img/experiments/fewshot/acc_comparison.jpg>
-[5]
-File: img/experiments/uncertainty/far_entropy_histogram.png Graphic file (type bmp)
-<img/experiments/uncertainty/far_entropy_histogram.png>
-File: img/experiments/uncertainty/near_entropy_histogram.png Graphic file (type bmp)
-<img/experiments/uncertainty/near_entropy_histogram.png>
-) (./src/06_discussion.tex) (./src/07_conclusion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-[]\TU/lmr/bx/n/14.4 Conclusion and Future
- []
-
-) [6] [7
-
-] (./src/nn_appendix.tex) [8
-
-
-] (./src/nn_reference.tex [9]) [10] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -661,12 +956,37 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6594 strings out of 476696
- 107625 string characters out of 5806955
- 1865018 words of memory out of 6000000
- 26707 multiletter control sequences out of 15000+600000
- 519702 words of font info for 79 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 55i,8n,63p,1396b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 7843 strings out of 476041
+ 126527 string characters out of 5793174
+ 1874388 words of memory out of 6000000
+ 28132 multiletter control sequences out of 15000+600000
+ 525556 words of font info for 84 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 62i,15n,67p,1332b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/cm-super/sfbx1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-s
+uper/sfrm1000.pfb>
+Output written on main.pdf (13 pages, 2243992 bytes).
+PDF statistics:
+ 171 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on main.pdf (10 pages).

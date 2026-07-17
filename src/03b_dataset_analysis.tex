@@ -1,13 +1,11 @@
 \section{Dataset Analysis}
 
-
-
 % =============================================
 % Dataset Statistics
 % =============================================
 \subsection{Dataset Statistics}
 
-The dataset consists of 1,861 images distributed across file disease categories and healthy leaves. It then was randomly split into training (70\%), validation (15\%), and test (15\%) sets while preserving class proportions via stratified sampling. Table~\ref{tab:dataset_stats} summarizes the overall statistics.
+The dataset consists of 1,861 images distributed across five disease categories and healthy leaves. It then was randomly split into training (70\%), validation (15\%), and test (15\%) sets while preserving class proportions via stratified sampling. Table~\ref{tab:dataset_stats} summarizes the overall statistics.
 
 \begin{table}[htbp]
 \centering
@@ -44,7 +42,7 @@ The class distribution is shown in Figure~\ref{fig:class_dist}. The most frequen
 % =============================================
 \subsection{Photometric Analysis}
 
-To demonstrate the diversity of imaging conditions, Figure~\ref{fig:brightness_contrast} presents the mean brightness and contrast per class. Brightness values range from 22.7 (darkest, in \textit{repsap}) to 153.9 (brightest, in \textit{domla}), covering a wide spectrum of illumination levels. Contrast also varies substantially across classes, reflecting differences in texture and disease symptoms. This variation confirms that the dataset captures real‑world conditions with diverse lighting and shadow effects.
+As supporting evidence for the imaging diversity claimed in Section~\ref{sec:related_work}, Figure~\ref{fig:brightness_contrast} shows per-class brightness ranging from 22.7 (\textit{repsap}) to 153.9 (\textit{domla}), and Figure~\ref{fig:rgb_histograms} shows that classes also differ in dominant colour channel (e.g.\ \textit{chaymepla} skews red, \textit{repsap} is low in green/blue). These variations confirm that the images were collected under diverse, uncontrolled lighting and colour conditions rather than a single studio-like setup, and imply that models must be robust to such shifts rather than exploit them as shortcuts.
 
 \begin{figure}[htbp]
 \centering
@@ -53,23 +51,12 @@ To demonstrate the diversity of imaging conditions, Figure~\ref{fig:brightness_c
 \label{fig:brightness_contrast}
 \end{figure}
 
-Figure~\ref{fig:rgb_histograms} shows RGB histograms of representative samples from each class. The histograms exhibit distinct color profiles: for instance, \textit{chaymepla} (leaf burn) has a relatively higher red channel, while \textit{repsap} (mealybug) shows suppressed green and blue intensities. These differences indicate that color information can help distinguish diseases, and the observed variation demonstrates the dataset’s richness in chromatic content.
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{img/dataset/eda/rgb_histograms.png}
 \caption{RGB histograms of one sample image per class. Colors: red, green, blue.}
 \label{fig:rgb_histograms}
 \end{figure}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -102,7 +89,7 @@ Intra/Inter distance ratio & 1.59 \\
 \end{tabular}
 \end{table}
 
-The Silhouette score near zero indicates that samples are not closer to their own class than to neighbouring classes, implying heavy inter-class overlap. The Davies–Bouldin index (4.17) far exceeds the typical threshold of 1.0 for well-separated datasets, confirming high similarity between disease categories. Notably, the intra/inter distance ratio exceeds 1 (1.59), meaning that within-class variation is larger than the separation between class centroids – a hallmark of fine-grained recognition problems.
+The Silhouette score near zero indicates that samples are not closer to their own class than to neighbouring classes, implying heavy inter-class overlap. The Davies–Bouldin index (4.17) far exceeds the typical threshold of 1.0 for well-separated datasets, confirming high similarity between disease categories. The Calinski–Harabasz index (8.23) is likewise very low compared to the values in the hundreds or thousands typically observed on well-separated benchmarks, corroborating the same conclusion of weak class separability. Notably, the intra/inter distance ratio exceeds 1 (1.59), meaning that within-class variation is larger than the separation between class centroids – a hallmark of fine-grained recognition problems.
 
 \subsubsection{Visualisation with t-SNE}
 
@@ -117,4 +104,6 @@ We projected the 512‑dimensional features into two dimensions using t-SNE \cit
 
 \subsubsection{Linear Separability Test}
 
-To determine whether the frozen deep features are linearly separable by disease class, we trained a logistic regression classifier on the extracted features. Using 5‑fold cross‑validation, the model achieved a mean accuracy of \(75.25\% \pm 3.76\%\). When evaluated on a held‑out test split (30\% of the validation data), the accuracy dropped to \(65.48\%\). While these results are significantly better than random guessing (\(16.7\%\) for six classes), they remain far below the performance typically observed on non‑fine‑grained benchmarks (e.g., \(>90\%\) on PlantVillage subsets). Hence, the disease classes are \textbf{not linearly separable} in the feature space, requiring non‑linear models or fine‑tuning to achieve satisfactory accuracy.
+To determine whether the frozen deep features are linearly separable by disease class, we trained a logistic regression classifier on the extracted features. Using 5‑fold cross‑validation, the model achieved a mean accuracy of \(75.25\% \pm 3.76\%\). When evaluated on a held‑out subset (30\% of the validation set, disjoint from the folds used above), the accuracy dropped to \(65.48\%\). Part of this gap is likely attributable to the small size of the validation set (279 images), which inflates the variance of both estimates; nonetheless, both figures are significantly better than random guessing (\(16.7\%\) for six classes) yet remain far below the performance typically observed on non‑fine‑grained benchmarks (e.g., \(>90\%\) on PlantVillage subsets). Hence, the disease classes are \textbf{not linearly separable} in the feature space, requiring non‑linear models or fine‑tuning to achieve satisfactory accuracy.
+
+Taken together, the three analyses in this section are consistent with one another: near-zero Silhouette, low Calinski–Harabasz, high Davies–Bouldin, and an intra/inter distance ratio above 1 all indicate substantial class overlap in feature space; the t-SNE visualisation shows this overlap directly; and the linear probe confirms that this overlap cannot be resolved by a linear decision boundary. This motivates both the comparison of non-linear, fine-tuned architectures in Section~\ref{sec:experiments} and, more specifically, the use of metric-based few-shot learning in Section~\ref{subsec:fewshot}: since frozen features are not linearly separable, a classifier trained directly on top of them generalises poorly, whereas prototypical networks learn a task-adapted embedding space in which the classes become separable.

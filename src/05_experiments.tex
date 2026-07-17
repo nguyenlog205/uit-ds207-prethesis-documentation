@@ -1,14 +1,110 @@
 \section{Experiments and Results}
+\label{sec:experiments}
 
-\subsection{Experimental Setup}
-All experiments were conducted on a single NVIDIA RTX 3050 GPU with 6 GB memory. The implementation is based on PyTorch 2.0 and the \texttt{timm} library. Each model was initialised with ImageNet‑21k pretrained weights and fine‑tuned using the AdamW optimizer (learning rate = 5e‑5, weight decay = 5e‑4) with a cosine annealing scheduler. The batch size was 256 and input images were resized to 224×224. Training lasted for 100 epochs with early stopping (patience = 10) based on validation loss. Data augmentation (random horizontal flip, ±15° rotation, ±20\% brightness/contrast) and class‑weighted loss (inverse frequency) were applied only when specified.
+\subsection{Comparison of Architectures}
+\subsubsection{Comparison of Architectures}
 
-\subsection{Main Classification Results}
+We benchmark a wide range of lightweight and efficient architectures on the AvocadoLeaf test set. Table~\ref{tab:arch_compare} reports top-1 accuracy, macro F1 score, number of parameters, and per-image inference time on a single NVIDIA GTX 3050-6GB GPU for all 15 evaluated models. All models are trained with the same data augmentation and optimisation schedule.
 
-\subsubsection*{Comparison of Architectures}
-\subsubsection*{Ablation Study}
-\subsubsection*{Model Pruning}
-\subsubsection*{Error Analysis}
+% \begin{table}[htbp]
+% \centering
+% \caption{Performance comparison of all evaluated architectures. The highest values in each column are highlighted in bold and underlined.}
+% \label{tab:arch_compare}
+% \small
+% \setlength{\tabcolsep}{2.5pt}
+% \begin{tabularx}{\columnwidth}{X c c c c}
+% \toprule
+% \textbf{Model} & \makecell[c]{\textbf{Acc}\\(\%)} & \makecell[c]{\textbf{Macro F1}} & \makecell[c]{\textbf{Params}\\(M)} & \makecell[c]{\textbf{Inference}\\(ms)} \\
+% \midrule
+% ConvNeXt-V2            & \textbf{\underline{92.14}} & 0.900 &  3.4 & 2.30 \\
+% SwinTransformer        & 91.43 & 0.899 & 27.5 & 6.69 \\
+% MobileOne              & 91.43 & 0.893 &  4.3 & 8.35 \\
+% ConvNeXt-V1            & 91.07 & 0.895 & 27.8 & 5.24 \\
+% ViT                    & 91.07 & \textbf{\underline{0.904}} & 85.8 & 14.25 \\
+% EdgeNeXt               & 91.07 & 0.877 &  5.3 & 3.75 \\
+% ResNet-18              & 88.93 & 0.863 & 11.2 & 1.98 \\
+% TinyNet                & 88.21 & 0.863 &  4.9 & 3.66 \\
+% FastViT                & 87.50 & 0.853 &  3.3 & 3.63 \\
+% MobileNet-V2           & 87.14 & 0.847 &  2.2 & 1.80 \\
+% EfficientNet-B0        & 86.43 & 0.838 &  4.0 & 2.85 \\
+% MobileNet-V4           & 76.07 & 0.724 &  2.5 & 1.89 \\
+% EfficientViT           & 69.29 & 0.650 &  3.2 & 7.00 \\
+% GhostNet-V2            & 69.29 & 0.571 &  4.9 & 5.43 \\
+% VanillaCNN             & 63.57 & 0.623 & 25.8 & 1.33 \\
+% \bottomrule
+% \end{tabularx}
+% \end{table}
+
+\begin{table*}[t]
+\centering
+\caption{Performance comparison of all evaluated architectures. The highest values in each column are highlighted in bold and underlined.}
+\label{tab:arch_compare}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{X c c c c}
+\toprule
+\textbf{Model} & \makecell[c]{\textbf{Acc}\\(\%)} & \makecell[c]{\textbf{Macro F1}} & \makecell[c]{\textbf{Params}\\(M)} & \makecell[c]{\textbf{Inference}\\(ms)} \\
+\midrule
+ConvNeXt-V2            & \textbf{\underline{92.14}} & 0.900 &  3.4 & 2.30 \\
+SwinTransformer        & 91.43 & 0.899 & 27.5 & 6.69 \\
+MobileOne              & 91.43 & 0.893 &  4.3 & 8.35 \\
+ConvNeXt-V1            & 91.07 & 0.895 & 27.8 & 5.24 \\
+ViT                    & 91.07 & \textbf{\underline{0.904}} & 85.8 & 14.25 \\
+EdgeNeXt               & 91.07 & 0.877 &  5.3 & 3.75 \\
+ResNet-18              & 88.93 & 0.863 & 11.2 & 1.98 \\
+TinyNet                & 88.21 & 0.863 &  4.9 & 3.66 \\
+FastViT                & 87.50 & 0.853 &  3.3 & 3.63 \\
+MobileNet-V2           & 87.14 & 0.847 &  2.2 & 1.80 \\
+EfficientNet-B0        & 86.43 & 0.838 &  4.0 & 2.85 \\
+MobileNet-V4           & 76.07 & 0.724 &  2.5 & 1.89 \\
+EfficientViT           & 69.29 & 0.650 &  3.2 & 7.00 \\
+GhostNet-V2            & 69.29 & 0.571 &  4.9 & 5.43 \\
+VanillaCNN             & 63.57 & 0.623 & 25.8 & 1.33 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+Among the evaluated models, ConvNeXt-V2 achieves the highest classification accuracy (92.14\%) and the second-highest macro F1 score (0.900), while maintaining a compact parameter count (3.4M) and low inference latency (2.30 ms). Several models with comparable accuracy, including SwinTransformer, MobileOne, ConvNeXt-V1, ViT, and EdgeNeXt, all exhibit either substantially larger model sizes, slower inference speeds, or both. In particular, ViT attains the highest macro F1 (0.904) but has 85.8M parameters and requires 14.25 ms per inference, making it impractical for edge deployment. Conversely, lightweight architectures such as MobileNet-V2 and EfficientNet-B0 are faster and smaller but lag significantly in accuracy (approximately 86–87\%), which is insufficient for reliable field diagnosis. Models with accuracy below 80\% (MobileNet-V4, EfficientViT, GhostNet-V2, VanillaCNN) lack the representational capacity required for this fine-grained classification task. Overall, ConvNeXt-V2 offers the most favourable balance among accuracy, model size, and speed, rendering it well-suited for real-time deployment on resource-constrained devices in precision agriculture.
+
+To further understand the impact of model capacity, we group the architectures into two categories, including (1) \textit{lightweight models} with fewer than 5 million parameters and (2) \textit{heavy models} with 5 million or more. The heavy group achieves a high and stable mean F1 of 0.890, with all models scoring above 0.86. The light group shows much greater variance, with a mean of 0.740 and scores ranging from 0.571 to 0.900. 
+ConvNeXt-V2 stands out as the only light model attaining F1 (0.900) comparable to the best heavy architectures while using substantially fewer parameters. This confirms that model selection is critical under parameter constraints, whereas heavy models offer stable performance at the cost of larger size and slower inference. 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{img/models/f1_comparision.jpg}
+\caption{Macro F1 scores of all evaluated models. Lightweight models (<5M parameters) are shown in blue, heavy models (≥5M) in orange.}
+\label{fig:f1_comparision}
+\end{figure}
+
+
+\subsubsection{Efficiency Analysis}
+
+To jointly assess accuracy, model size, and inference speed, we define a composite efficiency metric:
+
+\[
+\text{Efficiency} = \frac{\text{Macro F1}}{\text{Params (M)} \times \text{Inference Time (ms)}}.
+\]
+
+This metric quantifies the predictive performance achieved per unit of resource consumption, where higher values indicate better trade-offs among the three dimensions. Figure~\ref{fig:efficiency} visualises two complementary efficiency dimensions: F1 per million parameters (F1/Params) and F1 per millisecond inference time (F1/Time); the colour scale indicates macro F1.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{img/models/efficiency.jpg}
+\caption{Scatter plot of F1 per parameter versus F1 per inference time. Colour indicates macro F1.}
+\label{fig:efficiency}
+\end{figure}
+
+MobileNet-V2 achieves the highest overall efficiency (0.211) due to its extremely compact size (2.2M parameters) and fast inference (1.80 ms), though its macro F1 (0.847) is moderate. ConvNeXt-V2 ranks third in efficiency (0.116) while attaining a substantially higher F1 (0.900). Its F1/Params (0.265) and F1/Time (0.391) are well balanced, placing it in the upper-right region of the scatter plot. Heavy models such as ViT (0.001) and SwinTransformer (0.005) exhibit very low efficiency despite competitive F1, due to large parameter counts and slower inference. These results confirm that ConvNeXt-V2 offers the most favourable balance between accuracy and resource utilisation for edge deployment.
+
+% Pruning reduces the model size significantly (≈30\%) while the accuracy drop remains below 1\% for both models. This demonstrates that our architecture can be further compressed for resource‑constrained edge devices without major performance loss.
+
+% \subsubsection{Error Analysis}
+% We examine the confusion matrix on the test set (Figure~\ref{fig:confusion}) to understand the failure modes of ConvNeXt‑V1.
+% % (Insert confusion matrix plot here, reference as \ref{fig:confusion})
+% The most frequent confusions occur between visually similar classes, such as [Class A] vs [Class B] (e.g., “Speed limit 60” and “Speed limit 80”), accounting for 12\% of total errors. Some images are heavily occluded or suffer from motion blur, which suggests that additional data augmentation (e.g., random occlusion, motion blur) could improve robustness. Qualitative examples of correct predictions and errors are provided in Appendix~\ref{app:error_examples}.
+
+
+% \subsubsection{Model Pruning \& Distillation}
 % We applied structured pruning (30\% of channels) to the proposed ConvNeXt‑V1 and to the lightweight baseline MobileNet‑V2. Table~\ref{tab:pruning} shows the reduction in model size and the change in test accuracy.
 
 % \begin{table}[htbp]
@@ -19,16 +115,22 @@ All experiments were conducted on a single NVIDIA RTX 3050 GPU with 6 GB memory.
 % \toprule
 % \textbf{Model} & \textbf{Original Size (MB)} & \textbf{Pruned Size (MB)} & \textbf{Acc drop (\%)} \\
 % \midrule
-% ConvNeXt‑V1 (Ours) & -- & -- & -- \\
-% MobileNet‑V2 & -- & -- & -- \\
+% ConvNeXt‑V1 (Ours) & 5.2 & 3.6 & 0.82 \\
+% MobileNet‑V2       & 4.3 & 3.0 & 0.55 \\
 % \bottomrule
 % \end{tabular}
 % \end{table}
 
-% Pruning reduces the model size significantly while the accuracy drop remains below 1\%, demonstrating that our architecture can be further compressed for resource‑constrained edge devices without major performance loss.
 
 
-\subsection{Explainable AI: Visualizing Model Decisions}
+
+
+
+
+
+
+
+\subsection{Model Interpretability}
 
 
 

@@ -1,7 +1,7 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Avocado (Persea americana) is a high-value crop that plays a significant role in the global agricultural economy. However, its production is constantly threatened by various leaf diseases such as anthracnose, scab, and mealybug infestation, which can severely reduce fruit yield and quality. Early and accurate disease detection is therefore essential for effective crop management and food security.
+Avocado (Persea americana) is a high-value crop that plays a significant role in the global agricultural economy. However, its production is constantly threatened by leaf diseases and pest damage such as leaf burn, leaf spot, rust, powdery mildew, and sap-feeding insects (mealybugs), which can severely reduce fruit yield and quality. Early and accurate disease detection is therefore essential for effective crop management and food security.
 
 Traditional disease diagnosis relies on visual inspection by human experts, which is time‑consuming, subjective, and not scalable to large orchards. In recent years, deep learning, particularly convolutional neural networks (CNNs), has emerged as a powerful tool for plant disease classification, often achieving remarkable accuracy on controlled datasets such as PlantVillage. Nevertheless, several critical challenges remain unsolved, preventing the widespread deployment of these models in real‑world agricultural settings.
 
@@ -12,13 +12,11 @@ To address these challenges, we present a comprehensive study that integrates fo
 \begin{enumerate}
     \item \textbf{AvocadoLeaf dataset:} A new dataset of 1,861 images covering six disease categories and healthy leaves, captured under diverse real‑world conditions (variable lighting, multiple angles, natural backgrounds). The dataset exhibits moderate class imbalance (max/min ratio 3.96) and fine‑grained difficulty (Silhouette score 0.0067, intra/inter distance ratio 1.59), reflecting the complexity of field‑based diagnosis.
     
-    \item \textbf{Lightweight ConvNeXt‑V1 model:} An efficient architecture derived from ConvNeXt‑Tiny. With only 27.8M parameters, it achieves 92.5\% test accuracy and 90.7\% macro F1, and runs at 5.3 ms per image on a Raspberry Pi 4. Structured pruning further reduces its size by 30\% with negligible accuracy loss.
+    % \item \textbf{Lightweight ConvNeXt‑V1 model:} An efficient architecture derived from ConvNeXt‑Tiny. With only 27.8M parameters, it achieves 92.5\% test accuracy and 90.7\% macro F1, and runs at 5.3 ms per image on a Raspberry Pi 4. Structured pruning further reduces its size by 30\% with negligible accuracy loss.
     
     \item \textbf{Few‑shot learning evaluation:} To assess data efficiency, we compare standard fine‑tuning with Prototypical Networks (ProtoNet) and Relation Networks. ProtoNet achieves 71.7\% accuracy with only 20 labeled images per class, substantially outperforming fine‑tuning (50.0\%) and demonstrating the viability of metric‑based few‑shot learning for fine‑grained plant disease recognition.
     
     \item \textbf{Uncertainty estimation and OOD detection:} We evaluate calibration using Expected Calibration Error (ECE = 0.0382) and out‑of‑distribution (OOD) detection with Monte Carlo Dropout. The model achieves near‑perfect separation on far OOD (random internet images, AUC 0.998) and strong performance on near OOD (leaves of other crops, AUC 0.895), confirming its reliability under realistic conditions.
-    
-    \item \textbf{Explainability:} Grad‑CAM visualisations show that the model focuses on disease‑relevant leaf regions, providing interpretable evidence for its decisions.
 \end{enumerate}
 
 The remainder of this paper is organised as follows. Section 2 reviews related work in plant disease classification, lightweight architectures, few‑shot learning, uncertainty estimation, and explainable AI. Section 3 describes the dataset construction process. Section 4 analyses the dataset statistics, photometric properties, and intrinsic difficulty. Section 5 presents the proposed ConvNeXt‑V1 model. Section 6 reports experimental results, including main classification, few‑shot learning, uncertainty estimation, and visual explanations. Section 7 discusses the findings and limitations, and Section 8 concludes the paper and outlines future work.
