@@ -1,1 +1,40 @@
 \section{Proposed Lightweight Model}
+\label{sec:proposed_model}
+
+Rather than designing a new architecture from scratch, we adopt a systematic \emph{selection-and-adaptation} approach: a broad pool of existing lightweight and efficient architectures is fine-tuned under an identical protocol on the AvocadoLeaf dataset, and the best-performing candidate under joint accuracy/size/latency constraints is proposed as the deployment model for this task (Section~\ref{sec:experiments}). This section describes the candidate pool, the transfer-learning strategy applied to each, and the shared training protocol.
+
+\subsection{Candidate Architectures}
+
+We evaluate 15 architectures spanning four design families: (1) a Vanilla CNN trained from scratch as a minimal baseline; (2) mobile-oriented CNNs (MobileNetV2, MobileNetV4, TinyNet, GhostNetV2, EfficientNet-B0); (3) hybrid CNN-Transformer designs (MobileOne, EdgeNeXt, FastViT, EfficientViT, ConvNeXt-V1, ConvNeXt-V2); and (4) pure vision transformers (ViT-B/16, Swin Transformer), alongside a ResNet-18 baseline. All architectures except Vanilla CNN are initialised from ImageNet-pretrained weights obtained from \texttt{torchvision} or \texttt{timm}.
+
+\subsection{Transfer-Learning Strategy}
+
+Because the AvocadoLeaf training set is comparatively small (1,302 training images across six classes), fully fine-tuning all layers of large pretrained backbones risks overfitting. We therefore apply \emph{selective layer unfreezing}: for every pretrained model, all backbone weights are frozen except the last one to two stages (or the last two encoder layers, for the transformer-based models) and a newly initialised classification head sized to the six AvocadoLeaf classes. Table~\ref{tab:finetune_strategy} summarises the unfreezing strategy per architecture family; the Vanilla CNN baseline has no pretrained weights and is instead trained end-to-end from random initialisation.
+
+\begin{table}[htbp]
+\centering
+\caption{Transfer-learning strategy by architecture family.}
+\label{tab:finetune_strategy}
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Architecture family} & \textbf{Unfrozen layers} \\
+\midrule
+Vanilla CNN & All (trained from scratch) \\
+ResNet-18 & \texttt{layer4} + classifier head \\
+Mobile CNNs (MobileNetV2/V4, TinyNet, & \\
+\quad GhostNetV2, EfficientNet-B0) & Last 2 feature blocks + head \\
+Hybrid CNN-Transformer (MobileOne, & \\
+\quad EdgeNeXt, FastViT, EfficientViT, & \\
+\quad ConvNeXt-V1, ConvNeXt-V2) & Last 2 stages + head \\
+Vision Transformers (ViT-B/16, & \\
+\quad Swin Transformer) & Last 2 encoder layers + head \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Training Protocol}
+
+All models are trained under an identical protocol to isolate architecture as the sole varying factor. We use the AdamW optimiser (learning rate $1\times10^{-4}$, weight decay $1\times10^{-4}$) with cosine-annealing learning-rate decay over a maximum of 100 epochs, and cross-entropy loss. Early stopping is applied with a patience of 5 epochs on validation loss to prevent overfitting given the limited training set size. Input images are resized to $224\times224$ and normalised using ImageNet statistics. During training, we apply data augmentation consisting of random-resized cropping (scale $0.6$–$1.0$), horizontal flipping, random rotation ($\pm15^\circ$, applied with probability 0.3), colour jittering (brightness/contrast/saturation/hue), and random erasing, to improve robustness to the field-imaging variability described in Section~\ref{sec:dataset_construction}; models are evaluated without augmentation at validation and test time.
+
+The architecture that achieves the best joint accuracy-size-latency trade-off under this protocol, ConvNeXt-V2, is adopted as our proposed lightweight model for avocado disease classification; the full comparison against the other 14 candidates is reported in Section~\ref{sec:experiments}.

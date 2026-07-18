@@ -3,7 +3,7 @@
 
 \subsection{Comparison of Architectures}
 
-We benchmark a wide range of lightweight and efficient architectures on the AvocadoLeaf test set. Table~\ref{tab:arch_compare} reports top-1 accuracy, macro F1 score, number of parameters, and per-image inference time on a single NVIDIA RTX 3050-6GB GPU for all 15 evaluated models. All models are trained with the same data augmentation and optimisation schedule.
+We benchmark a wide range of lightweight and efficient architectures on the AvocadoLeaf test set. Table~\ref{tab:arch_compare} reports top-1 accuracy, macro F1 score, number of parameters, and per-image inference time on a single NVIDIA RTX 3050-6GB GPU for all 15 evaluated models. All models are trained with the same data augmentation and optimisation schedule. Each architecture was trained once (single seed); to account for the uncertainty this and the finite 280-image test set introduce, we additionally report bootstrap 95\% confidence intervals and paired significance tests in Appendix~\ref{app:bootstrap}.
 
 \begin{table*}[t]
 \centering
@@ -35,7 +35,7 @@ VanillaCNN             & 63.57 & 0.623 & 25.8 & 1.33 \\
 \end{table*}
 
 
-Among the evaluated models, ConvNeXt-V2 achieves the highest classification accuracy (92.14\%) and the second-highest macro F1 score (0.900), while maintaining a compact parameter count (3.4M) and low inference latency (2.30 ms). Several models with comparable accuracy, including SwinTransformer, MobileOne, ConvNeXt-V1, ViT, and EdgeNeXt, all exhibit either substantially larger model sizes, slower inference speeds, or both. In particular, ViT attains the highest macro F1 (0.904) but has 85.8M parameters and requires 14.25 ms per inference, making it impractical for edge deployment. Conversely, lightweight architectures such as MobileNet-V2 and EfficientNet-B0 are faster and smaller but lag significantly in accuracy (approximately 86–87\%), which is insufficient for reliable field diagnosis. Models with accuracy below 80\% (MobileNet-V4, EfficientViT, GhostNet-V2, VanillaCNN) lack the representational capacity required for this fine-grained classification task. Overall, ConvNeXt-V2 offers the most favourable balance among accuracy, model size, and speed, rendering it well-suited for real-time deployment on resource-constrained devices in precision agriculture.
+Among the evaluated models, ConvNeXt-V2 achieves the highest point-estimate classification accuracy (92.14\%) and the second-highest macro F1 score (0.900), while maintaining a compact parameter count (3.4M) and low inference latency (2.30 ms). However, bootstrap significance testing (Appendix~\ref{app:bootstrap}) shows that its accuracy advantage over the next five models -- SwinTransformer, MobileOne, ViT, EdgeNeXt, and ConvNeXt-V1 -- is \emph{not} statistically significant at this test set size ($p > 0.5$ for all five); these six models should be regarded as statistically tied in accuracy. In particular, ViT attains the highest macro F1 (0.904) but has 85.8M parameters and requires 14.25 ms per inference, making it impractical for edge deployment despite its statistically indistinguishable accuracy. What separates ConvNeXt-V2 from the rest of this tied top group is not proven superior accuracy but a far smaller parameter count (3.4M vs. 4.3--85.8M for the other five) and lower latency, which is why we select it as our proposed lightweight model. ConvNeXt-V2's advantage over every model ranked sixth or lower \emph{is} statistically significant ($p < 0.05$, Appendix~\ref{app:bootstrap}). Conversely, lightweight architectures such as MobileNet-V2 and EfficientNet-B0 are faster and smaller but lag significantly in accuracy (approximately 86–87\%), which is insufficient for reliable field diagnosis. Models with accuracy below 80\% (MobileNet-V4, EfficientViT, GhostNet-V2, VanillaCNN) lack the representational capacity required for this fine-grained classification task. Overall, ConvNeXt-V2 offers the most favourable balance among accuracy, model size, and speed, making it the strongest candidate among the evaluated architectures for deployment on resource-constrained devices, pending on-device latency validation (Section~\ref{sec:discussion}).
 
 To further understand the impact of model capacity, we group the architectures into two categories, including (1) \textit{lightweight models} with fewer than 5 million parameters and (2) \textit{heavy models} with 5 million or more. The heavy group achieves a high and stable mean F1 of 0.890, with all models scoring above 0.86. The light group shows much greater variance, with a mean of 0.740 and scores ranging from 0.571 to 0.900. 
 ConvNeXt-V2 stands out as the only light model attaining F1 (0.900) comparable to the best heavy architectures while using substantially fewer parameters. This confirms that model selection is critical under parameter constraints, whereas heavy models offer stable performance at the cost of larger size and slower inference. 
@@ -64,7 +64,7 @@ This metric quantifies the predictive performance achieved per unit of resource 
 \label{fig:efficiency}
 \end{figure}
 
-MobileNet-V2 achieves the highest overall efficiency (0.211) due to its extremely compact size (2.2M parameters) and fast inference (1.80 ms), though its macro F1 (0.847) is moderate. ConvNeXt-V2 ranks third in efficiency (0.116) while attaining a substantially higher F1 (0.900). Its F1/Params (0.265) and F1/Time (0.391) are well balanced, placing it in the upper-right region of the scatter plot. Heavy models such as ViT (0.001) and SwinTransformer (0.005) exhibit very low efficiency despite competitive F1, due to large parameter counts and slower inference. These results confirm that ConvNeXt-V2 offers the most favourable balance between accuracy and resource utilisation for edge deployment.
+MobileNet-V2 achieves the highest overall efficiency (0.211) due to its extremely compact size (2.2M parameters) and fast inference (1.80 ms), though its macro F1 (0.847) is moderate. ConvNeXt-V2 ranks third in efficiency (0.116) while attaining a substantially higher F1 (0.900). Its F1/Params (0.265) and F1/Time (0.391) are well balanced, placing it in the upper-right region of the scatter plot. Heavy models such as ViT (0.001) and SwinTransformer (0.005) exhibit very low efficiency despite competitive F1, due to large parameter counts and slower inference. These results indicate that ConvNeXt-V2 offers the most favourable balance between accuracy and resource utilisation among the evaluated architectures, based on parameter count and GPU inference latency.
 
 % TODO (future work): Error Analysis — confusion matrix on the test set to
 % understand ConvNeXt-V2's failure modes. Not yet produced.
@@ -75,9 +75,11 @@ MobileNet-V2 achieves the highest overall efficiency (0.211) due to its extremel
 
 \subsection{Model Interpretability}
 
-To assess whether ConvNeXt‑V2 relies on disease‑relevant visual evidence rather than spurious correlations, we apply LIME \cite{ribeiro2016why} to one held‑out test image per class. Each image is segmented into superpixels with the Quickshift algorithm, and 500 perturbed samples are used to fit a local surrogate model that identifies the superpixels most responsible for the predicted class. All six sampled images are classified correctly, with confidence ranging from 0.844 (\textit{binhthuong}, healthy) to 0.994 (\textit{chaymepla}, leaf scorch).
+To assess whether ConvNeXt‑V2 relies on disease‑relevant visual evidence rather than spurious correlations, we apply LIME \cite{ribeiro2016why} to every image in the 280-image test set (not merely a qualitative sample). Each image is segmented into superpixels with the Quickshift algorithm, and 500 perturbed samples are used to fit a local surrogate model that identifies the superpixels most responsible for the predicted class.
 
-Figure~\ref{fig:lime_examples} shows two representative examples. For \textit{chaymepla}, the highlighted superpixels tightly enclose the brown, scorched lesion at the centre of the leaf, closely matching the visible symptom boundary. For \textit{moctrang} (powdery mildew), the highlighted regions concentrate on the white powdery patches on the leaf surface rather than on the unaffected tissue or background. Across the remaining four classes (not shown), the explanations similarly localise to symptomatic regions — spotted or discoloured areas for \textit{domla} and \textit{gisat}, and diffuse but leaf-confined regions for \textit{repsap}, consistent with the stippled, non-localised nature of mealybug damage. These qualitative results suggest that ConvNeXt‑V2's predictions are driven by the same visual cues a human expert would use, rather than by background or imaging artefacts, though we note this evidence is qualitative and based on a single image per class.
+We quantify faithfulness with a deletion metric: for each test image, we hide exactly the superpixels LIME identifies as most responsible for the predicted class (the same masking colour used during LIME's own perturbation sampling) and re-run the model, measuring how much its confidence in the predicted class drops. A faithful explanation should cause a large drop, since it claims the hidden region is what the prediction relies on. Averaged over all 280 test images, hiding the LIME-highlighted region -- which covers only 20.0\% of the image area on average -- drops the model's confidence in its own predicted class from 0.940 to 0.292, a mean confidence drop of 0.649 (bootstrap 95\% CI [0.618, 0.678], see Appendix~\ref{app:lime_faithfulness} for the full methodology and per-class breakdown). The drop is larger for correctly classified images (0.660, $n=258$) than for misclassified ones (0.516, $n=22$), consistent with correct predictions being more strongly grounded in genuine symptomatic regions rather than spurious cues. This full-test-set quantitative result substantially strengthens the qualitative examples below.
+
+Figure~\ref{fig:lime_examples} shows two representative qualitative examples. For \textit{chaymepla}, the highlighted superpixels tightly enclose the brown, scorched lesion at the centre of the leaf, closely matching the visible symptom boundary. For \textit{moctrang} (powdery mildew), the highlighted regions concentrate on the white powdery patches on the leaf surface rather than on the unaffected tissue or background. These qualitative results illustrate that ConvNeXt‑V2's predictions are driven by the same visual cues a human expert would use, rather than by background or imaging artefacts, consistent with the quantitative deletion-metric result above.
 
 \begin{figure}[htbp]
 \centering
@@ -86,6 +88,38 @@ Figure~\ref{fig:lime_examples} shows two representative examples. For \textit{ch
 \caption{LIME explanations for ConvNeXt‑V2 on two disease classes. Left: \textit{chaymepla} (leaf scorch), where the highlighted region matches the scorched lesion. Right: \textit{moctrang} (powdery mildew), where the highlighted region matches the white powdery patches. Yellow outlines mark superpixels positively attributed to the predicted class.}
 \label{fig:lime_examples}
 \end{figure}
+
+\subsection{Multi-modal Explanation Generation (CNN + LIME + VLM)}
+\label{subsec:vlm_explain}
+
+LIME identifies \emph{which pixels} a prediction depends on but produces no natural-language account of \emph{why} those pixels are diagnostically relevant -- a gap that matters for a farmer-facing tool, where a highlighted region without a caption is of limited practical use. We therefore built a pipeline that combines all three components developed in this work -- the CNN's prediction, LIME's visual attribution, and a small, locally-hosted vision-language model (\texttt{Qwen2-VL-2B-Instruct}, no API cost) -- to generate a grounded natural-language explanation. Critically, the CNN remains the sole decision-maker: the VLM is given the CNN's already-decided class label together with the raw leaf image and the LIME overlay image, and is asked only to describe the visual evidence and judge whether it supports that label, never to propose a different one (\texttt{final\_pred} is verified to equal the CNN's prediction for 100\% of processed images). This design was applied to the 140 test images ConvNeXt‑V2 was least confident about (top 50\% by MC-Dropout predictive entropy).
+
+Figure~\ref{fig:explain_vlm_showcase} shows three representative outputs of this pipeline, each combining the original image, the LIME overlay, and the VLM's generated explanation (full text in Table~\ref{tab:explain_vlm_showcase}). In these examples, the generated text correctly references both the LIME-highlighted location (e.g. ``vùng giữa hai lá'') and the specific visual symptom expected for the class (e.g. rust-coloured spots for \textit{gisat}, white powdery patches for \textit{moctrang}), demonstrating that the pipeline can turn a raw prediction and an attribution map into an interpretable, farmer-readable statement, which was the original motivation for adding a language model to this system. Across the full 140-image escalated subset, the VLM judged the visual evidence to support the CNN's diagnosis for 92.0\% of the 125 images that produced a parseable response.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{img/experiments/llm/explain_vlm_showcase.png}
+\caption{Three examples of the combined CNN + LIME + VLM explanation pipeline. Top row: original test images. Bottom row: LIME overlay (yellow outlines) shown to the VLM alongside the CNN's prediction. Generated explanations are given in Table~\ref{tab:explain_vlm_showcase}.}
+\label{fig:explain_vlm_showcase}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{VLM-generated explanations for the three examples in Figure~\ref{fig:explain_vlm_showcase} (translated from Vietnamese; full original text in \texttt{deliverables/llm/explain\_vlm/showcase\_examples.txt}).}
+\label{tab:explain_vlm_showcase}
+\small
+\begin{tabular}{p{0.12\linewidth} p{0.78\linewidth}}
+\toprule
+\textbf{Class} & \textbf{Generated visual evidence} \\
+\midrule
+gisat & ``The CNN's most-attended region is in the middle of the leaf, particularly the area with rust-orange-coloured spots, typically on the underside -- this may be a sign of \textit{gisat}.'' \\
+moctrang & ``The estimated region between the two images has many yellow-outlined patches, indicating white powdery spots on the leaf -- the CNN attended most to this region when predicting \textit{moctrang}.'' \\
+domla & ``The CNN's most-attended region is near the centre of the leaf, close to the leaf-spot location; the spot's colour and shape resemble the small, round or irregular spots on the leaf surface [that define \textit{domla}].'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This capability is distinct from, and should not be conflated with, using the same VLM output as an automatic error detector: Section~\ref{sec:discussion} and Appendix~\ref{app:llm} report a separate, secondary analysis of whether the \texttt{supports\_cnn\_diagnosis} judgement can substitute for or complement predictive-entropy-based flagging of likely CNN mistakes, which was \emph{not} successful. The explanation-generation capability demonstrated here is unaffected by that negative result -- the pipeline reliably produces a plausible, grounded caption for a prediction; whether that caption is a reliable enough signal to automatically flag errors without human review is a separate, harder question.
 
 
 \subsection{Few-shot Learning}
