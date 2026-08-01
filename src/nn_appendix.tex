@@ -1,4 +1,4 @@
-\section{Quality Control – Raw Data and Agreement Calculation}
+\section{Raw Data Quality Control and Agreement Calculation}
 \label{app:quality_control_raw}
 
 \subsection{Per‑Annotator Performance vs.\ Expert}
@@ -30,7 +30,7 @@ The final label for each image was obtained by majority voting among the three a
 
 \begin{table}[htbp]
 \centering
-\caption{Confusion matrix: consensus (majority vote) vs.\ expert on the 279‑image review set.}
+\caption{Confusion matrix, consensus (majority vote) vs.\ expert on the 279‑image review set.}
 \label{tab:conf_matrix}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -56,7 +56,7 @@ From the confusion matrix:
 
 \begin{itemize}
     \item[a.] \textbf{Observed agreement} ($p_o$) = sum of diagonal elements / total images = $(43+43+43+44+44+44) / 279 = 261 / 279 \approx 0.9355$, reported as $0.94$.
-    \item[b.] \textbf{Expected agreement by chance} ($p_e$) is computed from the marginal distributions. Row totals $R$ and column totals $C$ are identical: $(46,46,46,47,47,47)$. Hence
+    \item[b.] \textbf{Expected agreement by chance} ($p_e$) is computed from the marginal distributions. Row totals $R$ and column totals $C$ are identical, both equal to $(46,46,46,47,47,47)$. Hence
     \begin{equation}
         p_e = \frac{\sum_{i=1}^{6} R_i \, C_i}{N^2} = \frac{3 \times 46^2 + 3 \times 47^2}{279^2} = \frac{3 \times 2116 + 3 \times 2209}{77841} = \frac{12975}{77841} \approx 0.1667.
     \end{equation}
@@ -81,7 +81,7 @@ These results confirm that the three‑annotator consensus achieves very high ag
 \section{Extended Difficulty Analysis}
 \label{app:difficulty}
 
-This appendix provides supplementary details for the difficulty analysis presented in Section 4.3.
+This appendix provides supplementary details for the difficulty analysis presented in Section~\ref{sec:dataset_analysis}, Section~\ref{subsec:difficulty}.
 
 \subsection{Software and Implementation Details}
 
@@ -123,7 +123,7 @@ The ratio \(R = D_{\text{intra}} / D_{\text{inter}}\) quantifies the trade-off b
 % \begin{figure}[htbp]
 % \centering
 % \includegraphics[width=0.85\textwidth]{img/dataset/analysis/tsne_avocado_leaf_labelled.png}
-% \caption{t-SNE projection with explicit class labels. Overlapping clusters are evident, especially between \textit{leaf burn} and \textit{mealybug infestation}.}
+% \caption{t-SNE projection with explicit class labels. Overlapping clusters are evident, especially between \textit{chaymepla} and \textit{repsap}.}
 % \label{fig:tsne_full}
 % \end{figure}
 
@@ -131,11 +131,20 @@ The ratio \(R = D_{\text{intra}} / D_{\text{inter}}\) quantifies the trade-off b
 \section{Bootstrap Confidence Intervals and Significance Testing}
 \label{app:bootstrap}
 
-This appendix provides the full statistical analysis supporting the architecture comparison in Section~\ref{sec:experiments}. Because each architecture was trained once (single seed) on the same 1,302-image training set, we do not have multiple independent training runs to estimate between-run variance. We instead quantify the uncertainty arising from the finite 280-image test set via non-parametric bootstrap resampling of the already-computed test predictions (no retraining involved): for each model, the test set is resampled with replacement 1,000 times, accuracy and macro F1 are recomputed on each resample, and the 2.5th/97.5th percentiles of the resulting distributions are reported as a 95\% confidence interval. To compare the leaderboard leader (ConvNeXt-V2) against every other architecture, we use \emph{paired} bootstrap resampling — the same resampled indices are applied to both models' predictions on each draw, which controls for the fact that some test images are inherently easier or harder than others — and report the 95\% CI of the accuracy difference together with a two-sided bootstrap $p$-value (the fraction of resamples in which the sign of the difference flips).
+This appendix provides the full statistical analysis supporting the architecture comparison in Section~\ref{sec:experiments}. Because each architecture was trained once (single seed) on the same 1,302-image training set, we do not have multiple independent training runs to estimate between-run variance. We instead quantify the uncertainty arising from the finite 280-image test set via non-parametric bootstrap resampling of the already-computed test predictions (no retraining involved). For each model, the test set is resampled with replacement 1,000 times, accuracy and macro F1 are recomputed on each resample, and the 2.5th/97.5th percentiles of the resulting distributions are reported as a 95\% confidence interval. To compare the leaderboard leader (ConvNeXt-V2) against every other architecture, we use \emph{paired} bootstrap resampling, where the same resampled indices are applied to both models' predictions on each draw, which controls for the fact that some test images are inherently easier or harder than others, and report the 95\% CI of the accuracy difference together with a two-sided bootstrap $p$-value (the fraction of resamples in which the sign of the difference flips).
+
+Figure~\ref{fig:bootstrap_forest} visualises the same accuracy confidence intervals as a forest plot, sorted by point estimate. The dashed line marks ConvNeXt-V2's lower CI bound. The six models shaded blue (ConvNeXt-V2 and the five statistically tied challengers) all have error bars crossing this line, while every model below them does not, showing the "tied top-6, then a real gap" structure at a glance.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{img/experiments/bootstrap/bootstrap_forest.png}
+\caption{Bootstrap 95\% CI forest plot of test accuracy, sorted by point estimate. Blue rows are the six models statistically tied with ConvNeXt-V2; grey rows are significantly below it ($p<0.05$). The dashed line marks ConvNeXt-V2's lower CI bound.}
+\label{fig:bootstrap_forest}
+\end{figure}
 
 \begin{table}[htbp]
 \centering
-\caption{Bootstrap 95\% confidence intervals (1,000 resamples) for test accuracy and macro F1 of all 15 architectures.}
+\caption{Bootstrap 95\% confidence intervals (1,000 resamples) for test accuracy and macro F1 of all 15 architectures. The reported point estimates are the \emph{mean} of the 1,000 bootstrap resamples, not the single test-set value in Table~\ref{tab:arch_compare}; the two differ by at most 0.11 pp / 0.004 F1 for every model, well within the reported intervals, and the CI, not the point estimate, is what supports the statistical claims in this appendix.}
 \label{tab:bootstrap_ci}
 \small
 \setlength{\tabcolsep}{4pt}
@@ -190,21 +199,62 @@ VanillaCNN       & +28.64 & [+23.21, +34.29]   & $<$0.001 \\
 \end{tabular}
 \end{table}
 
-\textbf{Interpretation.} ConvNeXt-V2's accuracy advantage over the next five models on the leaderboard (SwinTransformer, MobileOne, ViT, EdgeNeXt, ConvNeXt-V1) is \emph{not} statistically significant at the 280-image test set size ($p > 0.5$ in all five cases; 95\% CIs on the difference all include zero). ConvNeXt-V2 is significantly more accurate than every model ranked sixth or lower ($p < 0.05$). This means the ranking of the top six models by point-estimate accuracy alone should not be over-interpreted as a strict ordering — the top six are statistically indistinguishable in accuracy on this test set. ConvNeXt-V2 remains the preferred choice not because it is proven to be the single most accurate architecture, but because among this statistically-tied top group, it has by far the smallest parameter count (3.4M vs. 4.3--85.8M for the other five) and the lowest inference latency, which is what Section~\ref{sec:experiments}'s efficiency analysis and edge-deployment motivation are based on.
+\textbf{Interpretation.} ConvNeXt-V2's accuracy advantage over the next five models on the leaderboard (SwinTransformer, MobileOne, ViT, EdgeNeXt, ConvNeXt-V1) is \emph{not} statistically significant at the 280-image test set size ($p > 0.5$ in all five cases; 95\% CIs on the difference all include zero). ConvNeXt-V2 is significantly more accurate than every model ranked sixth or lower ($p < 0.05$). This means the ranking of the top six models by point-estimate accuracy alone should not be over-interpreted as a strict ordering; the top six are statistically indistinguishable in accuracy on this test set. ConvNeXt-V2 remains the preferred choice not because it is proven to be the single most accurate architecture, but because among this statistically-tied top group, it has by far the smallest parameter count (3.4M against 4.3 to 85.8M for the other five) and the lowest inference latency, which is what Section~\ref{sec:experiments}'s efficiency analysis and edge-deployment motivation are based on.
 
+\subsection{Ablation Study Significance Testing}
+\label{app:bootstrap_ablation}
 
-\section{LIME Faithfulness: Full Methodology and Per-Class Results}
+The same methodology is applied to the four-configuration ablation of Section~\ref{subsec:ablation}, using the per-sample predictions of each of the four BoVien checkpoints on the same 280-image test set.
+
+\begin{table}[htbp]
+\centering
+\caption{Bootstrap 95\% confidence intervals (1,000 resamples) for the ablation study's four configurations.}
+\label{tab:ablation_bootstrap_ci}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Configuration} & \textbf{Accuracy (\%) [95\% CI]} & \textbf{Macro F1 [95\% CI]} \\
+\midrule
+No augmentation, no class-weight & 92.11 [88.93, 95.00] & 0.898 [0.855, 0.935] \\
+Augmentation, class-weighted     & 91.47 [88.21, 94.29] & 0.894 [0.849, 0.933] \\
+No augmentation, class-weighted  & 90.70 [86.79, 94.29] & 0.886 [0.837, 0.928] \\
+Augmentation, no class-weight    & 88.99 [85.00, 92.50] & 0.863 [0.815, 0.907] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Paired bootstrap comparison of the best ablation configuration (no augmentation, no class-weight) against the other three (accuracy difference, 1,000 resamples).}
+\label{tab:ablation_bootstrap_pairwise}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Comparison (best $-$ X)} & \textbf{Diff (pp)} & \textbf{95\% CI (pp)} & \textbf{$p$} \\
+\midrule
+Augmentation, class-weighted    & +0.70 & [$-$1.79, +3.21] & 0.692 \\
+No augmentation, class-weighted & +1.37 & [$-$1.07, +3.93] & 0.336 \\
+Augmentation, no class-weight   & +3.31 & [+0.00, +6.44]   & 0.054 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Interpretation.} None of the three pairwise differences reach the conventional $p < 0.05$ threshold at this test set size, including the largest gap (no augmentation, no class-weight, versus augmentation, no class-weight, $+$3.31pp, $p = 0.054$), whose 95\% CI lower bound sits at essentially zero. The ablation study's ranking should therefore be read as suggestive rather than conclusive. The direction is consistent (the no-augmentation configuration is the point-estimate best in three independent comparisons) and matches the sign of the discrepancy discussed in Section~\ref{sec:discussion}, but a 280-image test set and single-seed training runs cannot establish statistical significance for effects of this size (roughly 1 to 3 accuracy points). A future protocol-matched re-run with multiple random seeds per configuration, as noted in Section~\ref{sec:discussion}, would be needed to confirm the ranking rather than only its direction.
+
+\section{LIME Faithfulness Evaluation Methodology and Per-Class Results}
 \label{app:lime_faithfulness}
 
 This appendix details the deletion-metric protocol summarised in Section~\ref{sec:experiments} (Model Interpretability) and reports the per-class breakdown.
 
 \subsection{Protocol}
 
-For every image in the 280-image test set: (1) the model's baseline confidence in its own predicted class is recorded; (2) LIME is run with the same settings used for the qualitative examples (Quickshift segmentation, 500 perturbed samples, top 10 superpixels); (3) the superpixels LIME attributes to the predicted class are replaced with the masking colour used during LIME's own sampling (black, consistent with \texttt{hide\_color=0} in the LIME configuration), and the model is re-run on this perturbed image; (4) the confidence drop is the baseline confidence minus the perturbed-image confidence, both measured for the \emph{same} (originally predicted) class. This is the standard "deletion" faithfulness metric used in the XAI literature: an explanation that faithfully identifies the pixels the model relies on should produce a large confidence drop when those pixels are removed, whereas an unfaithful or random explanation should produce a drop close to what removing a random region of the same size would cause. A 95\% confidence interval for the mean confidence drop is computed via bootstrap resampling of the 280 per-image drops (1,000 resamples, percentile method), identical in spirit to the procedure in Appendix~\ref{app:bootstrap}.
+For every image in the 280-image test set, four steps are applied. (1) The model's baseline confidence in its own predicted class is recorded; (2) LIME is run with the same settings used for the qualitative examples (Quickshift segmentation, 500 perturbed samples, top 10 superpixels); (3) the superpixels LIME attributes to the predicted class are replaced with the masking colour used during LIME's own sampling (black, consistent with \texttt{hide\_color=0} in the LIME configuration), and the model is re-run on this perturbed image; (4) the confidence drop is the baseline confidence minus the perturbed-image confidence, both measured for the \emph{same} (originally predicted) class. This is the standard "deletion" faithfulness metric used in the XAI literature, in the spirit of the masking-based evaluation introduced for saliency methods by RISE \cite{petsiuk2018rise}. An explanation that faithfully identifies the pixels the model relies on should produce a large confidence drop when those pixels are removed, whereas an unfaithful or random explanation should produce a drop close to what removing a random region of the same size would cause. A 95\% confidence interval for the mean confidence drop is computed via bootstrap resampling of the 280 per-image drops (1,000 resamples, percentile method), identical in spirit to the procedure in \ref{app:bootstrap}.
 
 \subsection{Per-Class Results}
 
-Table~\ref{tab:lime_per_class} breaks the mean confidence drop down by true class. The two classes with the most spatially localised, high-contrast symptoms in our annotation guideline -- \textit{domla} (leaf spot) and \textit{binhthuong} (healthy, where the model instead grounds its decision in the absence of any lesion pattern) -- show the largest drops. \textit{repsap} (mealybug infestation) shows the smallest drop, consistent with the qualitative observation in Section~\ref{sec:experiments} that its damage pattern is diffuse and stippled rather than a single contiguous lesion, making it harder for a fixed-size top-10-superpixel mask to capture all of the evidence the model uses.
+Table~\ref{tab:lime_per_class} breaks the mean confidence drop down by true class. The two classes with the most spatially localised, high-contrast symptoms in our annotation guideline, \textit{domla} (leaf spot) and \textit{binhthuong} (healthy, where the model instead grounds its decision in the absence of any lesion pattern), show the largest drops. \textit{repsap} (mealybug damage) shows the smallest drop, consistent with the qualitative observation in Section~\ref{sec:experiments} that its damage pattern is diffuse and stippled rather than a single contiguous lesion, making it harder for a fixed-size top-10-superpixel mask to capture all of the evidence the model uses.
 
 \begin{table}[htbp]
 \centering
@@ -226,44 +276,18 @@ repsap      & 0.416 & 0.249 & 25 \\
 \end{table}
 
 
-\section{LLM/VLM Integration: Full Protocol and Results}
+\section{LLM/VLM Integration Protocol and Results}
 \label{app:llm}
 
-This appendix details the three LLM/VLM integration designs summarised in Section~\ref{sec:discussion}. All experiments use ConvNeXt‑V2 as the base classifier, run on the full 280-image test set, and use only small, locally-hosted, zero-API-cost models (\texttt{Qwen2.5-1.5B-Instruct} for text-only, \texttt{Qwen2-VL-2B-Instruct} for vision), reflecting a no-budget resource constraint rather than an upper bound on what larger, paid models might achieve.
+This appendix details the VLM-explainer protocol summarised in Section~\ref{sec:discussion}, including a secondary analysis of whether its output can double as an automatic error-detection signal. The experiment uses ConvNeXt‑V2 as the base classifier, runs on the 140 least-confident images of the 280-image test set (top 50\% by MC-Dropout predictive entropy, as in Section~\ref{sec:experiments}'s uncertainty analysis), and uses only a small, locally-hosted, zero-API-cost model (\texttt{Qwen2-VL-2B-Instruct}), reflecting a no-budget resource constraint rather than an upper bound on what larger, paid models might achieve.
 
-\subsection{Escalation Protocol (Designs 1 and 2: LLM/VLM as Decision-Maker)}
+\subsection{Explanation Protocol: VLM as Explainer}
 
-For each test image, ConvNeXt‑V2 produces a prediction and an MC-Dropout predictive entropy (50 forward passes, as in Section~\ref{sec:experiments}'s uncertainty analysis). Images are ranked by entropy, and the top $f$ fraction (the escalation fraction) is escalated: for these images only, a prompt containing the CNN's top-3 class probabilities, a coarse text description of the LIME-attributed region, and a static per-class symptom description is sent to the LLM (Design 1) or additionally accompanied by the raw image (Design 2), and the LLM's returned diagnosis (constrained to the six known classes, or falling back to the CNN's prediction if parsing fails) replaces the CNN's prediction for that image. Non-escalated images always keep the CNN's own prediction. Because the escalation ranking is monotonic in entropy, the escalated set for any $f' < f$ is a subset of the set for $f$, so Table~\ref{tab:llm_escalation} sweeps multiple escalation fractions from a single pass of LLM calls (made once, at $f=0.5$) rather than requiring a separate run per fraction.
-
-\begin{table}[htbp]
-\centering
-\caption{Design 1 (text-only) and Design 2 (vision) escalation results. ``CNN-forced'' is the accuracy ConvNeXt‑V2 achieves on the escalated subset when \emph{not} escalated (i.e. forced to decide alone); ``LLM/VLM'' is the accuracy on that same subset when the LLM/VLM's diagnosis is used instead; ``Overall'' is the resulting accuracy on the full 280-image test set. The CNN-only baseline (no escalation) is 92.14\%.}
-\label{tab:llm_escalation}
-\small
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{c c ccc ccc}
-\toprule
-& & \multicolumn{3}{c}{\textbf{Design 1: text-only}} & \multicolumn{3}{c}{\textbf{Design 2: vision}} \\
-\textbf{$f$} & \textbf{$n$} & CNN-forced & LLM & Overall & CNN-forced & VLM & Overall \\
-\midrule
-0.05 & 14  & 57.1 & 42.9 & 91.4 & 57.1 & 50.0 & 91.8 \\
-0.10 & 28  & 60.7 & 28.6 & 88.9 & 60.7 & 35.7 & 89.6 \\
-0.20 & 56  & 71.4 & 39.3 & 85.7 & 71.4 & 35.7 & 85.0 \\
-0.30 & 84  & 77.4 & 41.7 & 81.4 & 77.4 & 39.3 & 80.7 \\
-0.50 & 140 & 85.0 & 47.9 & 73.6 & 85.0 & 37.9 & 68.6 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-At every escalation fraction and for both designs, the LLM/VLM's accuracy on the escalated subset is far below what ConvNeXt‑V2 itself achieves when forced to decide without help, so overall accuracy decreases monotonically as more of the test set is escalated -- the opposite of the intended effect. This holds despite Design 2 having direct access to the image itself, indicating the failure is not simply a lack of visual grounding.
-
-\subsection{Explanation Protocol (Design 3: VLM as Explainer)}
-
-Motivated by Design 1/2's failure, Design 3 removes the LLM's ability to override the CNN entirely. For each escalated image, the vision-language model is given the CNN's already-decided prediction, the raw image, and the LIME overlay image (boundary-marked highlighted region), and is asked only to output a boolean \texttt{supports\_cnn\_diagnosis} judgement plus free-text visual evidence -- never a competing class label. \texttt{final\_pred} is hard-set to the CNN's prediction for every image in this design (verified to hold for 100\% of rows). We then treat \texttt{supports\_cnn\_diagnosis = False} as a zero-cost-to-CNN ``the CNN might be wrong'' flag and score it against the CNN's actual (test-set-label-derived) correctness, comparing it to a free baseline that flags the top half of the escalated subset by predictive entropy.
+The vision-language model is given the CNN's already-decided prediction, the raw image, and the LIME overlay image (boundary-marked highlighted region), and is asked only to output a boolean \texttt{supports\_cnn\_diagnosis} judgement plus free-text visual evidence, never a competing class label; the CNN's decision is never overridden. \texttt{final\_pred} is hard-set to the CNN's prediction for every image in this design (verified to hold for 100\% of rows). Of the 140 escalated images, 125 yielded a valid, parseable \texttt{supports\_cnn\_diagnosis} boolean; the remaining 15 are excluded from the scoring below since neither flag can be scored without a VLM output to compare against. We then treat \texttt{supports\_cnn\_diagnosis = False} as a zero-cost-to-CNN ``the CNN might be wrong'' flag and score it against the CNN's actual (test-set-label-derived) correctness, comparing it to a free baseline that flags the top half of this same 125-image scored subset by predictive entropy, so that both flags are evaluated on an identical denominator.
 
 \begin{table}[htbp]
 \centering
-\caption{Design 3: VLM disagreement flag vs. a free entropy-threshold baseline, scored against actual CNN mistakes on the 140-image escalated subset (125 of which parsed to a valid boolean; 19 were actual CNN mistakes).}
+\caption{VLM disagreement flag vs. a free entropy-threshold baseline, scored against actual CNN mistakes on the 125-image subset of the 140 escalated images that yielded a parseable VLM output (19 were actual CNN mistakes).}
 \label{tab:llm_flagging}
 \small
 \begin{tabular}{lccc}
@@ -276,4 +300,4 @@ Entropy threshold (top half, free)              & 0.24 & 0.79 & 0.37 \\
 \end{tabular}
 \end{table}
 
-The VLM flag reaches higher precision but much lower recall than the free entropy baseline, and critically, all 4 CNN mistakes the VLM flag caught were also caught by the entropy baseline (0 complementary detections out of 19 actual mistakes) -- i.e. the VLM's grounded, image-based explanation added no error-detection information beyond what the CNN's own predictive entropy already provides at no extra inference cost. Qualitative inspection of the generated explanations also found instances of unfaithful reasoning, e.g. one case where the VLM justified a \emph{correct} \textit{binhthuong} (healthy) prediction by describing rust-coloured spots -- the symptom description belonging to a different class (\textit{gisat}) -- rather than reasoning from what was actually visible, underscoring that the free-text explanations should not be taken as reliably faithful without further validation.
+The VLM flag reaches higher precision but much lower recall than the free entropy baseline, and critically, all 4 CNN mistakes the VLM flag caught were also caught by the entropy baseline (0 complementary detections out of 19 actual mistakes); that is, the VLM's grounded, image-based explanation added no error-detection information beyond what the CNN's own predictive entropy already provides at no extra inference cost. Qualitative inspection of the generated explanations also found instances of unfaithful reasoning, e.g. one case where the VLM justified a \emph{correct} \textit{binhthuong} (healthy) prediction by describing rust-coloured spots, the symptom description belonging to a different class (\textit{gisat}), rather than reasoning from what was actually visible, underscoring that the free-text explanations should not be taken as reliably faithful without further validation.

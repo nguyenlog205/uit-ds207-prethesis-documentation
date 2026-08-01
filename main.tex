@@ -1,8 +1,12 @@
-\documentclass[twocolumn,a4paper,10pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{cite}
+% Computers and Electronics in Agriculture (Elsevier) submission format.
+% Compile with: latexmk -pdfxe main.tex   (xelatex, for native Vietnamese-diacritic support)
+\documentclass[3p,twocolumn,times]{elsarticle}
+
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes} % Times clone, full Vietnamese diacritic coverage
+
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{graphicx}
+\usepackage{graphicx} 
 \usepackage{xcolor}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -12,10 +16,13 @@
 \usepackage{caption} % <--- Adds support for \captionof
 
 \usepackage{listings}
-\usepackage{xcolor}
 \usepackage{float}
 
 \usepackage[htt]{hyphenat}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,shapes.geometric,shadows,calc}
+\usepackage{fontawesome5}
+\journal{Computers and Electronics in Agriculture}
 \lstdefinelanguage{YAML}{
   keywords={true,false,null,y,n},
   keywordstyle=\color{blue},
@@ -44,15 +51,18 @@
 \input{src/02_related_work.tex}
 \input{src/03a_dataset_construction.tex}
 \input{src/03b_dataset_analysis.tex}
-% \input{src/04_proposed_model.tex}
+\input{src/04_proposed_model.tex}
 \input{src/05_experiments.tex}
 \input{src/06_discussion.tex}
 \input{src/07_conclusion.tex}
+\input{src/08_statements.tex}
 
 \appendix
 \clearpage
-\onecolumn 
+\onecolumn
 \input{src/nn_appendix.tex}
 \newpage
-\input{src/nn_reference.tex}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{src/references}
 \end{document}

@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: elsarticle-num.bst
+Database file #1: src/references.bib
+Warning--empty pages in howard2017mobilenets
+Warning--empty pages in woo2023convnextv2
+Warning--empty pages in awais2025agrogpt
+Warning--empty pages in qin2024mobilenetv4
+Warning--empty pages in han2020tinynet
+Warning--empty pages in tang2022ghostnetv2
+Warning--empty pages in vasu2023mobileone
+Warning--empty pages in maaz2022edgenext
+Warning--empty pages in vasu2023fastvit
+Warning--empty pages in liu2023efficientvit
+Warning--empty pages in dosovitskiy2021vit
+Warning--empty pages in petsiuk2018rise
+You've used 50 entries,
+            2952 wiz_defined-function locations,
+            919 strings with 15917 characters,
+and the built_in function-call counts, 17701 in all, are:
+= -- 1527
+> -- 734
+< -- 19
++ -- 278
+- -- 228
+* -- 1122
+:= -- 2337
+add.period$ -- 53
+call.type$ -- 50
+change.case$ -- 50
+chr.to.int$ -- 0
+cite$ -- 62
+duplicate$ -- 631
+empty$ -- 2041
+format.name$ -- 273
+if$ -- 4634
+int.to.chr$ -- 0
+int.to.str$ -- 50
+missing$ -- 48
+newline$ -- 161
+num.names$ -- 50
+pop$ -- 405
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1256
+stack$ -- 0
+substring$ -- 869
+swap$ -- 190
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 12
+while$ -- 117
+width$ -- 52
+write$ -- 432
+(There were 12 warnings)

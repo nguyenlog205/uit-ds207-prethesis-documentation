@@ -1,164 +1,302 @@
 \relax 
+\Newlabel{uit}{a}
+\Newlabel{vnu}{b}
+\Newlabel{cth}{c}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
 \newlabel{sec:introduction}{{1}{1}}
 \citation{hughes2015plant}
 \citation{mohanty2016using}
+\citation{shoaib2023review,mustofa2023review}
+\citation{singh2020plantdoc}
 \citation{barbedo2019plant}
+\citation{kotagiri2024avocado}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{}\protected@file@percent }
+\newlabel{sec:related_work}{{2}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Plant Disease Classification}{2}{}\protected@file@percent }
+\citation{hughes2015plant}
+\citation{singh2020plantdoc}
+\citation{kotagiri2024avocado}
+\citation{howard2017mobilenets}
+\citation{tan2019efficientnet}
+\citation{liu2022convnet}
+\citation{woo2023convnextv2}
+\citation{atila2021plant}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the overall study pipeline. On the left, AvocadoLeaf dataset construction (field collection across three Central Highlands provinces, expert annotation with inter-annotator agreement, yielding 1{,}861 quality-filtered images across 6 classes). On the right, the systematic study built on top of it, benchmarking 15 architectures, selecting the proposed Model BoVien, then evaluating it for explainability, robustness (uncertainty/OOD, few-shot, cross-dataset), and edge-deployment readiness.\relax }}{3}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:pipeline_overview}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Lightweight Architectures for Edge Deployment}{3}{}\protected@file@percent }
+\citation{ribeiro2016why}
+\citation{selvaraju2017grad}
+\citation{sharma2020explainable}
+\citation{awais2025agrogpt}
+\citation{mahmood2026agrichain}
+\citation{sakib2025plantexpertvqa}
+\citation{hossain2026cropvqa}
+\citation{sakib2025plantexpertvqa}
 \citation{snell2017prototypical}
 \citation{sung2018learning}
 \citation{finn2017model}
 \citation{arguelles2020few,wang2021few}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Comparison of AvocadoLeaf with three related plant disease benchmarks.\relax }}{4}{}\protected@file@percent }
+\newlabel{tab:dataset_comparison}{{1}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Explainable AI for Plant Diagnosis}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Vision-Language Models for Agricultural Explanation}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Few-shot Learning for Plant Disease Recognition}{4}{}\protected@file@percent }
 \citation{guo2017calibration}
 \citation{gal2016dropout}
+\citation{lakshminarayanan2017ensembles}
 \citation{wang2022uncertainty}
 \citation{gonzalez2020identifying}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{}\protected@file@percent }
-\newlabel{sec:related_work}{{2}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Plant Disease Classification}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Few-shot Learning for Plant Disease Recognition}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Uncertainty Estimation in Deep Learning}{2}{}\protected@file@percent }
+\citation{wu2023laboratory}
+\citation{sun2024crossdataset}
+\citation{yang2024laboratory}
+\citation{wu2023laboratory,sun2024crossdataset,yang2024laboratory}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Uncertainty Estimation in Deep Learning}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Cross-dataset Generalization in Plant Disease Classification}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Dataset Construction}{5}{}\protected@file@percent }
+\newlabel{sec:dataset_construction}{{3}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Data Collection and Filtering}{5}{}\protected@file@percent }
+\newlabel{subsec:data_collection}{{3.1}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Annotation Guideline and Metadata Definition}{5}{}\protected@file@percent }
+\newlabel{subsec:annotation_guideline}{{3.2}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Overview of the data annotation pipeline. As a protocol design safeguard, a labelling round was to be repeated if pairwise inter-annotator agreement fell below an acceptable threshold; the quantitative Cohen's Kappa reported in Section\nobreakspace  {}\ref {subsec:quality_control} is a separate, downstream check of the resulting consensus labels against an independent expert, not this per-round inter-annotator value.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:annotation_pipeline}{{2}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Representative sample image for each of the six AvocadoLeaf classes.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:sample_images}{{3}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Quality Control}{6}{}\protected@file@percent }
+\newlabel{subsec:quality_control}{{3.3}{6}}
+\@writefile{toc}{\contentsline {paragraph}{Annotation aggregation.}{6}{}\protected@file@percent }
 \citation{landis1977measurement}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Dataset Construction}{3}{}\protected@file@percent }
-\newlabel{sec:dataset_construction}{{3}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Data Collection and Filtering}{3}{}\protected@file@percent }
-\newlabel{subsec:data_collection}{{3.1}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Annotation Guideline and Metadata Definition}{3}{}\protected@file@percent }
-\newlabel{subsec:annotation_guideline}{{3.2}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Quality Control}{3}{}\protected@file@percent }
-\newlabel{subsec:quality_control}{{3.3}{3}}
-\@writefile{toc}{\contentsline {paragraph}{Annotation aggregation.}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Expert review procedure.}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Agreement metric.}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Results.}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Expert review procedure.}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Agreement metric.}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Results.}{7}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Expert quality control results on the $279$‑image sample.\relax }}{7}{}\protected@file@percent }
+\newlabel{tab:quality_control}{{2}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Analysis}{7}{}\protected@file@percent }
+\newlabel{sec:dataset_analysis}{{4}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset Statistics}{7}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Summary statistics of the AvocadoLeaf dataset.\relax }}{7}{}\protected@file@percent }
+\newlabel{tab:dataset_stats}{{3}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Class distribution. Left, overall bar chart; right, grouped bar chart showing train/validation/test splits.\relax }}{7}{}\protected@file@percent }
+\newlabel{fig:class_dist}{{4}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Photometric Analysis}{7}{}\protected@file@percent }
 \citation{he2016deep}
 \citation{rousseeuw1987silhouettes}
 \citation{davies1979cluster}
 \citation{calinski1974dendrite}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the data annotation pipeline with an iterative quality-control loop based on inter-annotator agreement (Cohen's Kappa).\relax }}{4}{}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:annotation_pipeline}{{1}{4}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Expert quality control results on the $279$‑image sample.\relax }}{4}{}\protected@file@percent }
-\newlabel{tab:quality_control}{{1}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Analysis}{4}{}\protected@file@percent }
-\newlabel{sec:dataset_analysis}{{4}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset Statistics}{4}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Summary statistics of the AvocadoLeaf dataset.\relax }}{4}{}\protected@file@percent }
-\newlabel{tab:dataset_stats}{{2}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Class distribution: (left) overall bar chart, (right) grouped bar chart showing train/validation/test splits.\relax }}{4}{}\protected@file@percent }
-\newlabel{fig:class_dist}{{2}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Photometric Analysis}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Intrinsic Difficulty Analysis}{4}{}\protected@file@percent }
 \citation{maaten2008visualizing}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Brightness (left) and contrast (right) distributions per class.\relax }}{5}{}\protected@file@percent }
-\newlabel{fig:brightness_contrast}{{3}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces RGB histograms of one sample image per class. Colors: red, green, blue.\relax }}{5}{}\protected@file@percent }
-\newlabel{fig:rgb_histograms}{{4}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Quantitative Clustering Metrics}{5}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies–Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.\relax }}{5}{}\protected@file@percent }
-\newlabel{tab:difficulty_metrics}{{3}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Visualisation with t-SNE}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces t-SNE projection of ResNet-18 features on the validation set. Overlapping clusters confirm that disease categories are not well separated in the deep feature space.\relax }}{5}{}\protected@file@percent }
-\newlabel{fig:tsne}{{5}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Linear Separability Test}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Experiments and Results}{6}{}\protected@file@percent }
-\newlabel{sec:experiments}{{5}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Comparison of Architectures}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Macro F1 scores of all evaluated models. Lightweight models (<5M parameters) are shown in blue, heavy models ($\geq $5M) in orange.\relax }}{6}{}\protected@file@percent }
-\newlabel{fig:f1_comparision}{{6}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Efficiency Analysis}{6}{}\protected@file@percent }
+\citation{mohanty2016using}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Brightness (left) and contrast (right) distributions per class.\relax }}{8}{}\protected@file@percent }
+\newlabel{fig:brightness_contrast}{{5}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces RGB histograms of one sample image per class (red, green, blue channels).\relax }}{8}{}\protected@file@percent }
+\newlabel{fig:rgb_histograms}{{6}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Intrinsic Difficulty Analysis}{8}{}\protected@file@percent }
+\newlabel{subsec:difficulty}{{4.3}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Quantitative Clustering Metrics}{8}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies–Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.\relax }}{8}{}\protected@file@percent }
+\newlabel{tab:difficulty_metrics}{{4}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Visualisation with t-SNE}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces t-SNE projection of ResNet-18 features on the validation set. Overlapping clusters confirm that disease categories are not well separated in the deep feature space.\relax }}{8}{}\protected@file@percent }
+\newlabel{fig:tsne}{{7}{8}}
+\citation{he2016deep}
+\citation{sandler2018mobilenetv2}
+\citation{qin2024mobilenetv4}
+\citation{han2020tinynet}
+\citation{tang2022ghostnetv2}
+\citation{tan2019efficientnet}
+\citation{vasu2023mobileone}
+\citation{maaz2022edgenext}
+\citation{vasu2023fastvit}
+\citation{liu2023efficientvit}
+\citation{liu2022convnet}
+\citation{woo2023convnextv2}
+\citation{dosovitskiy2021vit}
+\citation{liu2021swin}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Linear Separability Test}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Proposed Lightweight Model}{9}{}\protected@file@percent }
+\newlabel{sec:proposed_model}{{5}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Candidate Architectures}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Transfer-Learning Strategy}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Training Protocol}{9}{}\protected@file@percent }
+\citation{iqbal2018plotneuralnet}
+\citation{iqbal2018plotneuralnet}
+\citation{iqbal2018plotneuralnet}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Transfer-learning strategy by architecture family.\relax }}{10}{}\protected@file@percent }
+\newlabel{tab:finetune_strategy}{{5}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Proposed Model Architecture}{10}{}\protected@file@percent }
+\newlabel{subsec:proposed_architecture}{{5.4}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experiments and Results}{10}{}\protected@file@percent }
+\newlabel{sec:experiments}{{6}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Comparison of Architectures}{10}{}\protected@file@percent }
+\newlabel{subsec:arch_compare}{{6.1}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Architecture of Model BoVien, rendered with PlotNeuralNet \cite  {iqbal2018plotneuralnet}. Box dimensions, tensor shapes, and frozen/unfrozen colouring are all read from the real \texttt  {nn.Module} via forward hooks, using grey for frozen (ImageNet-pretrained, unchanged) parameters, orange for parameters fine-tuned on AvocadoLeaf, and green for newly initialised, always-trainable parameters.\relax }}{11}{}\protected@file@percent }
+\newlabel{fig:proposed_architecture}{{8}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Performance comparison of all evaluated architectures. The highest values in each column are highlighted in bold and underlined.\relax }}{11}{}\protected@file@percent }
+\newlabel{tab:arch_compare}{{6}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Macro F1 scores of all evaluated models. Lightweight models (<5M parameters) are shown in blue, heavy models ($\geq $5M) in orange.\relax }}{12}{}\protected@file@percent }
+\newlabel{fig:f1_comparision}{{9}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Efficiency Analysis}{12}{}\protected@file@percent }
+\newlabel{subsec:efficiency}{{6.1.1}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Scatter plot of F1 per parameter versus F1 per inference time. Colour indicates macro F1.\relax }}{12}{}\protected@file@percent }
+\newlabel{fig:efficiency}{{10}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Ablation Study}{12}{}\protected@file@percent }
+\newlabel{subsec:ablation}{{6.1.2}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Ablation of augmentation and class-weighted loss on Model BoVien (AvocadoLeaf test set).\relax }}{13}{}\protected@file@percent }
+\newlabel{tab:ablation}{{7}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Test accuracy of Model BoVien under the four augmentation $\times $ class-weighted-loss combinations.\relax }}{13}{}\protected@file@percent }
+\newlabel{fig:ablation}{{11}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3}Error Analysis}{13}{}\protected@file@percent }
+\newlabel{subsec:error_analysis}{{6.1.3}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Row-normalised confusion matrix (raw counts annotated) for Model BoVien on the AvocadoLeaf test set.\relax }}{13}{}\protected@file@percent }
+\newlabel{fig:confusion_matrix}{{12}{13}}
 \citation{ribeiro2016why}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Performance comparison of all evaluated architectures. The highest values in each column are highlighted in bold and underlined.\relax }}{7}{}\protected@file@percent }
-\newlabel{tab:arch_compare}{{4}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Scatter plot of F1 per parameter versus F1 per inference time. Colour indicates macro F1.\relax }}{7}{}\protected@file@percent }
-\newlabel{fig:efficiency}{{7}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Model Interpretability}{7}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces LIME explanations for ConvNeXt‑V2 on two disease classes. Left: \textit  {chaymepla} (leaf scorch), where the highlighted region matches the scorched lesion. Right: \textit  {moctrang} (powdery mildew), where the highlighted region matches the white powdery patches. Yellow outlines mark superpixels positively attributed to the predicted class.\relax }}{8}{}\protected@file@percent }
-\newlabel{fig:lime_examples}{{8}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Multi-modal Explanation Generation (CNN + LIME + VLM)}{8}{}\protected@file@percent }
-\newlabel{subsec:vlm_explain}{{5.3}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Three examples of the combined CNN + LIME + VLM explanation pipeline. Top row: original test images. Bottom row: LIME overlay (yellow outlines) shown to the VLM alongside the CNN's prediction. Generated explanations are given in Table\nobreakspace  {}\ref {tab:explain_vlm_showcase}.\relax }}{8}{}\protected@file@percent }
-\newlabel{fig:explain_vlm_showcase}{{9}{8}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces VLM-generated explanations for the three examples in Figure\nobreakspace  {}\ref {fig:explain_vlm_showcase} (translated from Vietnamese; full original text in \texttt  {deliverables/llm/explain\_vlm/showcase\_examples.txt}).\relax }}{8}{}\protected@file@percent }
-\newlabel{tab:explain_vlm_showcase}{{5}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Few-shot Learning}{9}{}\protected@file@percent }
-\newlabel{subsec:fewshot}{{5.4}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Uncertainty Estimation}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.1}Calibration}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.2}Far out of distribution detection}{9}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Few-shot classification accuracy (\%) on the test set. Fine‑tune results are from a single training run; ProtoNet and RelationNet results are averaged over 600 random episodes (mean \(\pm \) std).\relax }}{10}{}\protected@file@percent }
-\newlabel{tab:fewshot_results}{{6}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Few-shot test accuracy comparison. Error bars represent standard deviation (ProtoNet, RelationNet). Fine‑tune results are single runs.\relax }}{10}{}\protected@file@percent }
-\newlabel{fig:fewshot_acc}{{10}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Entropy distribution on far OOD (random internet images). ID samples concentrate at very low entropy, OOD samples at high entropy, with almost no overlap.\relax }}{11}{}\protected@file@percent }
-\newlabel{fig:far_entropy}{{11}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.3}Near out of distribution detection}{11}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to high entropy, with only a small overlap, consistent with the AUC of 0.985.\relax }}{11}{}\protected@file@percent }
-\newlabel{fig:near_entropy}{{12}{11}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces OOD detection AUC using MC Dropout entropy.\relax }}{11}{}\protected@file@percent }
-\newlabel{tab:ood_auc}{{7}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{11}{}\protected@file@percent }
-\newlabel{sec:discussion}{{6}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion and Future Work}{12}{}\protected@file@percent }
-\newlabel{sec:conclusion}{{7}{12}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Quality Control – Raw Data and Agreement Calculation}{14}{}\protected@file@percent }
-\newlabel{app:quality_control_raw}{{A}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Per‑Annotator Performance vs.\ Expert}{14}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Individual annotator agreement with the expert on the 279‑image review set.\relax }}{14}{}\protected@file@percent }
-\newlabel{tab:raw_annotator}{{8}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Consensus (Majority Vote) vs.\ Expert}{14}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Confusion matrix: consensus (majority vote) vs.\ expert on the 279‑image review set.\relax }}{14}{}\protected@file@percent }
-\newlabel{tab:conf_matrix}{{9}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Calculation of Agreement Metrics}{14}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Extended Difficulty Analysis}{14}{}\protected@file@percent }
-\newlabel{app:difficulty}{{B}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Software and Implementation Details}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Mathematical Definition of Metrics}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Silhouette Score}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Davies–Bouldin Index (DBI)}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Intra/Inter-class Distance Ratio}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C}Bootstrap Confidence Intervals and Significance Testing}{15}{}\protected@file@percent }
-\newlabel{app:bootstrap}{{C}{15}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Bootstrap 95\% confidence intervals (1,000 resamples) for test accuracy and macro F1 of all 15 architectures.\relax }}{16}{}\protected@file@percent }
-\newlabel{tab:bootstrap_ci}{{10}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Paired bootstrap comparison of ConvNeXt-V2 against every other architecture (accuracy difference, 1,000 resamples).\relax }}{16}{}\protected@file@percent }
-\newlabel{tab:bootstrap_pairwise}{{11}{16}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}LIME Faithfulness: Full Methodology and Per-Class Results}{16}{}\protected@file@percent }
-\newlabel{app:lime_faithfulness}{{D}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Protocol}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Per-Class Results}{17}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Mean LIME deletion-metric confidence drop by true class (280 test images total).\relax }}{17}{}\protected@file@percent }
-\newlabel{tab:lime_per_class}{{12}{17}}
-\@writefile{toc}{\contentsline {section}{\numberline {E}LLM/VLM Integration: Full Protocol and Results}{17}{}\protected@file@percent }
-\newlabel{app:llm}{{E}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}Escalation Protocol (Designs 1 and 2: LLM/VLM as Decision-Maker)}{17}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Design 1 (text-only) and Design 2 (vision) escalation results. ``CNN-forced'' is the accuracy ConvNeXt‑V2 achieves on the escalated subset when \emph  {not} escalated (i.e. forced to decide alone); ``LLM/VLM'' is the accuracy on that same subset when the LLM/VLM's diagnosis is used instead; ``Overall'' is the resulting accuracy on the full 280-image test set. The CNN-only baseline (no escalation) is 92.14\%.\relax }}{18}{}\protected@file@percent }
-\newlabel{tab:llm_escalation}{{13}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}Explanation Protocol (Design 3: VLM as Explainer)}{18}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Design 3: VLM disagreement flag vs. a free entropy-threshold baseline, scored against actual CNN mistakes on the 140-image escalated subset (125 of which parsed to a valid boolean; 19 were actual CNN mistakes).\relax }}{18}{}\protected@file@percent }
-\newlabel{tab:llm_flagging}{{14}{18}}
-\bibcite{he2016deep}{1}
-\bibcite{maaten2008visualizing}{2}
-\bibcite{rousseeuw1987silhouettes}{3}
-\bibcite{davies1979cluster}{4}
-\bibcite{calinski1974dendrite}{5}
-\bibcite{landis1977measurement}{6}
-\bibcite{hughes2015plant}{7}
-\bibcite{mohanty2016using}{8}
-\bibcite{barbedo2019plant}{9}
-\bibcite{howard2017mobilenets}{10}
-\bibcite{tan2019efficientnet}{11}
-\bibcite{liu2022convnet}{12}
-\bibcite{atila2021plant}{13}
-\bibcite{snell2017prototypical}{14}
-\bibcite{sung2018learning}{15}
-\bibcite{finn2017model}{16}
-\bibcite{arguelles2020few}{17}
-\bibcite{wang2021few}{18}
-\bibcite{guo2017calibration}{19}
-\bibcite{gal2016dropout}{20}
-\bibcite{wang2022uncertainty}{21}
-\bibcite{gonzalez2020identifying}{22}
-\bibcite{selvaraju2017grad}{23}
-\bibcite{sharma2020explainable}{24}
-\bibcite{ribeiro2016why}{25}
-\gdef \@abspage@last{20}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Model Interpretability}{14}{}\protected@file@percent }
+\newlabel{subsec:interpretability}{{6.2}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces LIME explanations for ConvNeXt‑V2 on two disease classes. Left, \textit  {chaymepla} (leaf scorch), where the highlighted region matches the scorched lesion; right, \textit  {moctrang} (powdery mildew), where the highlighted region matches the white powdery patches. Yellow outlines mark superpixels positively attributed to the predicted class.\relax }}{14}{}\protected@file@percent }
+\newlabel{fig:lime_examples}{{13}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Multi-modal Explanation Generation (CNN + LIME + VLM)}{14}{}\protected@file@percent }
+\newlabel{subsec:vlm_explain}{{6.3}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Three examples of the combined CNN + LIME + VLM explanation pipeline. Top row, original test images; bottom row, LIME overlay (yellow outlines) shown to the VLM alongside the CNN's prediction. Generated explanations are given in Table\nobreakspace  {}\ref {tab:explain_vlm_showcase}.\relax }}{15}{}\protected@file@percent }
+\newlabel{fig:explain_vlm_showcase}{{14}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces VLM-generated explanations for the three examples in Figure\nobreakspace  {}\ref {fig:explain_vlm_showcase}, translated from Vietnamese.\relax }}{15}{}\protected@file@percent }
+\newlabel{tab:explain_vlm_showcase}{{8}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Few-shot Learning}{15}{}\protected@file@percent }
+\newlabel{subsec:fewshot}{{6.4}{15}}
+\citation{guo2017calibration}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Few-shot test accuracy comparison. Error bars represent standard deviation (ProtoNet, RelationNet). Fine‑tune results are single runs.\relax }}{16}{}\protected@file@percent }
+\newlabel{fig:fewshot_acc}{{15}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Uncertainty Estimation}{16}{}\protected@file@percent }
+\newlabel{subsec:uncertainty}{{6.5}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.1}Calibration}{16}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Reliability diagrams (test set, 10 bins) before and after temperature scaling ($T=1.274$). Bars show empirical accuracy per confidence bin; the dashed diagonal is perfect calibration. Some bins are sparsely populated given the 280-image test set, which is why individual bars can look noisy even as the aggregate ECE improves.\relax }}{16}{}\protected@file@percent }
+\newlabel{fig:reliability_diagram}{{16}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.2}Far out of distribution detection}{16}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Few-shot classification accuracy (\%) on the test set. Fine‑tune results are from a single training run; ProtoNet and RelationNet results are averaged over 600 random episodes (mean \(\pm \) std).\relax }}{17}{}\protected@file@percent }
+\newlabel{tab:fewshot_results}{{9}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Entropy distribution on far OOD (random internet images). ID samples concentrate at very low entropy, OOD samples at high entropy, with almost no overlap.\relax }}{17}{}\protected@file@percent }
+\newlabel{fig:far_entropy}{{17}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.3}Near out of distribution detection}{17}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Entropy distribution on near OOD (PlantVillage leaves). ID samples still cluster at low entropy, while near OOD samples shift to high entropy, with only a small overlap, consistent with the AUC of 0.985.\relax }}{17}{}\protected@file@percent }
+\newlabel{fig:near_entropy}{{18}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces OOD detection AUC using MC Dropout entropy.\relax }}{17}{}\protected@file@percent }
+\newlabel{tab:ood_auc}{{10}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Cross-dataset Evaluation}{17}{}\protected@file@percent }
+\newlabel{subsec:cross_dataset}{{6.6}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.1}Naive-Deployment Behaviour on Off-Task Inputs}{17}{}\protected@file@percent }
+\citation{kotagiri2024avocado}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Percentage of out-of-domain images (far-OOD, random internet images; near-OOD, PlantVillage leaves) that a naive arg-max deployment, with no uncertainty gate, would accept at confidence $>0.5$, for each of the three demo models.\relax }}{18}{}\protected@file@percent }
+\newlabel{fig:cross_dataset_acceptance}{{19}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.2}Real Cross-Domain Evaluation (Train A, Test B)}{18}{}\protected@file@percent }
+\newlabel{subsec:real_cross_domain}{{6.6.2}{18}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Naive-deployment behaviour on domain-shifted inputs (no uncertainty gate; single forward pass, arg-max class).\relax }}{19}{}\protected@file@percent }
+\newlabel{tab:cross_dataset_predictions}{{11}{19}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Zero-shot cross-domain evaluation: BoVien trained on AvocadoLeaf (domain A), evaluated with no retraining on both its own test set and K-Kotagiri (domain B), both collapsed to binary (healthy vs. diseased) for a like-for-like comparison.\relax }}{19}{}\protected@file@percent }
+\newlabel{tab:real_cross_domain}{{12}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Binary accuracy on K-Kotagiri: zero-shot (BoVien's own classifier head) versus few-shot nearest-prototype adaptation using BoVien's fine-tuned backbone as a frozen feature extractor, at 5/10/20 labelled Kotagiri images per class (200 random supports each; error bars are $\pm 1$ std). The dashed line is BoVien's in-domain (AvocadoLeaf test set) binary accuracy.\relax }}{19}{}\protected@file@percent }
+\newlabel{fig:kotagiri_fewshot}{{20}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}Real-time Inference under Realistic Conditions}{19}{}\protected@file@percent }
+\newlabel{subsec:realtime_demo}{{6.7}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{19}{}\protected@file@percent }
+\newlabel{sec:discussion}{{7}{19}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Real-time inference latency and prediction confidence on a laptop webcam, measured over a live session (phone-displayed leaf images). \emph  {This measures host-machine latency, not true embedded-hardware latency; see Limitations, Section\nobreakspace  {}\ref {sec:discussion}.}\relax }}{20}{}\protected@file@percent }
+\newlabel{tab:realtime_demo}{{13}{20}}
+\citation{kotagiri2024avocado}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion and Future Work}{22}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{8}{22}}
+\@writefile{toc}{\let\numberline\tmptocnumberline}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}A}Raw Data Quality Control and Agreement Calculation}{24}{}\protected@file@percent }
+\newlabel{app:quality_control_raw}{{Appendix \nobreakspace  {}A}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}A.1}Per‑Annotator Performance vs.\ Expert}{24}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {A.14}{\ignorespaces Individual annotator agreement with the expert on the 279‑image review set.\relax }}{24}{}\protected@file@percent }
+\newlabel{tab:raw_annotator}{{A.14}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}A.2}Consensus (Majority Vote) vs.\ Expert}{24}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {A.15}{\ignorespaces Confusion matrix, consensus (majority vote) vs.\ expert on the 279‑image review set.\relax }}{24}{}\protected@file@percent }
+\newlabel{tab:conf_matrix}{{A.15}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}A.3}Calculation of Agreement Metrics}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}B}Extended Difficulty Analysis}{24}{}\protected@file@percent }
+\newlabel{app:difficulty}{{Appendix \nobreakspace  {}B}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}B.1}Software and Implementation Details}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}B.2}Mathematical Definition of Metrics}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Silhouette Score}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Davies–Bouldin Index (DBI)}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Intra/Inter-class Distance Ratio}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}C}Bootstrap Confidence Intervals and Significance Testing}{25}{}\protected@file@percent }
+\newlabel{app:bootstrap}{{Appendix \nobreakspace  {}C}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.21}{\ignorespaces Bootstrap 95\% CI forest plot of test accuracy, sorted by point estimate. Blue rows are the six models statistically tied with ConvNeXt-V2; grey rows are significantly below it ($p<0.05$). The dashed line marks ConvNeXt-V2's lower CI bound.\relax }}{26}{}\protected@file@percent }
+\newlabel{fig:bootstrap_forest}{{C.21}{26}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.16}{\ignorespaces Bootstrap 95\% confidence intervals (1,000 resamples) for test accuracy and macro F1 of all 15 architectures. The reported point estimates are the \emph  {mean} of the 1,000 bootstrap resamples, not the single test-set value in Table\nobreakspace  {}\ref {tab:arch_compare}; the two differ by at most 0.11 pp / 0.004 F1 for every model, well within the reported intervals, and the CI, not the point estimate, is what supports the statistical claims in this appendix.\relax }}{27}{}\protected@file@percent }
+\newlabel{tab:bootstrap_ci}{{C.16}{27}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.17}{\ignorespaces Paired bootstrap comparison of ConvNeXt-V2 against every other architecture (accuracy difference, 1,000 resamples).\relax }}{27}{}\protected@file@percent }
+\newlabel{tab:bootstrap_pairwise}{{C.17}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}C.1}Ablation Study Significance Testing}{27}{}\protected@file@percent }
+\newlabel{app:bootstrap_ablation}{{Appendix \nobreakspace  {}C.1}{27}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.18}{\ignorespaces Bootstrap 95\% confidence intervals (1,000 resamples) for the ablation study's four configurations.\relax }}{27}{}\protected@file@percent }
+\newlabel{tab:ablation_bootstrap_ci}{{C.18}{27}}
+\citation{petsiuk2018rise}
+\@writefile{lot}{\contentsline {table}{\numberline {C.19}{\ignorespaces Paired bootstrap comparison of the best ablation configuration (no augmentation, no class-weight) against the other three (accuracy difference, 1,000 resamples).\relax }}{28}{}\protected@file@percent }
+\newlabel{tab:ablation_bootstrap_pairwise}{{C.19}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}D}LIME Faithfulness Evaluation Methodology and Per-Class Results}{28}{}\protected@file@percent }
+\newlabel{app:lime_faithfulness}{{Appendix \nobreakspace  {}D}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}D.1}Protocol}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}D.2}Per-Class Results}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}E}LLM/VLM Integration Protocol and Results}{28}{}\protected@file@percent }
+\newlabel{app:llm}{{Appendix \nobreakspace  {}E}{28}}
+\@writefile{lot}{\contentsline {table}{\numberline {D.20}{\ignorespaces Mean LIME deletion-metric confidence drop by true class (280 test images total).\relax }}{29}{}\protected@file@percent }
+\newlabel{tab:lime_per_class}{{D.20}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix \nobreakspace  {}E.1}Explanation Protocol: VLM as Explainer}{29}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {E.21}{\ignorespaces VLM disagreement flag vs. a free entropy-threshold baseline, scored against actual CNN mistakes on the 125-image subset of the 140 escalated images that yielded a parseable VLM output (19 were actual CNN mistakes).\relax }}{29}{}\protected@file@percent }
+\newlabel{tab:llm_flagging}{{E.21}{29}}
+\bibstyle{elsarticle-num}
+\bibdata{src/references}
+\bibcite{hughes2015plant}{{1}{}{{}}{{}}}
+\bibcite{mohanty2016using}{{2}{}{{}}{{}}}
+\bibcite{shoaib2023review}{{3}{}{{}}{{}}}
+\bibcite{mustofa2023review}{{4}{}{{}}{{}}}
+\bibcite{singh2020plantdoc}{{5}{}{{}}{{}}}
+\bibcite{barbedo2019plant}{{6}{}{{}}{{}}}
+\bibcite{kotagiri2024avocado}{{7}{}{{}}{{}}}
+\bibcite{howard2017mobilenets}{{8}{}{{}}{{}}}
+\bibcite{tan2019efficientnet}{{9}{}{{}}{{}}}
+\bibcite{liu2022convnet}{{10}{}{{}}{{}}}
+\bibcite{woo2023convnextv2}{{11}{}{{}}{{}}}
+\bibcite{atila2021plant}{{12}{}{{}}{{}}}
+\bibcite{ribeiro2016why}{{13}{}{{}}{{}}}
+\bibcite{selvaraju2017grad}{{14}{}{{}}{{}}}
+\bibcite{sharma2020explainable}{{15}{}{{}}{{}}}
+\bibcite{awais2025agrogpt}{{16}{}{{}}{{}}}
+\bibcite{mahmood2026agrichain}{{17}{}{{}}{{}}}
+\bibcite{sakib2025plantexpertvqa}{{18}{}{{}}{{}}}
+\bibcite{hossain2026cropvqa}{{19}{}{{}}{{}}}
+\bibcite{snell2017prototypical}{{20}{}{{}}{{}}}
+\bibcite{sung2018learning}{{21}{}{{}}{{}}}
+\bibcite{finn2017model}{{22}{}{{}}{{}}}
+\bibcite{arguelles2020few}{{23}{}{{}}{{}}}
+\bibcite{wang2021few}{{24}{}{{}}{{}}}
+\bibcite{guo2017calibration}{{25}{}{{}}{{}}}
+\bibcite{gal2016dropout}{{26}{}{{}}{{}}}
+\bibcite{lakshminarayanan2017ensembles}{{27}{}{{}}{{}}}
+\bibcite{wang2022uncertainty}{{28}{}{{}}{{}}}
+\bibcite{gonzalez2020identifying}{{29}{}{{}}{{}}}
+\bibcite{wu2023laboratory}{{30}{}{{}}{{}}}
+\bibcite{sun2024crossdataset}{{31}{}{{}}{{}}}
+\bibcite{yang2024laboratory}{{32}{}{{}}{{}}}
+\bibcite{landis1977measurement}{{33}{}{{}}{{}}}
+\bibcite{he2016deep}{{34}{}{{}}{{}}}
+\bibcite{rousseeuw1987silhouettes}{{35}{}{{}}{{}}}
+\bibcite{davies1979cluster}{{36}{}{{}}{{}}}
+\bibcite{calinski1974dendrite}{{37}{}{{}}{{}}}
+\bibcite{maaten2008visualizing}{{38}{}{{}}{{}}}
+\bibcite{sandler2018mobilenetv2}{{39}{}{{}}{{}}}
+\bibcite{qin2024mobilenetv4}{{40}{}{{}}{{}}}
+\bibcite{han2020tinynet}{{41}{}{{}}{{}}}
+\bibcite{tang2022ghostnetv2}{{42}{}{{}}{{}}}
+\bibcite{vasu2023mobileone}{{43}{}{{}}{{}}}
+\bibcite{maaz2022edgenext}{{44}{}{{}}{{}}}
+\bibcite{vasu2023fastvit}{{45}{}{{}}{{}}}
+\bibcite{liu2023efficientvit}{{46}{}{{}}{{}}}
+\bibcite{dosovitskiy2021vit}{{47}{}{{}}{{}}}
+\bibcite{liu2021swin}{{48}{}{{}}{{}}}
+\bibcite{iqbal2018plotneuralnet}{{49}{}{{}}{{}}}
+\bibcite{petsiuk2018rise}{{50}{}{{}}{{}}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\gdef \@abspage@last{32}
