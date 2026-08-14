@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2026.4.10)  1 AUG 2026 15:07
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2026.4.10)  13 AUG 2026 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1310,29 +1310,121 @@ Overfull \hbox (1.66667pt too wide) has occurred while \output is active
 [1
 
 
-]) (./src/02_related_work.tex
+]
+Underfull \hbox (badness 2913) in paragraph at lines 15--16
+\TU/TeXGyreTermes(0)/m/n/10 disease-relevant leaf regions rather than back-
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 15--16
+\TU/TeXGyreTermes(0)/m/n/10 ground artefacts: hiding the $\OMS/txsy/m/n/10 ^^X$
+\TU/TeXGyreTermes(0)/m/n/10 20% of the im-
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 15--16
+\TU/TeXGyreTermes(0)/m/n/10 language model to generate grounded, natural-
+ []
+
+) (./src/02_related_work.tex
 Underfull \hbox (badness 1521) in paragraph at lines 4--5
 \TU/TeXGyreTermes(0)/m/n/10 lightweight architectures for edge deployment (Sec-
 
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 7--8
-\TU/TeXGyreTermes(0)/m/n/10 tains more than 50,000 images of healthy and dis-
+Underfull \vbox (badness 3758) has occurred while \output is active []
+
+ [2]
+Underfull \hbox (badness 1648) in paragraph at lines 7--8
+\TU/TeXGyreTermes(0)/m/n/10 and Salathé, 2015) contains more than 50,000 im-
  []
 
-[2]
+
+Underfull \hbox (badness 1142) in paragraph at lines 7--8
+\TU/TeXGyreTermes(0)/m/n/10 conditions and underlies a large share of this lite
+r-
+ []
+
+
+Underfull \hbox (badness 1325) in paragraph at lines 7--8
+\TU/TeXGyreTermes(0)/m/n/10 ature, with models such as VGG, ResNet, and In-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\TU/TeXGyreTermes(0)/m/n/9 lab-controlled (uniform background,
+[]|\TU/TeXGyreTermes(0)/m/n/9 lab-controlled
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
-[]|\TU/TeXGyreTermes(0)/m/n/9 field-collected first-hand across 3
+\TU/TeXGyreTermes(0)/m/n/9 (uniform back-
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 ground, fixed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\TU/TeXGyreTermes(0)/m/n/9 field, internet-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 sourced (un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 controlled and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\TU/TeXGyreTermes(0)/m/n/9 field-collected,
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 single site (Tamil
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 Nadu, India),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 no disease-level
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\TU/TeXGyreTermes(0)/m/n/9 field-collected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 first-hand across
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 3 provinces (de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 liberate coverage
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 23--23
+\TU/TeXGyreTermes(0)/m/n/9 of light, weather,
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 29--30
@@ -1346,56 +1438,50 @@ Underfull \hbox (badness 2103) in paragraph at lines 29--30
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 29--30
-\TU/TeXGyreTermes(0)/m/n/10 this paper (Section 5[]), instead modernise standar
-d
+Underfull \hbox (badness 6526) in paragraph at lines 29--30
+\TU/TeXGyreTermes(0)/m/n/10 Raspberry Pi) requires careful trade‑offs between
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 29--30
-\TU/TeXGyreTermes(0)/m/n/10 CNNs with design elements borrowed from vision
+Underfull \hbox (badness 2818) in paragraph at lines 29--30
+\TU/TeXGyreTermes(0)/m/n/10 disease classification have often adopted one such
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 29--30
-\TU/TeXGyreTermes(0)/m/n/10 architectures spanning all three families to identi
-fy
+Underfull \hbox (badness 1478) in paragraph at lines 29--30
+\TU/TeXGyreTermes(0)/m/n/10 ResNet-18 baseline unfreezes one stage rather than
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 29--30
-\TU/TeXGyreTermes(0)/m/n/10 discusses both and why neither is judged likely to
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Underfull \vbox (badness 1990) has occurred while \output is active []
+
+ [4]
+Underfull \hbox (badness 1107) in paragraph at lines 38--39
+\TU/TeXGyreTermes(0)/m/n/10 trained classification backbone directly as a metri
+c-
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 29--30
-\TU/TeXGyreTermes(0)/m/n/10 change which architecture is selected; Sections 6.6
-[]
- []
-
-[3]
-Underfull \hbox (badness 1067) in paragraph at lines 35--36
-\TU/TeXGyreTermes(0)/m/n/10 crop and disease identification, and AgriChain [[]]
-
- []
-
-
-Underfull \hbox (badness 1142) in paragraph at lines 35--36
-\TU/TeXGyreTermes(0)/m/n/10 (over 765,000 question-answer pairs across 38 crop
- []
-
-[4]
 Underfull \hbox (badness 3260) in paragraph at lines 43--43
 []\TU/TeXGyreTermes(0)/m/it/10 Cross-dataset Generalization in Plant Disease
  []
 
-) (./src/03a_dataset_construction.tex
-File: img/dataset/dataset_diagram.png Graphic file (type bmp)
-<img/dataset/dataset_diagram.png>
- [5]
+) (./src/03a_dataset_construction.tex [5]
 File: img/dataset/eda/sample_images.png Graphic file (type bmp)
 <img/dataset/eda/sample_images.png>
- [6]) (./src/03b_dataset_analysis.tex
+ [6]
+File: img/dataset/dataset_diagram.png Graphic file (type bmp)
+<img/dataset/dataset_diagram.png>
+
+Underfull \hbox (badness 1320) in paragraph at lines 68--69
+ \TU/TeXGyreTermes(0)/m/it/10 Agreement metric.[] \TU/TeXGyreTermes(0)/m/n/10 W
+e measured the agreement be-
+ []
+
+) (./src/03b_dataset_analysis.tex
 Underfull \hbox (badness 2012) in paragraph at lines 9--10
 []\TU/TeXGyreTermes(0)/m/n/10 The dataset consists of 1,861 images distributed
  []
@@ -1407,31 +1493,51 @@ Underfull \hbox (badness 1092) in paragraph at lines 46--47
 []\TU/TeXGyreTermes(0)/m/n/10 As supporting evidence for the imaging diversity
  []
 
+[7]
 File: img/dataset/eda/brightness_contrast.png Graphic file (type bmp)
 <img/dataset/eda/brightness_contrast.png>
-[7]
 File: img/dataset/eda/rgb_histograms.png Graphic file (type bmp)
 <img/dataset/eda/rgb_histograms.png>
+ [8]
 File: img/dataset/analysis/tsne_avocado_leaf.png Graphic file (type bmp)
 <img/dataset/analysis/tsne_avocado_leaf.png>
- [8]) (./src/04_proposed_model.tex
+) (./src/04_proposed_model.tex
+Underfull \hbox (badness 1024) in paragraph at lines 110--1
+[]\TU/TeXGyreTermes(0)/m/n/10 Taken together, the three analyses in this sectio
+n
+ []
+
+
 Underfull \hbox (badness 4621) in paragraph at lines 4--5
 []\TU/TeXGyreTermes(0)/m/n/10 Rather than designing a new architecture from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
+Underfull \vbox (badness 1062) has occurred while \output is active []
+
+ [9]
+Underfull \hbox (badness 2057) in paragraph at lines 12--13
+[]\TU/TeXGyreTermes(0)/m/n/10 mobile-oriented CNNs (MobileNet-V2 (Sandler
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+[]\TU/TeXGyreTermes(0)/m/n/10 hybrid CNN-Transformer designs (MobileOne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 []|\TU/TeXGyreTermes(0)/m/n/9 MobileNet-V2, MobileNet-V4, TinyNet, GhostNet-V2,
 
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 29--29
+Underfull \hbox (badness 1831) in paragraph at lines 37--37
 []|\TU/TeXGyreTermes(0)/m/n/9 MobileOne, EdgeNeXt, FastViT, EfficientViT, ConvN
 eXt-V1,
  []
 
-[9]
+[10]
 File: img/models/proposed_architecture.pdf Graphic file (type pdf)
 <use img/models/proposed_architecture.pdf>
 ) (./src/05_experiments.tex
@@ -1451,9 +1557,8 @@ Underfull \hbox (badness 1077) in paragraph at lines 39--40
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 39--40
-\TU/TeXGyreTermes(0)/m/n/10 ConvNeXt-V1) is \TU/TeXGyreTermes(0)/m/it/10 not \T
-U/TeXGyreTermes(0)/m/n/10 statistically significant at this
+Underfull \hbox (badness 1142) in paragraph at lines 39--40
+\TU/TeXGyreTermes(0)/m/n/10 lightweight model. ConvNeXt-V2’s advantage over
  []
 
 
@@ -1472,8 +1577,10 @@ Underfull \hbox (badness 1874) in paragraph at lines 39--40
 ion
  []
 
-[10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Underfull \hbox (badness 4582) in paragraph at lines 39--40
+\TU/TeXGyreTermes(0)/m/n/10 balance among accuracy, model size, and speed,
+ []
 
 File: img/models/f1_comparision.jpg Graphic file (type bmp)
 <img/models/f1_comparision.jpg>
@@ -1503,7 +1610,7 @@ Underfull \hbox (badness 1527) in paragraph at lines 60--61
 
 File: img/models/efficiency.jpg Graphic file (type bmp)
 <img/models/efficiency.jpg>
-
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 90--90
 []|\TU/TeXGyreTermes(0)/m/n/9 No augmentation, no class-
  []
@@ -1515,19 +1622,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--90
 
 File: img/experiments/ablation/ablation_accuracy.png Graphic file (type bmp)
 <img/experiments/ablation/ablation_accuracy.png>
-[12]
-Underfull \vbox (badness 4995) has occurred while \output is active []
-
+[13]
 File: img/experiments/evaluating/confusion_matrix_heatmap.png Graphic file (typ
 e bmp)
 <img/experiments/evaluating/confusion_matrix_heatmap.png>
 
-Underfull \hbox (badness 2698) in paragraph at lines 114--115
-\TU/TeXGyreTermes(0)/m/n/10 downs are in \TU/lmtt/c/it/10 deliverables/evaluati
-ng/{per_-
- []
-
-[13]
 Underfull \hbox (badness 3713) in paragraph at lines 119--120
 []\TU/TeXGyreTermes(0)/m/n/10 To assess whether ConvNeXt‑V2 relies on dis-
  []
@@ -1536,12 +1635,11 @@ File: img/experiments/xai/chaymepla_lime.png Graphic file (type bmp)
 <img/experiments/xai/chaymepla_lime.png>
 File: img/experiments/xai/moctrang_lime.png Graphic file (type bmp)
 <img/experiments/xai/moctrang_lime.png>
-
+[14]
 Underfull \hbox (badness 4441) in paragraph at lines 133--133
 []\TU/TeXGyreTermes(0)/m/it/10 Multi-modal Explanation Generation (CNN +
  []
 
-[14]
 File: img/experiments/llm/explain_vlm_showcase.png Graphic file (type bmp)
 <img/experiments/llm/explain_vlm_showcase.png>
 
@@ -1559,12 +1657,12 @@ Overfull \hbox (1.79865pt too wide) in paragraph at lines 154--163
  [][] 
  []
 
-
+[15]
 Underfull \hbox (badness 7631) in paragraph at lines 180--181
 []\TU/TeXGyreTermes(0)/b/n/10 Prototypical Networks substantially outper-
  []
 
-[15]
+
 Underfull \hbox (badness 7203) in paragraph at lines 182--183
 []\TU/TeXGyreTermes(0)/b/n/10 Relation Networks perform poorly \TU/TeXGyreTerme
 s(0)/m/n/10 on this
@@ -1577,10 +1675,10 @@ Underfull \hbox (badness 2326) in paragraph at lines 182--183
 
 File: img/experiments/fewshot/acc_comparison.jpg Graphic file (type bmp)
 <img/experiments/fewshot/acc_comparison.jpg>
+[16]
 File: img/experiments/calibration/reliability_diagram.png Graphic file (type bm
 p)
 <img/experiments/calibration/reliability_diagram.png>
-[16]
 File: img/experiments/uncertainty/far_entropy_histogram.png Graphic file (type 
 bmp)
 <img/experiments/uncertainty/far_entropy_histogram.png>
@@ -1589,6 +1687,7 @@ Overfull \hbox (7.32257pt too wide) in paragraph at lines 238--239
  [][] 
  []
 
+[17]
 File: img/experiments/uncertainty/near_entropy_histogram.png Graphic file (type
  bmp)
 <img/experiments/uncertainty/near_entropy_histogram.png>
@@ -1602,10 +1701,6 @@ Underfull \hbox (badness 2486) in paragraph at lines 275--276
 []\TU/TeXGyreTermes(0)/m/n/10 The uncertainty analysis above shows that Con-
  []
 
-
-Underfull \vbox (badness 1264) has occurred while \output is active []
-
- [17]
 File: img/experiments/cross_dataset/confidence_by_class.png Graphic file (type 
 bmp)
 <img/experiments/cross_dataset/confidence_by_class.png>
@@ -1621,39 +1716,41 @@ Underfull \hbox (badness 1371) in paragraph at lines 309--310
 -
  []
 
+[18]
 File: img/experiments/cross_dataset/kotagiri_fewshot_recovery.png Graphic file 
 (type bmp)
 <img/experiments/cross_dataset/kotagiri_fewshot_recovery.png>
-[18]
+
 Underfull \hbox (badness 2680) in paragraph at lines 350--351
 \TU/TeXGyreTermes(0)/m/n/10 GPU inference latency measured on batched, pre-
  []
 
-) (./src/06_discussion.tex
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+File: img/experiments/realtime_demo/imac_deployment.jpg Graphic file (type bmp)
+
+<img/experiments/realtime_demo/imac_deployment.jpg>
+)
+(./src/06_discussion.tex [20]
 Underfull \hbox (badness 1142) in paragraph at lines 4--5
 \TU/TeXGyreTermes(0)/b/n/10 non‑linearly‑separable dataset. \TU/TeXGyreTermes(0
 )/m/n/10 Section 4[] showed
  []
 
-[19]
+
 Underfull \hbox (badness 1286) in paragraph at lines 10--11
 \TU/TeXGyreTermes(0)/m/n/10 calise to symptomatic regions (scorched lesions for
 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Underfull \hbox (badness 1038) in paragraph at lines 12--13
 []\TU/TeXGyreTermes(0)/b/n/10 A language model is a useful explainer of the
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20])
-(./src/07_conclusion.tex
+[21]) (./src/07_conclusion.tex [22]
 Underfull \hbox (badness 2189) in paragraph at lines 4--5
 \TU/TeXGyreTermes(0)/m/n/10 15 lightweight and efficient architectures for edge
 -
@@ -1666,9 +1763,6 @@ Underfull \hbox (badness 1009) in paragraph at lines 4--5
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
 Underfull \hbox (badness 2486) in paragraph at lines 6--7
 \TU/TeXGyreTermes(0)/m/n/10 questions raised by these results. First, a naive-
  []
@@ -1679,40 +1773,47 @@ Underfull \hbox (badness 1082) in paragraph at lines 6--7
 r
  []
 
-) (./src/08_statements.tex [22]) [23
+) (./src/08_statements.tex [23]) [24
 
-] (./src/nn_appendix.tex [24
+] (./src/nn_appendix.tex [25
 
 
 ]
 File: img/experiments/bootstrap/bootstrap_forest.png Graphic file (type bmp)
 <img/experiments/bootstrap/bootstrap_forest.png>
- [25]
+ [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-[27] [28]) [29] (./main.bbl
-Underfull \hbox (badness 8151) in paragraph at lines 168--172
-[]\TU/TeXGyreTermes(0)/m/n/8 J. Sun, Cross-dataset evaluation of deep learning 
-models for plant pest and disease diagnosis, bioRxiv preprint (2024).
+ [27]
+[28] [29]) [30] (./main.bbl [31]
+Underfull \hbox (badness 10000) in paragraph at lines 149--156
+[]\TU/TeXGyreTermes(0)/m/n/8 K-Kotagiri (NRB), 2024.  [dataset] avocado leaf da
+taset.  \TU/lmtt/m/n/8 https://data.mendeley.com/datasets/6zy6wxhf2v/1\TU/TeXGy
+reTermes(0)/m/n/8 .
  []
 
 
-Underfull \vbox (badness 1270) has occurred while \output is active []
+Underfull \hbox (badness 7397) in paragraph at lines 349--356
+[]\TU/TeXGyreTermes(0)/m/n/8 Sun, J., 2024.  Cross-dataset evaluation of deep l
+earning models for plant pest and disease diagnosis.  bioRxiv preprint
+ []
 
- [30])
-[31] (./main.aux)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32])
+[33] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 24257 strings out of 476696
- 507441 string characters out of 5806955
- 1877018 words of memory out of 6000000
- 43986 multiletter control sequences out of 15000+600000
- 535855 words of font info for 142 fonts, out of 8000000 for 9000
+ 24268 strings out of 476696
+ 507811 string characters out of 5806955
+ 1876018 words of memory out of 6000000
+ 43996 multiletter control sequences out of 15000+600000
+ 535847 words of font info for 141 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,15n,85p,5890b,922s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,15n,85p,6029b,922s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (32 pages, 1240680 bytes).
+Output written on main.xdv (34 pages, 1314152 bytes).

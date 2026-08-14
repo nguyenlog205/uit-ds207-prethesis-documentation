@@ -1,272 +1,451 @@
-\begin{thebibliography}{10}
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-\expandafter\ifx\csname href\endcsname\relax
-  \def\href#1#2{#2} \def\path#1{#1}\fi
-
-\bibitem{hughes2015plant}
-D.~P. Hughes, M.~Salath{\'e}, An open access repository of images on plant
-  health to enable the development of mobile disease diagnostics, arXiv
-  preprint arXiv:1511.08060 (2015).
-
-\bibitem{mohanty2016using}
-S.~P. Mohanty, D.~P. Hughes, M.~Salath{\'e}, Using deep learning for
-  image-based plant disease detection, Frontiers in Plant Science 7 (2016)
-  1419.
-
-\bibitem{shoaib2023review}
-M.~Shoaib, B.~Shah, S.~El-Sappagh, A.~Ali, A.~Ullah, F.~Alenezi, T.~Gechev,
-  T.~Hussain, F.~Ali, An advanced deep learning models-based plant disease
-  detection: A review of recent research, Frontiers in Plant Science 14 (2023)
-  1158933.
-
-\bibitem{mustofa2023review}
-S.~Mustofa, M.~M.~H. Munna, Y.~R. Emon, G.~Rabbany, M.~T. Ahad, A comprehensive
-  review on plant leaf disease detection using deep learning, arXiv preprint
-  arXiv:2308.14087 (2023).
-
-\bibitem{singh2020plantdoc}
-D.~Singh, N.~Jain, P.~Jain, P.~Kayal, S.~Kumawat, N.~Batra, {PlantDoc}: A
-  dataset for visual plant disease detection, in: Proceedings of the 7th ACM
-  IKDD CoDS and 25th COMAD, 2020, pp. 249--253.
-
-\bibitem{barbedo2019plant}
-J.~G.~A. Barbedo, Plant disease identification from individual lesions and
-  spots using deep learning, Biosystems Engineering 180 (2019) 96--107.
-
-\bibitem{kotagiri2024avocado}
-{K-Kotagiri (NRB)}, Avocado leaf dataset,
-  \url{https://data.mendeley.com/datasets/6zy6wxhf2v/1} (2024).
-\newblock \href {https://doi.org/10.17632/6zy6wxhf2v.1}
-  {\path{doi:10.17632/6zy6wxhf2v.1}}.
-
-\bibitem{howard2017mobilenets}
-A.~G. Howard, M.~Zhu, B.~Chen, D.~Kalenichenko, W.~Wang, T.~Weyand,
-  M.~Andreetto, H.~Adam, Mobilenets: Efficient convolutional neural networks
-  for mobile vision applications, in: Proceedings of the IEEE Conference on
-  Computer Vision and Pattern Recognition (CVPR) Workshops, 2017.
-
-\bibitem{tan2019efficientnet}
-M.~Tan, Q.~V. Le, Efficientnet: Rethinking model scaling for convolutional
-  neural networks, in: Proceedings of the 36th International Conference on
-  Machine Learning (ICML), 2019, pp. 6105--6114.
-
-\bibitem{liu2022convnet}
-Z.~Liu, H.~Mao, C.-Y. Wu, C.~Feichtenhofer, T.~Darrell, S.~Xie, A convnet for
-  the 2020s, in: Proceedings of the IEEE/CVF Conference on Computer Vision and
-  Pattern Recognition (CVPR), 2022, pp. 11976--11986.
-
-\bibitem{woo2023convnextv2}
-S.~Woo, S.~Debnath, R.~Hu, X.~Chen, Z.~Liu, I.~S. Kweon, S.~Xie, {ConvNeXt V2}:
-  Co-designing and scaling convnets with masked autoencoders, in: Proceedings
-  of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),
-  2023.
-
-\bibitem{atila2021plant}
-{\"U}.~Atila, M.~U{\c{c}}ar, K.~Akyol, E.~U{\c{c}}ar, Plant leaf disease
-  classification using efficientnet deep learning model, Ecological Informatics
-  61 (2021) 101182.
-
-\bibitem{ribeiro2016why}
-M.~T. Ribeiro, S.~Singh, C.~Guestrin, ``why should {I} trust you?'': Explaining
-  the predictions of any classifier, in: Proceedings of the 22nd ACM SIGKDD
-  International Conference on Knowledge Discovery and Data Mining (KDD), 2016,
-  pp. 1135--1144.
-
-\bibitem{selvaraju2017grad}
-R.~R. Selvaraju, M.~Cogswell, A.~Das, R.~Vedantam, D.~Parikh, D.~Batra,
-  Grad-cam: Visual explanations from deep networks via gradient-based
-  localization, in: Proceedings of the IEEE International Conference on
-  Computer Vision (ICCV), 2017, pp. 618--626.
-
-\bibitem{sharma2020explainable}
-P.~Sharma, Y.~P.~S. Berwal, W.~Ghai, Performance analysis of deep learning cnn
-  models for disease detection in plants using image segmentation, Information
-  Processing in Agriculture 7~(4) (2020) 566--574.
-
-\bibitem{awais2025agrogpt}
-M.~Awais, A.~H. S.~A. Alharthi, A.~Kumar, H.~Cholakkal, R.~M. Anwer, Agrogpt:
-  Efficient agricultural vision-language model with expert tuning, in:
-  Proceedings of the IEEE/CVF Winter Conference on Applications of Computer
-  Vision (WACV), 2025.
-
-\bibitem{mahmood2026agrichain}
-H.~Mahmood, Y.~Yu, R.~Anwer, Agrichain: Visually-grounded expert-verified
-  reasoning for interpretable agricultural vision-language models, arXiv
-  preprint arXiv:2604.07814 (2026).
-
-\bibitem{sakib2025plantexpertvqa}
-S.~N. Sakib, N.~Haque, M.~Z. Hossain, S.~E. Arman, Plantexpertvqa: A visual
-  question answering dataset for benchmarking vision-language models in plant
-  science, arXiv preprint arXiv:2508.17117 (2025).
-
-\bibitem{hossain2026cropvqa}
-M.~Z. Hossain, M.~S.~S. Samu, M.~R. Islam, M.~S. Ansary, A two-stage multitask
-  vision-language framework for explainable crop disease visual question
-  answering, arXiv preprint arXiv:2601.05143 (2026).
-
-\bibitem{snell2017prototypical}
-J.~Snell, K.~Swersky, R.~S. Zemel, Prototypical networks for few-shot learning,
-  in: Advances in Neural Information Processing Systems (NeurIPS), Vol.~30,
-  2017, pp. 4077--4087.
-
-\bibitem{sung2018learning}
-F.~Sung, Y.~Yang, L.~Zhang, T.~Xiang, P.~H.~S. Torr, T.~M. Hospedales, Learning
-  to compare: Relation network for few-shot learning, in: Proceedings of the
-  IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018, pp.
-  1199--1208.
-
-\bibitem{finn2017model}
-C.~Finn, P.~Abbeel, S.~Levine, Model-agnostic meta-learning for fast adaptation
-  of deep networks, in: Proceedings of the 34th International Conference on
-  Machine Learning (ICML), 2017, pp. 1126--1135.
-
-\bibitem{arguelles2020few}
-D.~Arg{\"u}eso, A.~Pic{\'o}n, U.~Irusta, A.~Medela, M.~G. San-Emeterio,
-  A.~Bereciartua, A.~Alvarez-Gila, Few-shot learning approach for plant disease
-  classification using images taken in the field, Computers and Electronics in
-  Agriculture 175 (2020) 105542.
-
-\bibitem{wang2021few}
-C.~Wang, J.~Zhou, C.~Zhao, J.~Li, G.~Teng, H.~Wu, Few-shot vegetable disease
-  recognition model based on image text collaborative representation learning,
-  Computers and Electronics in Agriculture 184 (2021) 106098.
-
-\bibitem{guo2017calibration}
-C.~Guo, G.~Pleiss, Y.~Sun, K.~Q. Weinberger, On calibration of modern neural
-  networks, in: Proceedings of the 34th International Conference on Machine
-  Learning (ICML), 2017, pp. 1321--1330.
-
-\bibitem{gal2016dropout}
-Y.~Gal, Z.~Ghahramani, Dropout as a bayesian approximation: Representing model
-  uncertainty in deep learning, in: Proceedings of the 33rd International
-  Conference on Machine Learning (ICML), 2016, pp. 1050--1059.
-
-\bibitem{lakshminarayanan2017ensembles}
-B.~Lakshminarayanan, A.~Pritzel, C.~Blundell, Simple and scalable predictive
-  uncertainty estimation using deep ensembles, in: Advances in Neural
-  Information Processing Systems (NeurIPS), Vol.~30, 2017, pp. 6405--6416.
-
-\bibitem{wang2022uncertainty}
-C.~Wang, J.~Zhou, Y.~Zhang, H.~Wu, C.~Zhao, A plant disease recognition method
-  based on fusion of images and graph structure text, Frontiers in Plant
-  Science 13 (2022) 850258.
-
-\bibitem{gonzalez2020identifying}
-J.~Gonzalez, A.~G.~C. Gonzalez, R.~A.~M. Gonzalez, Identifying
-  out-of-distribution samples in plant disease classification using deep
-  ensembles, in: Proceedings of the 2020 International Joint Conference on
-  Neural Networks (IJCNN), 2020, pp. 1--8.
-
-\bibitem{wu2023laboratory}
-X.~Wu, X.~Fan, P.~Luo, S.~D. Choudhury, T.~Tjahjadi, C.~Hu, From laboratory to
-  field: Unsupervised domain adaptation for plant disease recognition in the
-  wild, Plant Phenomics 5 (2023) 0038.
-
-\bibitem{sun2024crossdataset}
-J.~Sun, Cross-dataset evaluation of deep learning models for plant pest and
-  disease diagnosis, bioRxiv preprint (2024).
-\newblock \href {https://doi.org/10.1101/2024.10.07.617111}
-  {\path{doi:10.1101/2024.10.07.617111}}.
-
-\bibitem{yang2024laboratory}
-S.~Yang, Q.~Feng, J.~Zhang, W.~Yang, W.~Zhou, W.~Yan, From laboratory to field:
-  cross-domain few-shot learning for crop disease identification in the field,
-  Frontiers in Plant Science 15 (2024) 1434222.
-
-\bibitem{landis1977measurement}
-J.~R. Landis, G.~G. Koch, The measurement of observer agreement for categorical
-  data, Biometrics 33~(1) (1977) 159--174.
-
-\bibitem{he2016deep}
-K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
-  in: Proceedings of the IEEE Conference on Computer Vision and Pattern
-  Recognition (CVPR), 2016, pp. 770--778.
-
-\bibitem{rousseeuw1987silhouettes}
-P.~J. Rousseeuw, Silhouettes: A graphical aid to the interpretation and
-  validation of cluster analysis, Journal of Computational and Applied
-  Mathematics 20 (1987) 53--65.
-
-\bibitem{davies1979cluster}
-D.~L. Davies, D.~W. Bouldin, A cluster separation measure, IEEE Transactions on
-  Pattern Analysis and Machine Intelligence PAMI-1~(2) (1979) 224--227.
-
-\bibitem{calinski1974dendrite}
-T.~Cali{\'n}ski, J.~Harabasz, A dendrite method for cluster analysis,
-  Communications in Statistics 3~(1) (1974) 1--27.
-
-\bibitem{maaten2008visualizing}
-L.~van~der Maaten, G.~Hinton, Visualizing data using t-sne, Journal of Machine
-  Learning Research 9 (2008) 2579--2605.
-
-\bibitem{sandler2018mobilenetv2}
-M.~Sandler, A.~Howard, M.~Zhu, A.~Zhmoginov, L.-C. Chen, Mobilenetv2: Inverted
-  residuals and linear bottlenecks, in: Proceedings of the IEEE Conference on
-  Computer Vision and Pattern Recognition (CVPR), 2018, pp. 4510--4520.
-
-\bibitem{qin2024mobilenetv4}
-D.~Qin, C.~Leichner, M.~Delakis, M.~Fornoni, S.~Luo, F.~Yang, W.~Wang,
-  C.~Banbury, C.~Ye, B.~Akin, V.~Aggarwal, T.~Zhu, D.~Moro, A.~Howard,
-  Mobilenetv4: Universal models for the mobile ecosystem, in: Proceedings of
-  the European Conference on Computer Vision (ECCV), 2024.
-
-\bibitem{han2020tinynet}
-K.~Han, Y.~Wang, Q.~Zhang, W.~Zhang, C.~Xu, T.~Zhang, Model rubik's cube:
-  Twisting resolution, depth and width for tinynets, in: Advances in Neural
-  Information Processing Systems (NeurIPS), Vol.~33, 2020.
-
-\bibitem{tang2022ghostnetv2}
-Y.~Tang, K.~Han, J.~Guo, C.~Xu, C.~Xu, Y.~Wang, {GhostNetV2}: Enhance cheap
-  operation with long-range attention, in: Advances in Neural Information
-  Processing Systems (NeurIPS), Vol.~35, 2022.
-
-\bibitem{vasu2023mobileone}
-P.~K.~A. Vasu, J.~Gabriel, J.~Zhu, O.~Tuzel, A.~Ranjan, {MobileOne}: An
-  improved one millisecond mobile backbone, in: Proceedings of the IEEE/CVF
-  Conference on Computer Vision and Pattern Recognition (CVPR), 2023.
-
-\bibitem{maaz2022edgenext}
-M.~Maaz, A.~Shaker, H.~Cholakkal, S.~Khan, S.~W. Zamir, R.~M. Anwer, F.~S.
-  Khan, {EdgeNeXt}: Efficiently amalgamated cnn-transformer architecture for
-  mobile vision applications, in: Proceedings of the European Conference on
-  Computer Vision Workshops (ECCVW), 2022.
-
-\bibitem{vasu2023fastvit}
-P.~K.~A. Vasu, J.~Gabriel, J.~Zhu, O.~Tuzel, A.~Ranjan, {FastViT}: A fast
-  hybrid vision transformer using structural reparameterization, in:
-  Proceedings of the IEEE/CVF International Conference on Computer Vision
-  (ICCV), 2023.
-
-\bibitem{liu2023efficientvit}
-X.~Liu, H.~Peng, N.~Zheng, Y.~Yang, H.~Hu, Y.~Yuan, {EfficientViT}: Memory
-  efficient vision transformer with cascaded group attention, in: Proceedings
-  of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),
-  2023.
-
-\bibitem{dosovitskiy2021vit}
-A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai,
-  T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly, J.~Uszkoreit,
-  N.~Houlsby, An image is worth 16x16 words: Transformers for image recognition
-  at scale, in: Proceedings of the International Conference on Learning
-  Representations (ICLR), 2021.
-
-\bibitem{liu2021swin}
-Z.~Liu, Y.~Lin, Y.~Cao, H.~Hu, Y.~Wei, Z.~Zhang, S.~Lin, B.~Guo, Swin
-  transformer: Hierarchical vision transformer using shifted windows, in:
-  Proceedings of the IEEE/CVF International Conference on Computer Vision
-  (ICCV), 2021, pp. 10012--10022.
-
-\bibitem{iqbal2018plotneuralnet}
-H.~Iqbal, Plotneuralnet, \url{https://github.com/HarisIqbal88/PlotNeuralNet}
-  (2018).
-\newblock \href {https://doi.org/10.5281/zenodo.2526396}
-  {\path{doi:10.5281/zenodo.2526396}}.
-
-\bibitem{petsiuk2018rise}
-V.~Petsiuk, A.~Das, K.~Saenko, {RISE}: Randomized input sampling for
-  explanation of black-box models, in: Proceedings of the British Machine
-  Vision Conference (BMVC), 2018.
+\begin{thebibliography}{48}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Arg{\"u}eso et~al.(2020)Arg{\"u}eso, Pic{\'o}n, Irusta, Medela,
+  San-Emeterio, Bereciartua and Alvarez-Gila}]{arguelles2020few}
+\bibinfo{author}{Arg{\"u}eso, D.}, \bibinfo{author}{Pic{\'o}n, A.},
+  \bibinfo{author}{Irusta, U.}, \bibinfo{author}{Medela, A.},
+  \bibinfo{author}{San-Emeterio, M.G.}, \bibinfo{author}{Bereciartua, A.},
+  \bibinfo{author}{Alvarez-Gila, A.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Few-shot learning approach for plant disease
+  classification using images taken in the field}.
+\newblock \bibinfo{journal}{Computers and Electronics in Agriculture}
+  \bibinfo{volume}{175}, \bibinfo{pages}{105542}.
+%Type = Article
+\bibitem[{Atila et~al.(2021)Atila, U{\c{c}}ar, Akyol and
+  U{\c{c}}ar}]{atila2021plant}
+\bibinfo{author}{Atila, {\"U}.}, \bibinfo{author}{U{\c{c}}ar, M.},
+  \bibinfo{author}{Akyol, K.}, \bibinfo{author}{U{\c{c}}ar, E.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Plant leaf disease classification using efficientnet
+  deep learning model}.
+\newblock \bibinfo{journal}{Ecological Informatics} \bibinfo{volume}{61},
+  \bibinfo{pages}{101182}.
+%Type = Inproceedings
+\bibitem[{Awais et~al.(2025)Awais, Alharthi, Kumar, Cholakkal and
+  Anwer}]{awais2025agrogpt}
+\bibinfo{author}{Awais, M.}, \bibinfo{author}{Alharthi, A.H.S.A.},
+  \bibinfo{author}{Kumar, A.}, \bibinfo{author}{Cholakkal, H.},
+  \bibinfo{author}{Anwer, R.M.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Agrogpt: Efficient agricultural vision-language model
+  with expert tuning}, in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF
+  Winter Conference on Applications of Computer Vision (WACV)}, pp.
+  \bibinfo{pages}{5687--5696}.
+%Type = Article
+\bibitem[{Barbedo(2019)}]{barbedo2019plant}
+\bibinfo{author}{Barbedo, J.G.A.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Plant disease identification from individual lesions
+  and spots using deep learning}.
+\newblock \bibinfo{journal}{Biosystems Engineering} \bibinfo{volume}{180},
+  \bibinfo{pages}{96--107}.
+%Type = Article
+\bibitem[{Davies and Bouldin(1979)}]{davies1979cluster}
+\bibinfo{author}{Davies, D.L.}, \bibinfo{author}{Bouldin, D.W.},
+  \bibinfo{year}{1979}.
+\newblock \bibinfo{title}{A cluster separation measure}.
+\newblock \bibinfo{journal}{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence} \bibinfo{volume}{PAMI-1}, \bibinfo{pages}{224--227}.
+%Type = Inproceedings
+\bibitem[{Dosovitskiy et~al.(2021)Dosovitskiy, Beyer, Kolesnikov, Weissenborn,
+  Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit and
+  Houlsby}]{dosovitskiy2021vit}
+\bibinfo{author}{Dosovitskiy, A.}, \bibinfo{author}{Beyer, L.},
+  \bibinfo{author}{Kolesnikov, A.}, \bibinfo{author}{Weissenborn, D.},
+  \bibinfo{author}{Zhai, X.}, \bibinfo{author}{Unterthiner, T.},
+  \bibinfo{author}{Dehghani, M.}, \bibinfo{author}{Minderer, M.},
+  \bibinfo{author}{Heigold, G.}, \bibinfo{author}{Gelly, S.},
+  \bibinfo{author}{Uszkoreit, J.}, \bibinfo{author}{Houlsby, N.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{An image is worth 16x16 words: Transformers for image
+  recognition at scale}, in: \bibinfo{booktitle}{Proceedings of the
+  International Conference on Learning Representations (ICLR)}.
+%Type = Inproceedings
+\bibitem[{Finn et~al.(2017)Finn, Abbeel and Levine}]{finn2017model}
+\bibinfo{author}{Finn, C.}, \bibinfo{author}{Abbeel, P.},
+  \bibinfo{author}{Levine, S.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Model-agnostic meta-learning for fast adaptation of
+  deep networks}, in: \bibinfo{booktitle}{Proceedings of the 34th International
+  Conference on Machine Learning (ICML)}, pp. \bibinfo{pages}{1126--1135}.
+%Type = Inproceedings
+\bibitem[{Gal and Ghahramani(2016)}]{gal2016dropout}
+\bibinfo{author}{Gal, Y.}, \bibinfo{author}{Ghahramani, Z.},
+  \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Dropout as a bayesian approximation: Representing
+  model uncertainty in deep learning}, in: \bibinfo{booktitle}{Proceedings of
+  the 33rd International Conference on Machine Learning (ICML)}, pp.
+  \bibinfo{pages}{1050--1059}.
+%Type = Inproceedings
+\bibitem[{Gonzalez et~al.(2020)Gonzalez, Gonzalez and
+  Gonzalez}]{gonzalez2020identifying}
+\bibinfo{author}{Gonzalez, J.}, \bibinfo{author}{Gonzalez, A.G.C.},
+  \bibinfo{author}{Gonzalez, R.A.M.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Identifying out-of-distribution samples in plant
+  disease classification using deep ensembles}, in:
+  \bibinfo{booktitle}{Proceedings of the 2020 International Joint Conference on
+  Neural Networks (IJCNN)}, pp. \bibinfo{pages}{1--8}.
+%Type = Inproceedings
+\bibitem[{Guo et~al.(2017)Guo, Pleiss, Sun and Weinberger}]{guo2017calibration}
+\bibinfo{author}{Guo, C.}, \bibinfo{author}{Pleiss, G.}, \bibinfo{author}{Sun,
+  Y.}, \bibinfo{author}{Weinberger, K.Q.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{On calibration of modern neural networks}, in:
+  \bibinfo{booktitle}{Proceedings of the 34th International Conference on
+  Machine Learning (ICML)}, pp. \bibinfo{pages}{1321--1330}.
+%Type = Inproceedings
+\bibitem[{Han et~al.(2020)Han, Wang, Zhang, Zhang, Xu and
+  Zhang}]{han2020tinynet}
+\bibinfo{author}{Han, K.}, \bibinfo{author}{Wang, Y.}, \bibinfo{author}{Zhang,
+  Q.}, \bibinfo{author}{Zhang, W.}, \bibinfo{author}{Xu, C.},
+  \bibinfo{author}{Zhang, T.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Model rubik's cube: Twisting resolution, depth and
+  width for tinynets}, in: \bibinfo{booktitle}{Advances in Neural Information
+  Processing Systems (NeurIPS)}.
+%Type = Inproceedings
+\bibitem[{He et~al.(2016)He, Zhang, Ren and Sun}]{he2016deep}
+\bibinfo{author}{He, K.}, \bibinfo{author}{Zhang, X.}, \bibinfo{author}{Ren,
+  S.}, \bibinfo{author}{Sun, J.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Deep residual learning for image recognition}, in:
+  \bibinfo{booktitle}{Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, pp. \bibinfo{pages}{770--778}.
+%Type = Article
+\bibitem[{Hossain et~al.(2026)Hossain, Samu, Islam and
+  Ansary}]{hossain2026cropvqa}
+\bibinfo{author}{Hossain, M.Z.}, \bibinfo{author}{Samu, M.S.S.},
+  \bibinfo{author}{Islam, M.R.}, \bibinfo{author}{Ansary, M.S.},
+  \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{A two-stage multitask vision-language framework for
+  explainable crop disease visual question answering}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2601.05143} .
+%Type = Article
+\bibitem[{Howard et~al.(2017)Howard, Zhu, Chen, Kalenichenko, Wang, Weyand,
+  Andreetto and Adam}]{howard2017mobilenets}
+\bibinfo{author}{Howard, A.G.}, \bibinfo{author}{Zhu, M.},
+  \bibinfo{author}{Chen, B.}, \bibinfo{author}{Kalenichenko, D.},
+  \bibinfo{author}{Wang, W.}, \bibinfo{author}{Weyand, T.},
+  \bibinfo{author}{Andreetto, M.}, \bibinfo{author}{Adam, H.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Mobilenets: Efficient convolutional neural networks
+  for mobile vision applications}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1704.04861} .
+%Type = Article
+\bibitem[{Hughes and Salath{\'e}(2015)}]{hughes2015plant}
+\bibinfo{author}{Hughes, D.P.}, \bibinfo{author}{Salath{\'e}, M.},
+  \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{An open access repository of images on plant health
+  to enable the development of mobile disease diagnostics}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1511.08060} .
+%Type = Misc
+\bibitem[{{K-Kotagiri (NRB)}(2024)}]{kotagiri2024avocado}
+\bibinfo{author}{{K-Kotagiri (NRB)}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{[dataset] avocado leaf dataset}.
+\newblock
+  \bibinfo{howpublished}{\url{https://data.mendeley.com/datasets/6zy6wxhf2v/1}}.
+\newblock \DOIprefix\doi{10.17632/6zy6wxhf2v.1}.
+%Type = Inproceedings
+\bibitem[{Lakshminarayanan et~al.(2017)Lakshminarayanan, Pritzel and
+  Blundell}]{lakshminarayanan2017ensembles}
+\bibinfo{author}{Lakshminarayanan, B.}, \bibinfo{author}{Pritzel, A.},
+  \bibinfo{author}{Blundell, C.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Simple and scalable predictive uncertainty estimation
+  using deep ensembles}, in: \bibinfo{booktitle}{Advances in Neural Information
+  Processing Systems (NeurIPS)}, pp. \bibinfo{pages}{6405--6416}.
+%Type = Article
+\bibitem[{Landis and Koch(1977)}]{landis1977measurement}
+\bibinfo{author}{Landis, J.R.}, \bibinfo{author}{Koch, G.G.},
+  \bibinfo{year}{1977}.
+\newblock \bibinfo{title}{The measurement of observer agreement for categorical
+  data}.
+\newblock \bibinfo{journal}{Biometrics} \bibinfo{volume}{33},
+  \bibinfo{pages}{159--174}.
+%Type = Inproceedings
+\bibitem[{Liu et~al.(2023)Liu, Peng, Zheng, Yang, Hu and
+  Yuan}]{liu2023efficientvit}
+\bibinfo{author}{Liu, X.}, \bibinfo{author}{Peng, H.}, \bibinfo{author}{Zheng,
+  N.}, \bibinfo{author}{Yang, Y.}, \bibinfo{author}{Hu, H.},
+  \bibinfo{author}{Yuan, Y.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{{EfficientViT}: Memory efficient vision transformer
+  with cascaded group attention}, in: \bibinfo{booktitle}{Proceedings of the
+  IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pp.
+  \bibinfo{pages}{14420--14430}.
+%Type = Inproceedings
+\bibitem[{Liu et~al.(2021)Liu, Lin, Cao, Hu, Wei, Zhang, Lin and
+  Guo}]{liu2021swin}
+\bibinfo{author}{Liu, Z.}, \bibinfo{author}{Lin, Y.}, \bibinfo{author}{Cao,
+  Y.}, \bibinfo{author}{Hu, H.}, \bibinfo{author}{Wei, Y.},
+  \bibinfo{author}{Zhang, Z.}, \bibinfo{author}{Lin, S.}, \bibinfo{author}{Guo,
+  B.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Swin transformer: Hierarchical vision transformer
+  using shifted windows}, in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF
+  International Conference on Computer Vision (ICCV)}, pp.
+  \bibinfo{pages}{10012--10022}.
+%Type = Inproceedings
+\bibitem[{Liu et~al.(2022)Liu, Mao, Wu, Feichtenhofer, Darrell and
+  Xie}]{liu2022convnet}
+\bibinfo{author}{Liu, Z.}, \bibinfo{author}{Mao, H.}, \bibinfo{author}{Wu,
+  C.Y.}, \bibinfo{author}{Feichtenhofer, C.}, \bibinfo{author}{Darrell, T.},
+  \bibinfo{author}{Xie, S.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{A convnet for the 2020s}, in:
+  \bibinfo{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, pp. \bibinfo{pages}{11976--11986}.
+%Type = Article
+\bibitem[{van~der Maaten and Hinton(2008)}]{maaten2008visualizing}
+\bibinfo{author}{van~der Maaten, L.}, \bibinfo{author}{Hinton, G.},
+  \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{Visualizing data using t-sne}.
+\newblock \bibinfo{journal}{Journal of Machine Learning Research}
+  \bibinfo{volume}{9}, \bibinfo{pages}{2579--2605}.
+%Type = Inproceedings
+\bibitem[{Maaz et~al.(2022)Maaz, Shaker, Cholakkal, Khan, Zamir, Anwer and
+  Khan}]{maaz2022edgenext}
+\bibinfo{author}{Maaz, M.}, \bibinfo{author}{Shaker, A.},
+  \bibinfo{author}{Cholakkal, H.}, \bibinfo{author}{Khan, S.},
+  \bibinfo{author}{Zamir, S.W.}, \bibinfo{author}{Anwer, R.M.},
+  \bibinfo{author}{Khan, F.S.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{{EdgeNeXt}: Efficiently amalgamated cnn-transformer
+  architecture for mobile vision applications}, in:
+  \bibinfo{booktitle}{Proceedings of the European Conference on Computer Vision
+  Workshops (ECCVW)}, pp. \bibinfo{pages}{3--20}.
+%Type = Inproceedings
+\bibitem[{Mahmood et~al.(2026)Mahmood, Yu and Anwer}]{mahmood2026agrichain}
+\bibinfo{author}{Mahmood, H.}, \bibinfo{author}{Yu, Y.},
+  \bibinfo{author}{Anwer, R.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Agrichain: Visually-grounded expert-verified
+  reasoning for interpretable agricultural vision-language models}, in:
+  \bibinfo{booktitle}{Proceedings of the Fifteenth Language Resources and
+  Evaluation Conference (LREC)}, \bibinfo{publisher}{ELRA Language Resource
+  Association}. pp. \bibinfo{pages}{2268--2276}.
+\newblock \DOIprefix\doi{10.63317/2bv5k9hnduop}.
+%Type = Article
+\bibitem[{Mohanty et~al.(2016)Mohanty, Hughes and
+  Salath{\'e}}]{mohanty2016using}
+\bibinfo{author}{Mohanty, S.P.}, \bibinfo{author}{Hughes, D.P.},
+  \bibinfo{author}{Salath{\'e}, M.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Using deep learning for image-based plant disease
+  detection}.
+\newblock \bibinfo{journal}{Frontiers in Plant Science} \bibinfo{volume}{7},
+  \bibinfo{pages}{1419}.
+%Type = Article
+\bibitem[{Mustofa et~al.(2023)Mustofa, Munna, Emon, Rabbany and
+  Ahad}]{mustofa2023review}
+\bibinfo{author}{Mustofa, S.}, \bibinfo{author}{Munna, M.M.H.},
+  \bibinfo{author}{Emon, Y.R.}, \bibinfo{author}{Rabbany, G.},
+  \bibinfo{author}{Ahad, M.T.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{A comprehensive review on plant leaf disease
+  detection using deep learning}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2308.14087} .
+%Type = Inproceedings
+\bibitem[{Petsiuk et~al.(2018)Petsiuk, Das and Saenko}]{petsiuk2018rise}
+\bibinfo{author}{Petsiuk, V.}, \bibinfo{author}{Das, A.},
+  \bibinfo{author}{Saenko, K.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{{RISE}: Randomized input sampling for explanation of
+  black-box models}, in: \bibinfo{booktitle}{Proceedings of the British Machine
+  Vision Conference (BMVC)}, p. \bibinfo{pages}{151}.
+%Type = Inproceedings
+\bibitem[{Qin et~al.(2024)Qin, Leichner, Delakis, Fornoni, Luo, Yang, Wang,
+  Banbury, Ye, Akin, Aggarwal, Zhu, Moro and Howard}]{qin2024mobilenetv4}
+\bibinfo{author}{Qin, D.}, \bibinfo{author}{Leichner, C.},
+  \bibinfo{author}{Delakis, M.}, \bibinfo{author}{Fornoni, M.},
+  \bibinfo{author}{Luo, S.}, \bibinfo{author}{Yang, F.}, \bibinfo{author}{Wang,
+  W.}, \bibinfo{author}{Banbury, C.}, \bibinfo{author}{Ye, C.},
+  \bibinfo{author}{Akin, B.}, \bibinfo{author}{Aggarwal, V.},
+  \bibinfo{author}{Zhu, T.}, \bibinfo{author}{Moro, D.},
+  \bibinfo{author}{Howard, A.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Mobilenetv4: Universal models for the mobile
+  ecosystem}, in: \bibinfo{booktitle}{Proceedings of the European Conference on
+  Computer Vision (ECCV)}, pp. \bibinfo{pages}{78--96}.
+%Type = Inproceedings
+\bibitem[{Ribeiro et~al.(2016)Ribeiro, Singh and Guestrin}]{ribeiro2016why}
+\bibinfo{author}{Ribeiro, M.T.}, \bibinfo{author}{Singh, S.},
+  \bibinfo{author}{Guestrin, C.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{``why should {I} trust you?'': Explaining the
+  predictions of any classifier}, in: \bibinfo{booktitle}{Proceedings of the
+  22nd ACM SIGKDD International Conference on Knowledge Discovery and Data
+  Mining (KDD)}, pp. \bibinfo{pages}{1135--1144}.
+%Type = Article
+\bibitem[{Rousseeuw(1987)}]{rousseeuw1987silhouettes}
+\bibinfo{author}{Rousseeuw, P.J.}, \bibinfo{year}{1987}.
+\newblock \bibinfo{title}{Silhouettes: A graphical aid to the interpretation
+  and validation of cluster analysis}.
+\newblock \bibinfo{journal}{Journal of Computational and Applied Mathematics}
+  \bibinfo{volume}{20}, \bibinfo{pages}{53--65}.
+%Type = Article
+\bibitem[{Sakib et~al.(2025)Sakib, Haque, Hossain and
+  Arman}]{sakib2025plantexpertvqa}
+\bibinfo{author}{Sakib, S.N.}, \bibinfo{author}{Haque, N.},
+  \bibinfo{author}{Hossain, M.Z.}, \bibinfo{author}{Arman, S.E.},
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Plantexpertvqa: A visual question answering dataset
+  for benchmarking vision-language models in plant science}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2508.17117} .
+%Type = Inproceedings
+\bibitem[{Sandler et~al.(2018)Sandler, Howard, Zhu, Zhmoginov and
+  Chen}]{sandler2018mobilenetv2}
+\bibinfo{author}{Sandler, M.}, \bibinfo{author}{Howard, A.},
+  \bibinfo{author}{Zhu, M.}, \bibinfo{author}{Zhmoginov, A.},
+  \bibinfo{author}{Chen, L.C.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Mobilenetv2: Inverted residuals and linear
+  bottlenecks}, in: \bibinfo{booktitle}{Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, pp.
+  \bibinfo{pages}{4510--4520}.
+%Type = Inproceedings
+\bibitem[{Selvaraju et~al.(2017)Selvaraju, Cogswell, Das, Vedantam, Parikh and
+  Batra}]{selvaraju2017grad}
+\bibinfo{author}{Selvaraju, R.R.}, \bibinfo{author}{Cogswell, M.},
+  \bibinfo{author}{Das, A.}, \bibinfo{author}{Vedantam, R.},
+  \bibinfo{author}{Parikh, D.}, \bibinfo{author}{Batra, D.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Grad-cam: Visual explanations from deep networks via
+  gradient-based localization}, in: \bibinfo{booktitle}{Proceedings of the IEEE
+  International Conference on Computer Vision (ICCV)}, pp.
+  \bibinfo{pages}{618--626}.
+%Type = Article
+\bibitem[{Sharma et~al.(2020)Sharma, Berwal and Ghai}]{sharma2020explainable}
+\bibinfo{author}{Sharma, P.}, \bibinfo{author}{Berwal, Y.P.S.},
+  \bibinfo{author}{Ghai, W.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Performance analysis of deep learning cnn models for
+  disease detection in plants using image segmentation}.
+\newblock \bibinfo{journal}{Information Processing in Agriculture}
+  \bibinfo{volume}{7}, \bibinfo{pages}{566--574}.
+%Type = Article
+\bibitem[{Shoaib et~al.(2023)Shoaib, Shah, El-Sappagh, Ali, Ullah, Alenezi,
+  Gechev, Hussain and Ali}]{shoaib2023review}
+\bibinfo{author}{Shoaib, M.}, \bibinfo{author}{Shah, B.},
+  \bibinfo{author}{El-Sappagh, S.}, \bibinfo{author}{Ali, A.},
+  \bibinfo{author}{Ullah, A.}, \bibinfo{author}{Alenezi, F.},
+  \bibinfo{author}{Gechev, T.}, \bibinfo{author}{Hussain, T.},
+  \bibinfo{author}{Ali, F.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{An advanced deep learning models-based plant disease
+  detection: A review of recent research}.
+\newblock \bibinfo{journal}{Frontiers in Plant Science} \bibinfo{volume}{14},
+  \bibinfo{pages}{1158933}.
+%Type = Inproceedings
+\bibitem[{Singh et~al.(2020)Singh, Jain, Jain, Kayal, Kumawat and
+  Batra}]{singh2020plantdoc}
+\bibinfo{author}{Singh, D.}, \bibinfo{author}{Jain, N.}, \bibinfo{author}{Jain,
+  P.}, \bibinfo{author}{Kayal, P.}, \bibinfo{author}{Kumawat, S.},
+  \bibinfo{author}{Batra, N.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{{PlantDoc}: A dataset for visual plant disease
+  detection}, in: \bibinfo{booktitle}{Proceedings of the 7th ACM IKDD CoDS and
+  25th COMAD}, pp. \bibinfo{pages}{249--253}.
+%Type = Inproceedings
+\bibitem[{Snell et~al.(2017)Snell, Swersky and Zemel}]{snell2017prototypical}
+\bibinfo{author}{Snell, J.}, \bibinfo{author}{Swersky, K.},
+  \bibinfo{author}{Zemel, R.S.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Prototypical networks for few-shot learning}, in:
+  \bibinfo{booktitle}{Advances in Neural Information Processing Systems
+  (NeurIPS)}, pp. \bibinfo{pages}{4077--4087}.
+%Type = Article
+\bibitem[{Sun(2024)}]{sun2024crossdataset}
+\bibinfo{author}{Sun, J.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Cross-dataset evaluation of deep learning models for
+  plant pest and disease diagnosis}.
+\newblock \bibinfo{journal}{bioRxiv preprint}
+  \DOIprefix\doi{10.1101/2024.10.07.617111}.
+%Type = Inproceedings
+\bibitem[{Sung et~al.(2018)Sung, Yang, Zhang, Xiang, Torr and
+  Hospedales}]{sung2018learning}
+\bibinfo{author}{Sung, F.}, \bibinfo{author}{Yang, Y.}, \bibinfo{author}{Zhang,
+  L.}, \bibinfo{author}{Xiang, T.}, \bibinfo{author}{Torr, P.H.S.},
+  \bibinfo{author}{Hospedales, T.M.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Learning to compare: Relation network for few-shot
+  learning}, in: \bibinfo{booktitle}{Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, pp.
+  \bibinfo{pages}{1199--1208}.
+%Type = Inproceedings
+\bibitem[{Tan and Le(2019)}]{tan2019efficientnet}
+\bibinfo{author}{Tan, M.}, \bibinfo{author}{Le, Q.V.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Efficientnet: Rethinking model scaling for
+  convolutional neural networks}, in: \bibinfo{booktitle}{Proceedings of the
+  36th International Conference on Machine Learning (ICML)}, pp.
+  \bibinfo{pages}{6105--6114}.
+%Type = Inproceedings
+\bibitem[{Tang et~al.(2022)Tang, Han, Guo, Xu, Xu and
+  Wang}]{tang2022ghostnetv2}
+\bibinfo{author}{Tang, Y.}, \bibinfo{author}{Han, K.}, \bibinfo{author}{Guo,
+  J.}, \bibinfo{author}{Xu, C.}, \bibinfo{author}{Xu, C.},
+  \bibinfo{author}{Wang, Y.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{{GhostNetV2}: Enhance cheap operation with long-range
+  attention}, in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems (NeurIPS)}.
+%Type = Inproceedings
+\bibitem[{Vasu et~al.(2023a)Vasu, Gabriel, Zhu, Tuzel and
+  Ranjan}]{vasu2023fastvit}
+\bibinfo{author}{Vasu, P.K.A.}, \bibinfo{author}{Gabriel, J.},
+  \bibinfo{author}{Zhu, J.}, \bibinfo{author}{Tuzel, O.},
+  \bibinfo{author}{Ranjan, A.}, \bibinfo{year}{2023}a.
+\newblock \bibinfo{title}{{FastViT}: A fast hybrid vision transformer using
+  structural reparameterization}, in: \bibinfo{booktitle}{Proceedings of the
+  IEEE/CVF International Conference on Computer Vision (ICCV)}, pp.
+  \bibinfo{pages}{5785--5795}.
+%Type = Inproceedings
+\bibitem[{Vasu et~al.(2023b)Vasu, Gabriel, Zhu, Tuzel and
+  Ranjan}]{vasu2023mobileone}
+\bibinfo{author}{Vasu, P.K.A.}, \bibinfo{author}{Gabriel, J.},
+  \bibinfo{author}{Zhu, J.}, \bibinfo{author}{Tuzel, O.},
+  \bibinfo{author}{Ranjan, A.}, \bibinfo{year}{2023}b.
+\newblock \bibinfo{title}{{MobileOne}: An improved one millisecond mobile
+  backbone}, in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, pp.
+  \bibinfo{pages}{7907--7917}.
+%Type = Article
+\bibitem[{Wang et~al.(2022)Wang, Zhou, Zhang, Wu and
+  Zhao}]{wang2022uncertainty}
+\bibinfo{author}{Wang, C.}, \bibinfo{author}{Zhou, J.}, \bibinfo{author}{Zhang,
+  Y.}, \bibinfo{author}{Wu, H.}, \bibinfo{author}{Zhao, C.},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{A plant disease recognition method based on fusion of
+  images and graph structure text}.
+\newblock \bibinfo{journal}{Frontiers in Plant Science} \bibinfo{volume}{13},
+  \bibinfo{pages}{850258}.
+%Type = Article
+\bibitem[{Wang et~al.(2021)Wang, Zhou, Zhao, Li, Teng and Wu}]{wang2021few}
+\bibinfo{author}{Wang, C.}, \bibinfo{author}{Zhou, J.}, \bibinfo{author}{Zhao,
+  C.}, \bibinfo{author}{Li, J.}, \bibinfo{author}{Teng, G.},
+  \bibinfo{author}{Wu, H.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Few-shot vegetable disease recognition model based on
+  image text collaborative representation learning}.
+\newblock \bibinfo{journal}{Computers and Electronics in Agriculture}
+  \bibinfo{volume}{184}, \bibinfo{pages}{106098}.
+%Type = Inproceedings
+\bibitem[{Woo et~al.(2023)Woo, Debnath, Hu, Chen, Liu, Kweon and
+  Xie}]{woo2023convnextv2}
+\bibinfo{author}{Woo, S.}, \bibinfo{author}{Debnath, S.}, \bibinfo{author}{Hu,
+  R.}, \bibinfo{author}{Chen, X.}, \bibinfo{author}{Liu, Z.},
+  \bibinfo{author}{Kweon, I.S.}, \bibinfo{author}{Xie, S.},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{{ConvNeXt V2}: Co-designing and scaling convnets with
+  masked autoencoders}, in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition (CVPR)}, pp.
+  \bibinfo{pages}{16133--16142}.
+%Type = Article
+\bibitem[{Wu et~al.(2023)Wu, Fan, Luo, Choudhury, Tjahjadi and
+  Hu}]{wu2023laboratory}
+\bibinfo{author}{Wu, X.}, \bibinfo{author}{Fan, X.}, \bibinfo{author}{Luo, P.},
+  \bibinfo{author}{Choudhury, S.D.}, \bibinfo{author}{Tjahjadi, T.},
+  \bibinfo{author}{Hu, C.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{From laboratory to field: Unsupervised domain
+  adaptation for plant disease recognition in the wild}.
+\newblock \bibinfo{journal}{Plant Phenomics} \bibinfo{volume}{5},
+  \bibinfo{pages}{0038}.
+%Type = Article
+\bibitem[{Yang et~al.(2024)Yang, Feng, Zhang, Yang, Zhou and
+  Yan}]{yang2024laboratory}
+\bibinfo{author}{Yang, S.}, \bibinfo{author}{Feng, Q.}, \bibinfo{author}{Zhang,
+  J.}, \bibinfo{author}{Yang, W.}, \bibinfo{author}{Zhou, W.},
+  \bibinfo{author}{Yan, W.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{From laboratory to field: cross-domain few-shot
+  learning for crop disease identification in the field}.
+\newblock \bibinfo{journal}{Frontiers in Plant Science} \bibinfo{volume}{15},
+  \bibinfo{pages}{1434222}.
 
 \end{thebibliography}

@@ -103,7 +103,7 @@ For each cluster \(C_i\), define its scatter \(S_i\) as the average distance of 
 \[
 DB = \frac{1}{k} \sum_{i=1}^{k} \max_{j \neq i} \left( \frac{S_i + S_j}{d_{ij}} \right),
 \]
-where \(k\) is the number of clusters. Lower DBI values imply better separation; values above 1 often indicate overlapping clusters.
+where \(k\) is the number of clusters. Lower DBI values imply better separation. The index has no fixed upper bound and is best interpreted relative to other clustering configurations on the same data rather than against a universal cut-off.
 
 \paragraph{Intra/Inter-class Distance Ratio}
 Let \(\mathbf{c}_g\) denote the centroid of class \(g\). The average intra-class distance is:
@@ -115,17 +115,6 @@ The average inter-class distance is defined as the mean pairwise distance betwee
 D_{\text{inter}} = \frac{2}{k(k-1)} \sum_{1 \le i < j \le k} \|\mathbf{c}_i - \mathbf{c}_j\|_2.
 \]
 The ratio \(R = D_{\text{intra}} / D_{\text{inter}}\) quantifies the trade-off between within-class compactness and between-class separation. A ratio \(R \ge 1\) suggests that classes are not well separated.
-
-% \subsection{Additional Visualisation}
-
-% Figure~\ref{fig:tsne_full} presents the same t-SNE projection as in the main paper, but with each class explicitly labelled for easier interpretation.
-
-% \begin{figure}[htbp]
-% \centering
-% \includegraphics[width=0.85\textwidth]{img/dataset/analysis/tsne_avocado_leaf_labelled.png}
-% \caption{t-SNE projection with explicit class labels. Overlapping clusters are evident, especially between \textit{chaymepla} and \textit{repsap}.}
-% \label{fig:tsne_full}
-% \end{figure}
 
 
 \section{Bootstrap Confidence Intervals and Significance Testing}
@@ -199,7 +188,7 @@ VanillaCNN       & +28.64 & [+23.21, +34.29]   & $<$0.001 \\
 \end{tabular}
 \end{table}
 
-\textbf{Interpretation.} ConvNeXt-V2's accuracy advantage over the next five models on the leaderboard (SwinTransformer, MobileOne, ViT, EdgeNeXt, ConvNeXt-V1) is \emph{not} statistically significant at the 280-image test set size ($p > 0.5$ in all five cases; 95\% CIs on the difference all include zero). ConvNeXt-V2 is significantly more accurate than every model ranked sixth or lower ($p < 0.05$). This means the ranking of the top six models by point-estimate accuracy alone should not be over-interpreted as a strict ordering; the top six are statistically indistinguishable in accuracy on this test set. ConvNeXt-V2 remains the preferred choice not because it is proven to be the single most accurate architecture, but because among this statistically-tied top group, it has by far the smallest parameter count (3.4M against 4.3 to 85.8M for the other five) and the lowest inference latency, which is what Section~\ref{sec:experiments}'s efficiency analysis and edge-deployment motivation are based on.
+\textbf{Interpretation.} ConvNeXt-V2's accuracy advantage over the next five models on the leaderboard (SwinTransformer, MobileOne, ViT, EdgeNeXt, ConvNeXt-V1) is \emph{not} statistically significant at the 280-image test set size ($p > 0.5$ in all five cases; 95\% CIs on the difference all include zero). ConvNeXt-V2 is significantly more accurate than every model ranked seventh or lower ($p < 0.05$). This means the ranking of the top six models by point-estimate accuracy alone should not be over-interpreted as a strict ordering; the top six are statistically indistinguishable in accuracy on this test set. ConvNeXt-V2 remains the preferred choice not because it is proven to be the single most accurate architecture, but because among this statistically-tied top group, it has by far the smallest parameter count (3.4M against 4.3 to 85.8M for the other five) and the lowest inference latency, which is what Section~\ref{sec:experiments}'s efficiency analysis and edge-deployment motivation are based on.
 
 \subsection{Ablation Study Significance Testing}
 \label{app:bootstrap_ablation}
@@ -250,7 +239,7 @@ This appendix details the deletion-metric protocol summarised in Section~\ref{se
 
 \subsection{Protocol}
 
-For every image in the 280-image test set, four steps are applied. (1) The model's baseline confidence in its own predicted class is recorded; (2) LIME is run with the same settings used for the qualitative examples (Quickshift segmentation, 500 perturbed samples, top 10 superpixels); (3) the superpixels LIME attributes to the predicted class are replaced with the masking colour used during LIME's own sampling (black, consistent with \texttt{hide\_color=0} in the LIME configuration), and the model is re-run on this perturbed image; (4) the confidence drop is the baseline confidence minus the perturbed-image confidence, both measured for the \emph{same} (originally predicted) class. This is the standard "deletion" faithfulness metric used in the XAI literature, in the spirit of the masking-based evaluation introduced for saliency methods by RISE \cite{petsiuk2018rise}. An explanation that faithfully identifies the pixels the model relies on should produce a large confidence drop when those pixels are removed, whereas an unfaithful or random explanation should produce a drop close to what removing a random region of the same size would cause. A 95\% confidence interval for the mean confidence drop is computed via bootstrap resampling of the 280 per-image drops (1,000 resamples, percentile method), identical in spirit to the procedure in \ref{app:bootstrap}.
+For every image in the 280-image test set, four steps are applied. (1) The model's baseline confidence in its own predicted class is recorded; (2) LIME is run with the same settings used for the qualitative examples (Quickshift segmentation, 500 perturbed samples, top 10 superpixels); (3) the superpixels LIME attributes to the predicted class are replaced with the masking colour used during LIME's own sampling (black, consistent with \texttt{hide\_color=0} in the LIME configuration), and the model is re-run on this perturbed image; (4) the confidence drop is the baseline confidence minus the perturbed-image confidence, both measured for the \emph{same} (originally predicted) class. This is the standard "deletion" faithfulness metric used in the XAI literature, in the spirit of the masking-based evaluation introduced for saliency methods by RISE \citep{petsiuk2018rise}. An explanation that faithfully identifies the pixels the model relies on should produce a large confidence drop when those pixels are removed, whereas an unfaithful or random explanation should produce a drop close to what removing a random region of the same size would cause. A 95\% confidence interval for the mean confidence drop is computed via bootstrap resampling of the 280 per-image drops (1,000 resamples, percentile method), identical in spirit to the procedure in \ref{app:bootstrap}.
 
 \subsection{Per-Class Results}
 
@@ -299,5 +288,53 @@ Entropy threshold (top half, free)              & 0.24 & 0.79 & 0.37 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\section{Real-time On-device Deployment, Per-class Results}
+\label{app:realtime_demo}
+
+This appendix reports the full per-class breakdown behind the platform-level means in Table~\ref{tab:realtime_demo} (Section~\ref{subsec:realtime_demo}). For each of the four platforms, one representative image per AvocadoLeaf class was displayed full-screen on a second device and presented to that platform's own camera, with the exported BoVien model, run via ONNX Runtime (Windows, macOS, Android) or a native Core ML conversion (iOS), producing one live prediction logged per class.
+
+\begin{table}[htbp]
+\centering
+\caption{Per-class confidence, FPS, and latency for the real-time on-device deployment of BoVien, one live capture per class per platform.}
+\label{tab:realtime_demo_per_class}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccc}
+\toprule
+\textbf{Platform} & \textbf{Class} & \textbf{Conf.\ (\%)} & \textbf{FPS} & \textbf{Latency (ms)} \\
+\midrule
+Windows & \texttt{binhthuong} & 85.6 & 35.2 & 15.51 \\
+Windows & \texttt{chaymepla}  & 74.7 & 37.6 & 13.59 \\
+Windows & \texttt{domla}      & 35.7 & 28.9 & 19.00 \\
+Windows & \texttt{gisat}      & 68.0 & 33.3 & 14.00 \\
+Windows & \texttt{moctrang}   & 65.3 & 36.3 & 13.00 \\
+Windows & \texttt{repsap}     & 36.7 & 30.3 & 15.01 \\
+\midrule
+macOS   & \texttt{binhthuong} & 95.8 & 14.3 & 31.60 \\
+macOS   & \texttt{chaymepla}  & 81.0 & 14.9 & 31.41 \\
+macOS   & \texttt{domla}      & 71.9 & 15.1 & 30.19 \\
+macOS   & \texttt{gisat}      & 85.2 & 14.6 & 28.21 \\
+macOS   & \texttt{moctrang}   & 70.2 & 13.4 & 30.90 \\
+macOS   & \texttt{repsap}     & 75.5 & 14.6 & 31.40 \\
+\midrule
+iOS     & \texttt{binhthuong} & 98.8 & 18.2 & 42.10 \\
+iOS     & \texttt{chaymepla}  & 90.2 & 17.3 & 55.30 \\
+iOS     & \texttt{domla}      & 92.1 & 18.2 & 52.60 \\
+iOS     & \texttt{gisat}      & 86.1 & 18.5 & 52.10 \\
+iOS     & \texttt{moctrang}   & 81.0 & 16.2 & 53.90 \\
+iOS     & \texttt{repsap}     & 59.5 & 17.6 & 53.40 \\
+\midrule
+Android & \texttt{binhthuong} & 89.6 & 2.7  & 243.09 \\
+Android & \texttt{chaymepla}  & 80.7 & 2.6  & 274.34 \\
+Android & \texttt{domla}      & 93.0 & 2.5  & 350.30 \\
+Android & \texttt{gisat}      & 92.9 & 2.7  & 272.27 \\
+Android & \texttt{moctrang}   & 55.7 & 2.9  & 270.02 \\
+Android & \texttt{repsap}     & 45.0 & 2.6  & 291.69 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The per-class confidence figures should not be read as a second accuracy measurement. Each row is a single live capture per class per platform, so unlike Table~\ref{tab:arch_compare}'s 280-image test-set evaluation, a low confidence value here (e.g.\ Android's 45.0\% on \textit{repsap}) reflects one particular camera angle, lighting condition, and phone-screen glare on a single frame, not a per-class accuracy estimate. This appendix logs confidence and latency only, not whether the predicted class matched the displayed one on each of the 24 captures.
 
 The VLM flag reaches higher precision but much lower recall than the free entropy baseline, and critically, all 4 CNN mistakes the VLM flag caught were also caught by the entropy baseline (0 complementary detections out of 19 actual mistakes); that is, the VLM's grounded, image-based explanation added no error-detection information beyond what the CNN's own predictive entropy already provides at no extra inference cost. Qualitative inspection of the generated explanations also found instances of unfaithful reasoning, e.g. one case where the VLM justified a \emph{correct} \textit{binhthuong} (healthy) prediction by describing rust-coloured spots, the symptom description belonging to a different class (\textit{gisat}), rather than reasoning from what was actually visible, underscoring that the free-text explanations should not be taken as reliably faithful without further validation.

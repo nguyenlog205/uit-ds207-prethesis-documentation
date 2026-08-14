@@ -1,59 +1,51 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-The style file: elsarticle-num.bst
+The style file: elsarticle-harv.bst
 Database file #1: src/references.bib
-Warning--empty pages in howard2017mobilenets
-Warning--empty pages in woo2023convnextv2
-Warning--empty pages in awais2025agrogpt
-Warning--empty pages in qin2024mobilenetv4
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty pages in dosovitskiy2021vit
 Warning--empty pages in han2020tinynet
 Warning--empty pages in tang2022ghostnetv2
-Warning--empty pages in vasu2023mobileone
-Warning--empty pages in maaz2022edgenext
-Warning--empty pages in vasu2023fastvit
-Warning--empty pages in liu2023efficientvit
-Warning--empty pages in dosovitskiy2021vit
-Warning--empty pages in petsiuk2018rise
-You've used 50 entries,
-            2952 wiz_defined-function locations,
-            919 strings with 15917 characters,
-and the built_in function-call counts, 17701 in all, are:
-= -- 1527
-> -- 734
-< -- 19
-+ -- 278
-- -- 228
-* -- 1122
-:= -- 2337
-add.period$ -- 53
-call.type$ -- 50
-change.case$ -- 50
-chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 631
-empty$ -- 2041
-format.name$ -- 273
-if$ -- 4634
-int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 48
-newline$ -- 161
-num.names$ -- 50
-pop$ -- 405
+You've used 48 entries,
+            2990 wiz_defined-function locations,
+            877 strings with 15789 characters,
+and the built_in function-call counts, 39720 in all, are:
+= -- 3036
+> -- 1896
+< -- 34
++ -- 742
+- -- 675
+* -- 4352
+:= -- 5625
+add.period$ -- 119
+call.type$ -- 48
+change.case$ -- 465
+chr.to.int$ -- 47
+cite$ -- 51
+duplicate$ -- 2830
+empty$ -- 2656
+format.name$ -- 823
+if$ -- 7583
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 544
+newline$ -- 230
+num.names$ -- 192
+pop$ -- 1062
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 417
 quote$ -- 0
-skip$ -- 1256
+skip$ -- 1046
 stack$ -- 0
-substring$ -- 869
-swap$ -- 190
-text.length$ -- 19
+substring$ -- 1704
+swap$ -- 2191
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 12
-while$ -- 117
-width$ -- 52
-write$ -- 432
-(There were 12 warnings)
+type$ -- 432
+warning$ -- 3
+while$ -- 234
+width$ -- 0
+write$ -- 655
+(There were 3 warnings)

@@ -3,19 +3,12 @@
 \subsection{Data Collection and Filtering}
 \label{subsec:data_collection}
 
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{img/dataset/dataset_diagram.png}
-\caption{Overview of the data annotation pipeline. As a protocol design safeguard, a labelling round was to be repeated if pairwise inter-annotator agreement fell below an acceptable threshold; the quantitative Cohen's Kappa reported in Section~\ref{subsec:quality_control} is a separate, downstream check of the resulting consensus labels against an independent expert, not this per-round inter-annotator value.}
-\label{fig:annotation_pipeline}
-\end{figure*}
-
-All images were collected by our team in avocado orchards across three provinces of the Central Highlands (Gia Lai, Đắk Lắk, and Đắk Nông). We visited multiple gardens to capture the natural diversity of leaf appearance across (1) light (full sun, cloudy, backlight), (2) weather (dry, cloudy, sunny, after rain), (3) time of day (morning, noon, afternoon), and (4) angle and distance (top-down, oblique, close-up).
+We refer to the resulting dataset as \textbf{AvocadoLeaf} throughout this paper. All images were collected by our team in avocado orchards across three provinces of the Central Highlands (Gia Lai, Đắk Lắk, and Đắk Nông). We visited multiple gardens to capture the natural diversity of leaf appearance across (1) light (full sun, cloudy, backlight), (2) weather (dry, cloudy, sunny, after rain), (3) time of day (morning, noon, afternoon), and (4) angle and distance (top-down, oblique, close-up).
 
 To ensure quality, we applied the following filtering steps:
 \begin{enumerate}
-    \item[(1)] Removal of duplicate images;
-    \item[(2)] Exclusion of images with motion blur so severe that the leaf becomes impossible to distinguish;
+    \item[(1)] Removal of duplicate images.
+    \item[(2)] Exclusion of images with motion blur so severe that the leaf becomes impossible to distinguish.
     \item[(3)] Manual screening to discard frames where the avocado leaf is occluded more than $50\%$ or is otherwise impossible to identify reliably.
 \end{enumerate}
 After filtering, $1,861$ images remained and were passed to the annotation phase.
@@ -26,12 +19,12 @@ After filtering, $1,861$ images remained and were passed to the annotation phase
 
 We defined a simple annotation protocol for the six avocado leaf conditions observed in our dataset. The six class labels and their meanings are:
 \begin{itemize}
-    \item \texttt{binhthuong} – healthy leaf, no visible damage or disease.
-    \item \texttt{chaymepla} – Leaf scorch (no causal pathogen; abiotic physiological disorder), tip or margin burn typically caused by salt stress or sunburn.
-    \item \texttt{domla} – Cercospora leaf spot (\textit{Pseudocercospora purpurea}), small brown to purplish-black lesions caused by fungal infection.
-    \item \texttt{gisat} – Algal leaf spot, locally known as ``red rust'' (\textit{Cephaleuros virescens}), orange, velvety pustule-like spots caused by a parasitic alga.
-    \item \texttt{moctrang} – Powdery mildew (\textit{Oidium} sp., family Erysiphaceae), white powdery coating on the leaf surface.
-    \item \texttt{repsap} – Long-tailed mealybug damage (\textit{Pseudococcus longispinus}), sap-feeding insect leaving silver or stippled marks.
+    \item \texttt{binhthuong}: healthy leaf, no visible damage or disease.
+    \item \texttt{chaymepla}: leaf scorch, an abiotic physiological disorder with no causal pathogen, tip or margin burn typically caused by salt stress or sunburn.
+    \item \texttt{domla}: Cercospora leaf spot (\textit{Pseudocercospora purpurea}), small brown to purplish-black lesions caused by fungal infection.
+    \item \texttt{gisat}: algal leaf spot, locally known as ``red rust'' (\textit{Cephaleuros virescens}), orange, velvety pustule-like spots caused by a parasitic alga.
+    \item \texttt{moctrang}: powdery mildew (\textit{Oidium} sp., family Erysiphaceae), white powdery coating on the leaf surface.
+    \item \texttt{repsap}: long-tailed mealybug damage (\textit{Pseudococcus longispinus}), sap-feeding insect leaving silver or stippled marks.
 \end{itemize}
 
 Figure~\ref{fig:sample_images} shows one representative image per class.
@@ -46,7 +39,7 @@ Figure~\ref{fig:sample_images} shows one representative image per class.
 The annotators followed a consistent guideline:
 \begin{itemize}
     \item Each image must contain at least one clearly visible avocado leaf as the main subject.
-    \item The label is assigned based on the dominant visible symptom on that leaf. If multiple symptoms are present, the annotator selects the most severe condition; this collapses any co-occurring secondary symptom into the single-label taxonomy used throughout this work, which is a source of label ambiguity we return to in Section~\ref{sec:discussion}.
+    \item The label is assigned based on the dominant visible symptom on that leaf. If multiple symptoms are present, the annotator selects the most severe condition. This collapses any co-occurring secondary symptom into the single-label taxonomy used throughout this work. We return to this source of label ambiguity in Section~\ref{sec:discussion}.
     \item Images where the leaf cannot be reliably identified (e.g., extreme blur, heavy occlusion) are discarded during manual screening.
 \end{itemize}
 
@@ -58,20 +51,27 @@ All annotations were recorded in a simple CSV file with \texttt{filename} and \t
 
 To ensure the reliability of the annotated dataset, we conducted a quality control step using an independent expert review.
 
-\paragraph{Annotation aggregation.}
-After three annotators independently labelled the entire dataset, the final label for each image was determined by majority voting. Pairwise agreement among the three annotators was monitored throughout as the trigger for the re-labelling loop shown in Figure~\ref{fig:annotation_pipeline}; it remained high enough that no round was ever repeated, so no per-round inter-annotator Kappa values were retained for reporting here. In the rare case of a three‑way tie (all three annotators disagree), the image was flagged for a short discussion to reach a unanimous decision; no such case occurred in practice. As a result, Appendix~\ref{app:quality_control_raw} reports each annotator's individual agreement with the independent expert (Table~\ref{tab:raw_annotator}) but not a pairwise Kappa among the three annotators themselves; the Cohen's Kappa reported later in this section should therefore be read as validating the consensus label against an external reference, not as a measure of how much the three annotators agreed with each other before that consensus was formed.
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{img/dataset/dataset_diagram.png}
+\caption{Overview of the data annotation pipeline, including the re-labelling loop described below.}
+\label{fig:annotation_pipeline}
+\end{figure*}
 
-\paragraph{Expert review procedure.}
+\paragraph{Annotation aggregation}
+After three annotators independently labelled the entire dataset, the final label for each image was determined by majority voting. Pairwise agreement among the three annotators was monitored throughout as the trigger for the re-labelling loop shown in Figure~\ref{fig:annotation_pipeline}. A round was to be repeated whenever pairwise agreement fell below a pre-set acceptable threshold. This threshold was never crossed, so no round was ever repeated, and no per-round inter-annotator Kappa values were retained for reporting here. This is a documented limitation of the protocol. The actual pairwise agreement values are not available for independent verification. In the rare case of a three-way tie, where all three annotators disagree, the image was flagged for a short discussion to reach a unanimous decision. No such case occurred in practice. As a result, \ref{app:quality_control_raw} reports each annotator's individual agreement with the independent expert (Table~\ref{tab:raw_annotator}) but not a pairwise Kappa among the three annotators themselves. The Cohen's Kappa reported later in this section should therefore be read as validating the consensus label against an external reference. It is not a measure of how much the three annotators agreed with each other before that consensus was formed.
+
+\paragraph{Expert review procedure}
 From the $1,861$ images with their consensus labels, we randomly sampled $15\%$ ($279$ images) for this review, drawn independently of the train/validation/test split used for model development. This review sample and the 279-image validation split (Section~\ref{sec:dataset_analysis}) coincide in size only because both happen to be a 15\% draw from the same 1,861-image pool. These images were presented to an avocado leaf disease expert who had not participated in the original annotation. The expert, blind to the annotators' decision, assigned one of the six predefined classes to each image following the same annotation guideline. As only one expert was involved, the resulting agreement reflects consistency with a single reviewer's judgment rather than inter-expert reliability.
 
-\paragraph{Agreement metric.}
+\paragraph{Agreement metric}
 We measured the agreement between the annotator consensus labels and the expert labels using Cohen's Kappa coefficient ($\kappa$), which accounts for chance agreement. It is defined as:
 \begin{equation}
 \kappa = \frac{p_o - p_e}{1 - p_e}
 \end{equation}
-where $p_o$ is the observed proportion of agreement and $p_e$ the expected proportion under random assignment. Values of $\kappa > 0.80$ indicate strong agreement \cite{landis1977measurement}.
+where $p_o$ is the observed proportion of agreement and $p_e$ the expected proportion under random assignment. Values of $\kappa > 0.80$ indicate strong agreement \citep{landis1977measurement}.
 
-\paragraph{Results.}
+\paragraph{Results}
 Table~\ref{tab:quality_control} reports the outcome of this review.
 
 \begin{table}[htbp]

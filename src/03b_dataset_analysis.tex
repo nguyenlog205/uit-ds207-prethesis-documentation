@@ -28,12 +28,12 @@ Imbalance ratio (max/min) & 3.96 \\
 \end{tabular}
 \end{table}
 
-The class distribution is shown in Figure~\ref{fig:class_dist}. The most frequent class is \textit{domla} (654 images), while the least frequent is \textit{repsap} (165 images). The imbalance ratio of 3.96 indicates moderate class imbalance, which is typical for field-collected datasets. Transfer learning and data augmentation (Section~\ref{sec:proposed_model}) help this sample size go further than training from scratch would allow, though Section~\ref{sec:discussion} revisits how the resulting class sizes, particularly for \textit{repsap} and \textit{gisat}, still bound how confidently the rarest classes' results should be read. The per-split distribution is also displayed, confirming that the stratification was effective.
+The class distribution is shown in Figure~\ref{fig:class_dist}. The most frequent class is \textit{domla} (654 images), while the least frequent is \textit{repsap} (165 images). The imbalance ratio of 3.96 indicates moderate class imbalance. Transfer learning (Section~\ref{sec:proposed_model}) helps this sample size go further than training from scratch would allow. Section~\ref{sec:discussion} revisits how the resulting class sizes, particularly for \textit{repsap} and \textit{gisat}, still bound how confidently the rarest classes' results should be read. The per-split distribution is also displayed, confirming that the stratification was effective.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{img/dataset/eda/class_distribution.png}
-\caption{Class distribution. Left, overall bar chart; right, grouped bar chart showing train/validation/test splits.}
+\caption{Class distribution. Left, overall bar chart. Right, grouped bar chart showing train/validation/test splits.}
 \label{fig:class_dist}
 \end{figure}
 
@@ -43,7 +43,7 @@ The class distribution is shown in Figure~\ref{fig:class_dist}. The most frequen
 % =============================================
 \subsection{Photometric Analysis}
 
-As supporting evidence for the imaging diversity claimed in Section~\ref{sec:dataset_construction}, Figure~\ref{fig:brightness_contrast} shows per-class brightness ranging from 22.7 (\textit{repsap}) to 153.9 (\textit{domla}), and Figure~\ref{fig:rgb_histograms} shows that classes also differ in dominant colour channel (e.g.\ \textit{chaymepla} skews red, \textit{repsap} is low in green/blue). These variations confirm that the images were collected under diverse, uncontrolled lighting and colour conditions rather than a single studio-like setup, and imply that models must be robust to such shifts rather than exploit them as shortcuts.
+As supporting evidence for the imaging diversity claimed in Section~\ref{sec:dataset_construction}, Figure~\ref{fig:brightness_contrast} shows that brightness varies substantially even within a single class (standard deviation 9.0 to 24.9 across classes), with \textit{domla} images alone spanning 44.4 to 153.9 and \textit{gisat} images spanning 80.5 to 182.1 on the 0-255 scale. Figure~\ref{fig:rgb_histograms} shows that classes also differ in dominant colour channel. These variations confirm that the images were collected under diverse, uncontrolled lighting and colour conditions rather than a single studio-like setup, and imply that models must be robust to such shifts rather than exploit them as shortcuts.
 
 \begin{figure}[htbp]
 \centering
@@ -67,23 +67,22 @@ As supporting evidence for the imaging diversity claimed in Section~\ref{sec:dat
 \subsection{Intrinsic Difficulty Analysis}
 \label{subsec:difficulty}
 
-To assess how challenging the dataset is for automatic classification, we performed three complementary analyses on the validation set using features extracted from a frozen ImageNet-pretrained ResNet-18 \cite{he2016deep}. The feature dimension was reduced to 512 via global average pooling.
+To assess how challenging the dataset is for automatic classification, we performed three complementary analyses on the validation set using features extracted from a frozen ImageNet-pretrained ResNet-18 \citep{he2016deep}. The feature dimension was reduced to 512 via global average pooling.
 
 \subsubsection{Quantitative Clustering Metrics}
 
-We computed three standard metrics that evaluate class separability in the feature space, namely the Silhouette score \cite{rousseeuw1987silhouettes}, the Davies–Bouldin index \cite{davies1979cluster}, and the Calinski–Harabasz index \cite{calinski1974dendrite}. Table~\ref{tab:difficulty_metrics} summarises the results.
+We computed two standard metrics that evaluate class separability in the feature space, namely the Silhouette score \citep{rousseeuw1987silhouettes} and the Davies-Bouldin index \citep{davies1979cluster}. Table~\ref{tab:difficulty_metrics} summarises the results.
 
 \begin{table}[htbp]
 \centering
-\caption{Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies–Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.}
+\caption{Quantitative difficulty metrics on the validation set. Lower Silhouette, higher Davies-Bouldin, and intra/inter ratio $\ge 1$ indicate strong class overlap.}
 \label{tab:difficulty_metrics}
 \begin{tabular}{l c}
 \toprule
 \textbf{Metric} & \textbf{Value} \\
 \midrule
 Silhouette Score & 0.0067 \\
-Davies–Bouldin Index & 4.17 \\
-Calinski–Harabasz Index & 8.23 \\
+Davies-Bouldin Index & 4.17 \\
 Average intra-class distance & 12.82 \\
 Average inter-class distance & 8.04 \\
 Intra/Inter distance ratio & 1.59 \\
@@ -91,11 +90,9 @@ Intra/Inter distance ratio & 1.59 \\
 \end{tabular}
 \end{table}
 
-The Silhouette score near zero indicates that samples are not closer to their own class than to neighbouring classes, implying heavy inter-class overlap. The Davies–Bouldin index (4.17) far exceeds the typical threshold of 1.0 for well-separated datasets, confirming high similarity between disease categories. The Calinski–Harabasz index (8.23) is likewise very low compared to the values in the hundreds or thousands typically observed on well-separated benchmarks, corroborating the same conclusion of weak class separability. Notably, the intra/inter distance ratio exceeds 1 (1.59), meaning that within-class variation is larger than the separation between class centroids – a hallmark of fine-grained recognition problems.
+The Silhouette score near zero indicates that samples are not closer to their own class than to neighbouring classes, implying heavy inter-class overlap. The Davies-Bouldin index (4.17) points in the same direction (lower is better separated, metric definition in \ref{app:difficulty}), though its absolute value is best read relative to other clustering configurations rather than against a fixed threshold, so it is reported here as a corroborating signal alongside Silhouette and the intra/inter distance ratio below. Notably, the intra/inter distance ratio exceeds 1 (1.59), meaning that within-class variation is larger than the separation between class centroids, a hallmark of fine-grained recognition problems.
 
 \subsubsection{Visualisation with t-SNE}
-
-We projected the 512‑dimensional features into two dimensions using t-SNE \cite{maaten2008visualizing} with perplexity 30. Figure~\ref{fig:tsne} shows the resulting scatter plot, where each point represents a validation image and colours encode disease classes. All six classes exhibit substantial overlap without clear cluster boundaries. Classes with visually similar symptoms, such as \textit{chaymepla} (leaf scorch) and \textit{repsap} (mealybug damage), are heavily interleaved. This visual entanglement further confirms that the disease categories are not well separated in the deep feature space.
 
 \begin{figure}[H]
 \centering
@@ -104,8 +101,10 @@ We projected the 512‑dimensional features into two dimensions using t-SNE \cit
 \label{fig:tsne}
 \end{figure}
 
+We projected the 512‑dimensional features into two dimensions using t-SNE \citep{maaten2008visualizing} with perplexity 30. Figure~\ref{fig:tsne} shows the resulting scatter plot, where each point represents a validation image and colours encode disease classes. All six classes exhibit substantial overlap without clear cluster boundaries. Classes with visually similar symptoms, such as \textit{chaymepla} (leaf scorch) and \textit{repsap} (mealybug damage), are heavily interleaved. This visual entanglement further confirms that the disease categories are not well separated in the deep feature space.
+
 \subsubsection{Linear Separability Test}
 
-To determine whether the frozen deep features are linearly separable by disease class, we trained a logistic regression classifier on the extracted features. Using 5‑fold cross‑validation, the model achieved a mean accuracy of \(75.25\% \pm 3.76\%\). When evaluated on a held‑out subset (30\% of the validation set, disjoint from the folds used above), the accuracy dropped to \(65.48\%\). Part of this gap is likely attributable to the small size of the validation set (279 images), which inflates the variance of both estimates. This attribution is qualitative; unlike the architecture comparison in Section~\ref{sec:experiments} (Appendix~\ref{app:bootstrap}), we did not compute a bootstrap confidence interval for the held-out estimate, so the size of the reported drop should be read as a point estimate whose own precision is not quantified here. Nonetheless, both figures are significantly better than random guessing (\(16.7\%\) for six classes) yet remain far below the performance typically observed on non‑fine‑grained benchmarks (e.g., \(>90\%\) on PlantVillage subsets \cite{mohanty2016using}). Hence, the disease classes are \textbf{not linearly separable} in the feature space, requiring non‑linear models or fine‑tuning to achieve satisfactory accuracy.
+To determine whether the frozen deep features are linearly separable by disease class, we trained a logistic regression classifier on the extracted features. Using 5‑fold cross‑validation, the model achieved a mean accuracy of \(75.25\% \pm 3.76\%\). When evaluated on a held‑out subset (30\% of the validation set, disjoint from the folds used above), the accuracy dropped to \(65.48\%\). Part of this gap is likely attributable to the small size of the validation set (279 images), which inflates the variance of both estimates. This attribution is qualitative. Unlike the architecture comparison in Section~\ref{sec:experiments} (\ref{app:bootstrap}), we did not compute a bootstrap confidence interval for the held-out estimate. The size of the reported drop should therefore be read as a point estimate whose own precision is not quantified here. Nonetheless, both figures are significantly better than random guessing (\(16.7\%\) for six classes). For comparison, Section~\ref{sec:experiments} shows that a fine-tuned, non-linear ConvNeXt-V2 model reaches \(92.14\%\) on this same AvocadoLeaf test set, a gap of roughly 17-27 percentage points over the linear probe depending on which estimate (\(75.25\%\) or \(65.48\%\)) is used. Hence, the disease classes are \textbf{not linearly separable} in the feature space, requiring non‑linear models or fine‑tuning to achieve satisfactory accuracy.
 
-Taken together, the three analyses in this section are consistent with one another. Near-zero Silhouette, low Calinski–Harabasz, high Davies–Bouldin, and an intra/inter distance ratio above 1 all indicate substantial class overlap in feature space; the t-SNE visualisation shows this overlap directly; and the linear probe confirms that this overlap cannot be resolved by a linear decision boundary. This motivates both the comparison of non-linear, fine-tuned architectures in Section~\ref{sec:experiments} and, more specifically, the use of metric-based few-shot learning in Section~\ref{subsec:fewshot}. Since frozen features are not linearly separable, a classifier trained directly on top of them generalises poorly, whereas prototypical networks learn a task-adapted embedding space in which the classes become separable.
+Taken together, the three analyses in this section are consistent with one another. Near-zero Silhouette, high Davies-Bouldin, and an intra/inter distance ratio above 1 all indicate substantial class overlap in feature space. The t-SNE visualisation shows this overlap directly. The linear probe confirms that this overlap cannot be resolved by a linear decision boundary. This motivates both the comparison of non-linear, fine-tuned architectures in Section~\ref{sec:experiments} and, more specifically, the use of metric-based few-shot learning in Section~\ref{subsec:fewshot}. Since frozen features are not linearly separable, a classifier trained directly on top of them generalises poorly, whereas prototypical networks learn a task-adapted embedding space in which the classes become separable.

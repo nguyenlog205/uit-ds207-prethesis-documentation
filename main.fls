@@ -864,12 +864,12 @@ INPUT ./src/03a_dataset_construction.tex
 INPUT src/03a_dataset_construction.tex
 INPUT ./src/03a_dataset_construction.tex
 INPUT src/03a_dataset_construction.tex
-INPUT ./img/dataset/dataset_diagram.png
-INPUT ./img/dataset/dataset_diagram.png
-INPUT img/dataset/dataset_diagram.png
 INPUT ./img/dataset/eda/sample_images.png
 INPUT ./img/dataset/eda/sample_images.png
 INPUT img/dataset/eda/sample_images.png
+INPUT ./img/dataset/dataset_diagram.png
+INPUT ./img/dataset/dataset_diagram.png
+INPUT img/dataset/dataset_diagram.png
 INPUT ./src/03b_dataset_analysis.tex
 INPUT src/03b_dataset_analysis.tex
 INPUT ./src/03b_dataset_analysis.tex
@@ -936,6 +936,9 @@ INPUT img/experiments/cross_dataset/confidence_by_class.png
 INPUT ./img/experiments/cross_dataset/kotagiri_fewshot_recovery.png
 INPUT ./img/experiments/cross_dataset/kotagiri_fewshot_recovery.png
 INPUT img/experiments/cross_dataset/kotagiri_fewshot_recovery.png
+INPUT ./img/experiments/realtime_demo/imac_deployment.jpg
+INPUT ./img/experiments/realtime_demo/imac_deployment.jpg
+INPUT img/experiments/realtime_demo/imac_deployment.jpg
 INPUT ./src/06_discussion.tex
 INPUT src/06_discussion.tex
 INPUT ./src/06_discussion.tex
