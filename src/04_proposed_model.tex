@@ -1,7 +1,7 @@
 \section{Proposed Lightweight Model}
 \label{sec:proposed_model}
 
-Rather than designing a new architecture from scratch, we adopt a systematic \emph{selection-and-adaptation} approach. A broad pool of existing lightweight and efficient architectures is fine-tuned under an identical protocol on the AvocadoLeaf dataset, and the best-performing candidate under joint accuracy-size-latency constraints is proposed as the deployment model for this task (Section~\ref{sec:experiments}). This section describes the candidate pool, the transfer-learning strategy applied to each, and the shared training protocol.
+Rather than designing a new architecture from scratch, we adopt a systematic \emph{selection-and-adaptation} approach. A broad pool of existing lightweight and efficient architectures is fine-tuned under a largely shared training protocol, with the deviations documented below, on the AvocadoLeaf dataset, and the best-performing candidate under joint accuracy-size-latency constraints is proposed as the deployment model for this task (Section~\ref{sec:experiments}). This section describes the candidate pool, the transfer-learning strategy applied to each, and the shared training protocol.
 
 \subsection{Candidate Architectures}
 

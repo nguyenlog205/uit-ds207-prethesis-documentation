@@ -8,7 +8,7 @@ Deep learning, particularly convolutional neural networks (CNNs), has emerged as
 This paper addresses all four gaps around a single proposed model, which we name \textbf{BoVien}\footnote{From Vietnamese \emph{bơ} (avocado) + \emph{viên} (a small unit / device).}, through the following contributions.
 
 \begin{enumerate}
-    \item \textbf{AvocadoLeaf dataset.} A new dataset of 1,861 images covering five disease categories and a healthy class, captured first-hand under diverse real-world conditions (variable lighting, multiple angles, natural backgrounds) rather than in a controlled studio setting. The dataset exhibits moderate class imbalance (max/min ratio 3.96) and fine-grained inter-class similarity (Silhouette score 0.0067, intra/inter distance ratio 1.59), reflecting the genuine difficulty of field-based diagnosis rather than an artificially easy benchmark.
+    \item \textbf{AvocadoLeaf dataset.} A new dataset of 1,861 images covering five disease conditions and one healthy class, captured first-hand under diverse real-world conditions (variable lighting, multiple angles, natural backgrounds) rather than in a controlled studio setting. The dataset exhibits moderate class imbalance (max/min ratio 3.96) and fine-grained inter-class similarity (Silhouette score 0.0067, intra/inter distance ratio 1.59), reflecting the genuine difficulty of field-based diagnosis rather than an artificially easy benchmark.
 
     \item \textbf{Model BoVien, a lightweight architecture for edge deployment.} Selected from a systematic benchmark of 15 architectures spanning CNN, hybrid CNN-Transformer, and pure-transformer families (Section~\ref{sec:experiments}), BoVien (a ConvNeXt-V2 backbone with selective layer fine-tuning) reaches the best accuracy-size-latency trade-off, with 92.14\% test accuracy and 0.900 macro F1 at only 3.4M parameters and 2.30\,ms per image on a single GPU.
 
@@ -19,7 +19,7 @@ This paper addresses all four gaps around a single proposed model, which we name
     \item \textbf{Uncertainty estimation and out-of-distribution (OOD) detection.} Using Monte Carlo Dropout, BoVien separates in-distribution inputs from out-of-distribution ones with high reliability, reaching AUC 0.994 on far-OOD (unrelated internet images) and AUC 0.985 on the harder near-OOD case (leaves of other crop species), giving a practical signal for when a prediction should be flagged for human review. Its raw softmax confidence, by contrast, is only moderately calibrated (ECE = 0.0625), which we discuss as a limitation in Section~\ref{sec:discussion} rather than overstate here. This OOD test asks whether BoVien recognises \emph{off-task} inputs (non-leaf images, leaves of other crops) as unfamiliar. It is a distinct question from whether BoVien still recognises \emph{avocado leaves collected at a new site}, which Section~\ref{subsec:real_cross_domain} answers separately and less favourably.
 \end{enumerate}
 
-Figure~\ref{fig:pipeline_overview} summarises how these four contributions fit together, from field data collection through architecture selection to the explainability, robustness, and edge-deployment evaluation that follows.
+Figure~\ref{fig:pipeline_overview} summarises how these contributions fit together, from field data collection through architecture selection to the explainability, robustness, and edge-deployment evaluation that follows.
 
 \begin{figure*}[t]
 \centering
