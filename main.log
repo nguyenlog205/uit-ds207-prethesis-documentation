@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.8.15)  18 AUG 2026 14:05
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.8.15)  23 AUG 2026 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1244,42 +1244,43 @@ LaTeX Font Warning: Font shape `TU/lmtt/m/In' undefined
 (Font)              using `TU/lmtt/m/n' instead on input line 48.
 
 (src/00_information_and_abstract.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
-
-
-]
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 4
-1.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 3
+4.
 
 (C:\Program Files\MiKTeX\tex/latex/txfonts\ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 4
-1.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 3
+4.
 
 (C:\Program Files\MiKTeX\tex/latex/txfonts\utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 4
-1.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 3
+4.
 
 (C:\Program Files\MiKTeX\tex/latex/txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
-)) (src/01_introduction.tex
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+])
+(src/01_introduction.tex
 Underfull \hbox (badness 1389) in paragraph at lines 4--5
 \TU/TeXGyreTermes(0)/m/n/10 omy, yet its production is constantly threatened by
 
@@ -1291,7 +1292,7 @@ Underfull \hbox (badness 1558) in paragraph at lines 6--7
  []
 
 
-Underfull \vbox (badness 3029) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
@@ -1328,10 +1329,7 @@ Underfull \hbox (badness 1521) in paragraph at lines 4--5
 
  []
 
-
-Underfull \vbox (badness 3758) has occurred while \output is active []
-
- [2]
+[2]
 Underfull \hbox (badness 1648) in paragraph at lines 7--8
 \TU/TeXGyreTermes(0)/m/n/10 and Salathé, 2015) contains more than 50,000 im-
  []
@@ -1448,13 +1446,7 @@ Underfull \hbox (badness 1478) in paragraph at lines 29--30
 \TU/TeXGyreTermes(0)/m/n/10 ResNet-18 baseline unfreezes one stage rather than
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-Underfull \vbox (badness 1990) has occurred while \output is active []
-
- [4]
+[3] [4]
 Underfull \hbox (badness 1107) in paragraph at lines 38--39
 \TU/TeXGyreTermes(0)/m/n/10 trained classification backbone directly as a metri
 c-
@@ -1468,16 +1460,19 @@ Underfull \hbox (badness 3260) in paragraph at lines 43--43
 ) (src/03a_dataset_construction.tex [5]
 File: img/dataset/eda/sample_images.png Graphic file (type bmp)
 <img/dataset/eda/sample_images.png>
- [6]
 File: img/dataset/dataset_diagram.png Graphic file (type bmp)
 <img/dataset/dataset_diagram.png>
-
+ [6]
 Underfull \hbox (badness 1320) in paragraph at lines 68--69
  \TU/TeXGyreTermes(0)/m/it/10 Agreement metric.[] \TU/TeXGyreTermes(0)/m/n/10 W
 e measured the agreement be-
  []
 
-) (src/03b_dataset_analysis.tex
+
+Underfull \vbox (badness 1189) has occurred while \output is active []
+
+)
+(src/03b_dataset_analysis.tex
 Underfull \hbox (badness 2012) in paragraph at lines 9--10
 []\TU/TeXGyreTermes(0)/m/n/10 The dataset consists of 1,861 images distributed
  []
@@ -1494,14 +1489,10 @@ File: img/dataset/eda/brightness_contrast.png Graphic file (type bmp)
 <img/dataset/eda/brightness_contrast.png>
 File: img/dataset/eda/rgb_histograms.png Graphic file (type bmp)
 <img/dataset/eda/rgb_histograms.png>
-
-Underfull \vbox (badness 1348) has occurred while \output is active []
-
- [8]
+[8]
 File: img/dataset/analysis/tsne_avocado_leaf.png Graphic file (type bmp)
 <img/dataset/analysis/tsne_avocado_leaf.png>
-)
-(src/04_proposed_model.tex
+) (src/04_proposed_model.tex
 Underfull \hbox (badness 1024) in paragraph at lines 110--1
 []\TU/TeXGyreTermes(0)/m/n/10 Taken together, the three analyses in this sectio
 n
@@ -1524,10 +1515,7 @@ Underfull \hbox (badness 1755) in paragraph at lines 4--5
 
  []
 
-
-Underfull \vbox (badness 5878) has occurred while \output is active []
-
- [9]
+[9]
 Underfull \hbox (badness 2057) in paragraph at lines 12--13
 []\TU/TeXGyreTermes(0)/m/n/10 mobile-oriented CNNs (MobileNet-V2 (Sandler
  []
@@ -1600,15 +1588,9 @@ Underfull \hbox (badness 1478) in paragraph at lines 39--40
 File: img/models/f1_comparision.jpg Graphic file (type bmp)
 <img/models/f1_comparision.jpg>
 
-Underfull \vbox (badness 1515) has occurred while \output is active []
-
- [11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 3907) has occurred while \output is active []
-
- [12]
+ [11]
 Underfull \hbox (badness 1320) in paragraph at lines 60--61
 []\TU/TeXGyreTermes(0)/m/n/10 This metric quantifies the predictive performance
 
@@ -1631,7 +1613,7 @@ Underfull \hbox (badness 1527) in paragraph at lines 60--61
 
 File: img/models/efficiency.jpg Graphic file (type bmp)
 <img/models/efficiency.jpg>
-
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 90--90
 []|\TU/TeXGyreTermes(0)/m/n/9 No augmentation, no class-
  []
@@ -1643,7 +1625,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--90
 
 File: img/experiments/ablation/ablation_accuracy.png Graphic file (type bmp)
 <img/experiments/ablation/ablation_accuracy.png>
-[13]
+
+Underfull \vbox (badness 4995) has occurred while \output is active []
+
+ [13]
 File: img/experiments/evaluating/confusion_matrix_heatmap.png Graphic file (typ
 e bmp)
 <img/experiments/evaluating/confusion_matrix_heatmap.png>
@@ -1657,12 +1642,11 @@ Underfull \hbox (badness 1490) in paragraph at lines 121--122
 \TU/TeXGyreTermes(0)/m/n/10 with disease-associated symptoms rather than back-
  []
 
-[14]
 File: img/experiments/xai/chaymepla_lime.png Graphic file (type bmp)
 <img/experiments/xai/chaymepla_lime.png>
 File: img/experiments/xai/moctrang_lime.png Graphic file (type bmp)
 <img/experiments/xai/moctrang_lime.png>
-
+[14]
 Underfull \hbox (badness 4441) in paragraph at lines 133--133
 []\TU/TeXGyreTermes(0)/m/it/10 Multi-modal Explanation Generation (CNN +
  []
@@ -1684,13 +1668,13 @@ Overfull \hbox (1.79865pt too wide) in paragraph at lines 154--163
  [][] 
  []
 
-[15]
+
 Underfull \hbox (badness 1067) in paragraph at lines 165--166
 \TU/TeXGyreTermes(0)/m/n/10 tomatic error detector. Section 7[] and Appendix E[
 ]
  []
 
-
+[15]
 Underfull \hbox (badness 7631) in paragraph at lines 180--181
 []\TU/TeXGyreTermes(0)/b/n/10 Prototypical Networks substantially outper-
  []
@@ -1758,21 +1742,26 @@ Underfull \hbox (badness 1371) in paragraph at lines 309--310
 File: img/experiments/cross_dataset/kotagiri_fewshot_recovery.png Graphic file 
 (type bmp)
 <img/experiments/cross_dataset/kotagiri_fewshot_recovery.png>
- [19]
+
 Underfull \hbox (badness 2680) in paragraph at lines 350--351
 \TU/TeXGyreTermes(0)/m/n/10 GPU inference latency measured on batched, pre-
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
 File: img/experiments/realtime_demo/imac_deployment.jpg Graphic file (type bmp)
 
 <img/experiments/realtime_demo/imac_deployment.jpg>
-[20]) (src/06_discussion.tex
+)
+(src/06_discussion.tex
 Underfull \hbox (badness 1142) in paragraph at lines 4--5
 \TU/TeXGyreTermes(0)/b/n/10 non‑linearly‑separable dataset. \TU/TeXGyreTermes(0
 )/m/n/10 Section 4[] showed
  []
 
-
+[20]
 Underfull \hbox (badness 1286) in paragraph at lines 10--11
 \TU/TeXGyreTermes(0)/m/n/10 calise to symptomatic regions (scorched lesions for
 
@@ -1806,7 +1795,9 @@ Underfull \hbox (badness 1082) in paragraph at lines 6--7
 r
  []
 
-) (src/08_statements.tex [23]) [24] (src/nn_appendix.tex [25
+) (src/08_statements.tex [23]) [24
+
+] (src/nn_appendix.tex [25
 
 
 ]
@@ -1832,11 +1823,14 @@ L3 programming layer <2025-12-24>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  24248 strings out of 402987
  497279 string characters out of 5452871
- 959385 words of memory out of 5000000
+ 957384 words of memory out of 5000000
  52461 multiletter control sequences out of 15000+600000
  654263 words of font info for 149 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
