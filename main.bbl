@@ -86,15 +86,6 @@
   the 33rd International Conference on Machine Learning (ICML)}, pp.
   \bibinfo{pages}{1050--1059}.
 %Type = Inproceedings
-\bibitem[{Gonzalez et~al.(2020)Gonzalez, Gonzalez and
-  Gonzalez}]{gonzalez2020identifying}
-\bibinfo{author}{Gonzalez, J.}, \bibinfo{author}{Gonzalez, A.G.C.},
-  \bibinfo{author}{Gonzalez, R.A.M.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{Identifying out-of-distribution samples in plant
-  disease classification using deep ensembles}, in:
-  \bibinfo{booktitle}{Proceedings of the 2020 International Joint Conference on
-  Neural Networks (IJCNN)}, pp. \bibinfo{pages}{1--8}.
-%Type = Inproceedings
 \bibitem[{Guo et~al.(2017)Guo, Pleiss, Sun and Weinberger}]{guo2017calibration}
 \bibinfo{author}{Guo, C.}, \bibinfo{author}{Pleiss, G.}, \bibinfo{author}{Sun,
   Y.}, \bibinfo{author}{Weinberger, K.Q.}, \bibinfo{year}{2017}.
@@ -152,13 +143,21 @@
   \bibinfo{howpublished}{\url{https://data.mendeley.com/datasets/6zy6wxhf2v/1}}.
 \newblock \DOIprefix\doi{10.17632/6zy6wxhf2v.1}.
 %Type = Inproceedings
-\bibitem[{Lakshminarayanan et~al.(2017)Lakshminarayanan, Pritzel and
+\bibitem[{Lakshminarayanan et~al.(2017a)Lakshminarayanan, Pritzel and
   Blundell}]{lakshminarayanan2017ensembles}
 \bibinfo{author}{Lakshminarayanan, B.}, \bibinfo{author}{Pritzel, A.},
-  \bibinfo{author}{Blundell, C.}, \bibinfo{year}{2017}.
+  \bibinfo{author}{Blundell, C.}, \bibinfo{year}{2017}a.
 \newblock \bibinfo{title}{Simple and scalable predictive uncertainty estimation
   using deep ensembles}, in: \bibinfo{booktitle}{Advances in Neural Information
   Processing Systems (NeurIPS)}, pp. \bibinfo{pages}{6405--6416}.
+%Type = Inproceedings
+\bibitem[{Lakshminarayanan et~al.(2017b)Lakshminarayanan, Pritzel and
+  Blundell}]{lakshminarayanan2017simple}
+\bibinfo{author}{Lakshminarayanan, B.}, \bibinfo{author}{Pritzel, A.},
+  \bibinfo{author}{Blundell, C.}, \bibinfo{year}{2017}b.
+\newblock \bibinfo{title}{Simple and scalable predictive uncertainty estimation
+  using deep ensembles}, in: \bibinfo{booktitle}{Advances in Neural Information
+  Processing Systems (NIPS)}, pp. \bibinfo{pages}{6402--6413}.
 %Type = Article
 \bibitem[{Landis and Koch(1977)}]{landis1977measurement}
 \bibinfo{author}{Landis, J.R.}, \bibinfo{author}{Koch, G.G.},
@@ -398,16 +397,6 @@
   Computer Vision and Pattern Recognition (CVPR)}, pp.
   \bibinfo{pages}{7907--7917}.
 %Type = Article
-\bibitem[{Wang et~al.(2022)Wang, Zhou, Zhang, Wu and
-  Zhao}]{wang2022uncertainty}
-\bibinfo{author}{Wang, C.}, \bibinfo{author}{Zhou, J.}, \bibinfo{author}{Zhang,
-  Y.}, \bibinfo{author}{Wu, H.}, \bibinfo{author}{Zhao, C.},
-  \bibinfo{year}{2022}.
-\newblock \bibinfo{title}{A plant disease recognition method based on fusion of
-  images and graph structure text}.
-\newblock \bibinfo{journal}{Frontiers in Plant Science} \bibinfo{volume}{13},
-  \bibinfo{pages}{850258}.
-%Type = Article
 \bibitem[{Wang et~al.(2021)Wang, Zhou, Zhao, Li, Teng and Wu}]{wang2021few}
 \bibinfo{author}{Wang, C.}, \bibinfo{author}{Zhou, J.}, \bibinfo{author}{Zhao,
   C.}, \bibinfo{author}{Li, J.}, \bibinfo{author}{Teng, G.},
@@ -416,6 +405,20 @@
   image text collaborative representation learning}.
 \newblock \bibinfo{journal}{Computers and Electronics in Agriculture}
   \bibinfo{volume}{184}, \bibinfo{pages}{106098}.
+%Type = Article
+\bibitem[{Wang et~al.(2024)Wang, Bai, Tan, Wang, Fan, Bai, Chen, Liu, Wang, Ge,
+  Fan, Dang, Du, Ren, Men, Liu, Zhou, Zhou and Lin}]{wang2024qwen2vl}
+\bibinfo{author}{Wang, P.}, \bibinfo{author}{Bai, S.}, \bibinfo{author}{Tan,
+  S.}, \bibinfo{author}{Wang, S.}, \bibinfo{author}{Fan, Z.},
+  \bibinfo{author}{Bai, J.}, \bibinfo{author}{Chen, K.}, \bibinfo{author}{Liu,
+  X.}, \bibinfo{author}{Wang, J.}, \bibinfo{author}{Ge, W.},
+  \bibinfo{author}{Fan, Y.}, \bibinfo{author}{Dang, K.}, \bibinfo{author}{Du,
+  M.}, \bibinfo{author}{Ren, X.}, \bibinfo{author}{Men, R.},
+  \bibinfo{author}{Liu, D.}, \bibinfo{author}{Zhou, C.}, \bibinfo{author}{Zhou,
+  J.}, \bibinfo{author}{Lin, J.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Qwen2-vl: Enhancing vision-language model's
+  perception of the world at any resolution}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2409.12191} .
 %Type = Inproceedings
 \bibitem[{Woo et~al.(2023)Woo, Debnath, Hu, Chen, Liu, Kweon and
   Xie}]{woo2023convnextv2}
